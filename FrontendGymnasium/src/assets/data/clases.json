@@ -1,0 +1,66 @@
+{
+    "individuales": [
+        {
+            "titulo": "Boxeo",
+            "codigo": "Sala 7",
+            "duracion": "1 hora y media",
+            "plazas": 2,
+            "plazasLibres": 1,
+            "instructor": "Manuel Fernández"
+        },
+        {
+            "titulo": "Alterofilia",
+            "codigo": "Sala 11",
+            "duracion": "1 hora",
+            "plazas": 2,
+            "plazasLibres": 2,
+            "instructor": "Manuel Fernández"
+        },
+        {
+            "titulo": "Entrenamiento personal",
+            "codigo": "Sala 2",
+            "duracion": "2 horas",
+            "plazas": 1,
+            "plazasLibres": 1,
+            "instructor": "Manuel Fernández"
+        }
+    ],
+    "grupales": [
+        {
+            "titular": "CrossFit",
+            "codigo": 7354,
+            "dinero": 90000,
+            "objetivo": 120000
+        },
+        {
+            "titular": "CrossFit",
+            "codigo": 8498,
+            "dinero": 75000,
+            "objetivo": 100000
+        },
+        {
+            "titular": "CrossFit",
+            "codigo": 7354,
+            "dinero": 90000,
+            "objetivo": 120000
+        },
+        {
+            "titular": "CrossFit",
+            "codigo": 8498,
+            "dinero": 75000,
+            "objetivo": 100000
+        },
+        {
+            "titular": "CrossFit",
+            "codigo": 7354,
+            "dinero": 90000,
+            "objetivo": 120000
+        },
+        {
+            "titular": "CrossFit",
+            "codigo": 8498,
+            "dinero": 75000,
+            "objetivo": 100000
+        }
+    ]
+}

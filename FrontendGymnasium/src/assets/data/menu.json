@@ -1,0 +1,20 @@
+{
+    "menu": [
+        {
+            "id": 0,
+            "titulo": "Clases"
+        },
+        {
+            "id": 1,
+            "titulo": "Centros"
+        },
+        {
+            "id": 2,
+            "titulo": "Progreso"
+        },
+        {
+            "id": 3,
+            "titulo": "Objetivos"
+        }
+    ]
+}

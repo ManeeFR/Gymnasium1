@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
-  base = environment.base
+//   base = environment.base
 
-  constructor(private http: HttpClient) { }
+//   constructor(private http: HttpClient) { }
 
-  getUser(){
-    return this.http.get('${this.base}users')
-  }
+//   getUser(){
+//     return this.http.get('${this.base}users')
+//   }
 }

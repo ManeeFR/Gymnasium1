@@ -1,0 +1,124 @@
+{
+        "actividad": {
+
+                "hoy": [
+                        {
+                                "id": 64,
+                                "titulo": "Boxeo",
+                                "cantidad": "De 19:30 a 20:30",
+                                "individual": true
+                        },
+                        {
+                                "id": 63,
+                                "titulo": "Aerobic",
+                                "cantidad": "De 19:00 a 19:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 62,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 10:00 a 11:30",
+                                "individual": false
+                        }
+                ],
+
+                "ayer": [
+                        {
+                                "id": 61,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 60,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": true
+                        },
+                        {
+                                "id": 59,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 58,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 57,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 56,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 55,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 54,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 53,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 52,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 51,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 50,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 49,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        },
+                        {
+                                "id": 48,
+                                "titulo": "CrossFit",
+                                "cantidad": "De 17:30 a 18:30",
+                                "individual": false
+                        }
+                ]
+
+        },
+        
+        "tienda": [
+                {
+                        "entrada": "Comprar ordenadores",
+                        "url": "./src/assets/icons/compraPC.png"
+                },
+                {
+                        "entrada": "Comprar servicios",
+                        "url": "./src/assets/icons/compraPC.png"
+                }
+        ]
+}

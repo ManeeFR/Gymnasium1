@@ -6,21 +6,21 @@ import { AuthService } from './auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
   title = 'FrontendGymnasium';
-  usuarios = [];
+//   usuarios = [];
 
-  constructor(private authService: AuthService){
+//   constructor(private authService: AuthService){
 
-  }
-  ngOnInit(): void {
+//   }
+//   ngOnInit(): void {
 
-    this.authService.getUser().subscribe((data: any) => {
-      console.log(data);
-      this.usuarios = data;
-    })
+//     this.authService.getUser().subscribe((data: any) => {
+//       console.log(data);
+//       this.usuarios = data;
+//     })
 
-  }
+//   }
   
 }

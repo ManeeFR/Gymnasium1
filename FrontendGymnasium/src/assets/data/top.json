@@ -1,0 +1,38 @@
+{
+    "welcome": "Manuel",
+    "favorites": [
+        {
+            "id": 0,
+            "titulo": "Mi rutina"
+        },
+        {
+            "id": 1,
+            "titulo": "Mis comidas"
+        },
+        {
+            "id": 2,
+            "titulo": "Mis notas"
+        }
+    ],
+    "summary": [
+        {
+            "id": 0,
+            "titulo": "Último entrenamiento",
+            "clase": "ultEntrenamiento",
+            "cantidad": "Hace 1 día y 21 horas"
+        },
+        {
+            "id": 1,
+            "titulo": "Duración",
+            "clase": "duracion",
+            "cantidad": "1 hora y 16 minutos"
+        },
+        {
+            "id": 2,
+            "titulo": "Completado",
+            "clase": "completado",
+            "cantidad": "89 %"
+        }
+    ]
+
+}
