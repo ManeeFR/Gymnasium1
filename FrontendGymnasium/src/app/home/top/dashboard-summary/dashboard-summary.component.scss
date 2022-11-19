@@ -1,0 +1,77 @@
+.ultimoDia {
+
+    display: flex;
+
+    gap: 3vw;
+
+    &__ultEntrenamiento,
+    &__duracion,
+    &__completado {
+
+        padding-right: 4vw;
+        border-right: solid 1px rgba(184, 184, 184, 0.589);
+        max-height: 13vh;
+
+        @media screen and (max-width: 1023px) {
+            min-width: 25vw;
+            max-width: 25vw;
+            padding-right: 0;
+        }
+        @media screen and (max-width: 876px) {
+            margin: 0 1.32vw;
+            min-width: 24.8vw;
+            max-width: 24.8vw;
+        }
+    }
+
+    &__completado {
+        border: 0;
+
+    }
+
+    .texto {
+        color: #717578;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 876px) {
+            min-height: 5vh;
+            text-align: center;
+            padding-top: 0vh;
+            margin-bottom: 0;
+        }
+    }
+
+    .cantidad {
+        font-size: x-large;
+        font-weight: 600;
+        
+        @media screen and (max-width: 876px) {
+            width: 29vw;
+            min-width: 29vw;
+            font-weight: 400;
+        }       
+
+    }
+
+    .azul {
+        color: #0b7ad0;
+
+        @media screen and (max-width: 876px) {
+            text-align: start;
+            font-size: 26px;
+        }
+    }
+
+    div {
+        @media screen and (max-width: 876px) {
+            padding-right: 3vh;
+        }
+    }
+
+    @media screen and (max-width: 876px) {
+        margin-bottom: 3vh;
+        width: 35vw;
+        min-width: 35vw;
+    }        
+
+}

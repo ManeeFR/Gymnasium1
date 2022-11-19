@@ -1,0 +1,82 @@
+<section class="actividad">
+
+    <h2> Próximas clases </h2>
+
+    <article>
+
+        <!-- TO DO: Hacer que la fecha se muestre bien siempre -->
+            <p class="fecha"> {{ fecha }} NOV </p>
+
+            <ul>
+
+                    <li *ngFor="let item of Data['actividad'].hoy;" class="pago">
+                            <div class="pago__texto">
+                                    {{ item.titulo }}
+                            </div>
+                            <div class="pago__cantidad">
+
+                                    <!-- <p> {{ (item.cantidad | currency:"EUR":"symbol") | euros }} </p> -->
+                                    <p> {{ item.cantidad }} </p>
+                                    
+                                    <img *ngIf="!item.individual else grupal"
+                                            src="../../../../assets/icons/puntitoRojo.png"
+                                            alt="Icono de punto rojo">
+
+                                    <ng-template #grupal>
+                                            <img src="../../../../assets/icons/puntitoVerde.png"
+                                                    alt="Icono de punto verde">
+                                    </ng-template>
+
+                            </div>
+                    </li>
+
+            </ul>
+
+    </article>
+
+    <article>
+
+            <p class="fecha"> {{ fecha + 1 }} NOV </p>
+
+            <ul>
+
+                    <li *ngFor="let item of Data['actividad'].ayer;" class="pago">
+                            <div class="pago__texto">
+                                    {{ item.titulo }}
+                            </div>
+                            <div class="pago__cantidad">
+
+                                    <!-- <p> {{ (item.cantidad | currency:"EUR":"symbol") | euros }} </p> -->
+                                    <p> {{ item.cantidad }} </p>
+                                    
+                                    <img *ngIf="!item.individual else grupal"
+                                            src="../../../../assets/icons/puntitoRojo.png"
+                                            alt="Icono de punto rojo">
+
+                                    <ng-template #grupal>
+                                            <img src="../../../../assets/icons/puntitoVerde.png"
+                                                    alt="Icono de punto verde">
+                                    </ng-template>
+
+                            </div>
+                    </li>
+
+            </ul>
+
+    </article>
+
+</section>
+
+
+<section class="necesidades">
+
+    <h2> Tienda </h2>
+
+    <article>
+
+            <!-- CAMBIAR ESTO POR CSS Y DATOS DEL JSON "sidebar.json" -->
+            <img src="../../../../assets/icons/compraPC.png" alt="Imagen de anuncio de PC">
+
+    </article>
+
+</section>

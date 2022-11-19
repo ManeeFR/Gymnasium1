@@ -1,0 +1,40 @@
+
+<h1> {{ fecha | saludo }} {{ Data['welcome'] }} </h1>
+
+<div class="fecha">
+
+        <button type="button"> <!-- TO DO: Desplegar un calendario al hacer hover al botón -->
+
+                <img src="../../../../assets/icons/calendario.svg" alt="Calendario">
+
+        </button> 
+
+        <div [ngSwitch]="fecha.getUTCDay()"> 
+            <p *ngSwitchCase="1"> Lunes     </p>
+            <p *ngSwitchCase="2"> Martes    </p>
+            <p *ngSwitchCase="3"> Miércoles </p>
+            <p *ngSwitchCase="4"> Jueves    </p>
+            <p *ngSwitchCase="5"> Viernes   </p> 
+            <p *ngSwitchCase="6"> Sábado    </p>
+            <p *ngSwitchCase="7"> Domingo   </p>
+            <p *ngSwitchDefault>  Lunes     </p>
+        </div>    
+    
+        <p> {{ fecha.getUTCDate() }} de&nbsp;</p>
+
+        <div [ngSwitch]="fecha.getMonth()"> 
+            <p *ngSwitchCase="1">  enero      </p>
+            <p *ngSwitchCase="2">  febrero    </p>
+            <p *ngSwitchCase="3">  mayo       </p>
+            <p *ngSwitchCase="4">  abril      </p>
+            <p *ngSwitchCase="5">  junio      </p>
+            <p *ngSwitchCase="6">  julio      </p>
+            <p *ngSwitchCase="7">  agosto     </p>
+            <p *ngSwitchCase="8">  septiembre </p>
+            <p *ngSwitchCase="9">  octubre    </p>
+            <p *ngSwitchCase="10"> noviembre  </p>
+            <p *ngSwitchCase="11"> diciembre  </p>
+            <p *ngSwitchDefault>   enero      </p>
+        </div>
+
+</div>

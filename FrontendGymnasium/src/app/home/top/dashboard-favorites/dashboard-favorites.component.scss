@@ -1,0 +1,50 @@
+.menuFavorites {
+
+    display: flex;
+    margin: 2vh 0;
+
+    ul {
+
+        list-style: none;
+        display: flex;
+        gap: 1vw;
+        margin: 0 1.5vw;
+        padding: 0;
+
+        li {
+            :hover {
+                font-weight: bold;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            &#medio {
+                border-left: 1px solid rgba(128, 128, 128, 0.705);
+                border-right: 1px solid rgba(128, 128, 128, 0.705);
+                padding: 0 1.5vw;
+            }
+        }
+    }
+
+    .despliegue {
+
+        a {
+            :hover {
+                min-height: 2.8vh;
+                min-width: 0.5vw;
+            }
+
+            img {
+                min-height: 2.7vh;
+                min-width: 0.4vw;
+            }
+
+            padding: 0.4vh 1vw 0 0.5vw;
+            margin-right: 3vw;
+            cursor: pointer;
+        }
+    }
+}

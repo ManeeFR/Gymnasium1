@@ -1,0 +1,32 @@
+
+
+h1 {
+    margin: 0;
+}
+
+.fecha {
+
+    display: flex;
+    justify-content: flex-start;
+
+    button {
+            border: 0;
+            background-color: transparent;
+            margin-right: 0.5vw;
+            img {
+                    min-width: 3vw;
+            }
+    }
+
+    div, p {
+        padding-right: 0.15vw;
+        color: #717578;
+        p {
+
+            color: #717578;
+            margin: auto 0;
+        }
+        margin: auto 0;
+    }
+
+}

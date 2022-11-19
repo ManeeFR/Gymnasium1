@@ -1,0 +1,102 @@
+<section class="claseIndividual">
+
+    <div class="claseIndividual__title">
+
+        <div class="claseIndividual__title__shared">
+
+            <app-dashboard-filters titulo="{{ titulo }}"></app-dashboard-filters>
+
+        </div>
+
+        <div class="claseIndividual__title__filtros">
+
+            <ul>
+                <li>
+                    <button type="button" name="ocultas">
+                        <div class="muestraOcultas">
+                            <img src="../../../../../assets/icons/ojito.png" alt="Icono de un ojo">
+                            <p> Mostrar ocultas </p>
+                        </div>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" name="filtrar">
+                        <div class="muestraFiltro">
+                            <p> Filtra resultados </p>
+                            <img src="../../../../../assets/icons/flechita.png" alt="Icono de una flecha">
+                        </div>
+                    </button>
+                </li>
+                <button (click)="cambiaLayout()">
+
+                    <img src="{{ imagen }}" alt="Selector de layout">
+
+                </button>
+            </ul>
+
+ 
+        </div>
+
+    </div>
+
+    <div *ngIf="layout=='flex'; else grid" class="claseIndividual__flex">
+
+        <article *ngFor="let item of Data['individuales'];" class="claseIndividual__flex__card">
+
+            <div class="claseIndividual__flex__card--menu">
+                <img src="../../../../../assets/icons/puntitosMenu.png" alt="Menú de despliegue"> 
+            </div>
+
+            <div class="claseIndividual__flex__card--title">
+                <h5> {{ item.titulo }} </h5>
+                <p> {{ item.codigo }} </p>
+            </div>
+
+            <div class="claseIndividual__flex__card--cantidad">
+                <h3> {{ item.duracion }} </h3>
+                <!-- <h3> {{ (item.duracion | currency:"EUR":"symbol") }} </h3> -->
+                <!-- <p> Plazas libres: {{ (item.plazasLibres | currency:"EUR":"symbol") }} </p> -->
+                <p> Plazas libres: {{ item.plazasLibres }} </p>
+            </div>
+
+            <div class="claseIndividual__flex__card--movimientos">
+                <img src="../../../../../assets/icons/mensaje.png" alt="Icono de mensaje">
+                <p> {{ item.instructor }} </p>
+            </div> 
+
+        </article>
+   
+    </div>
+
+    <ng-template #grid>
+ 
+        <div class="claseIndividual__grid">
+
+            <article *ngFor="let item of Data['individuales']; let i = index;" class="claseIndividual__grid__card"
+                id="{{ 'articulo-'+i }}">
+
+                <div class="claseIndividual__grid__card--title">
+                    <h5> {{ item.titulo }} </h5>
+                    <p> {{ item.codigo }} </p>
+                </div>
+
+                <div class="claseIndividual__grid__card--cantidad">
+                    <h5> {{ item.duracion }} </h5>
+                    <!-- <h5> {{ (item.duracion | currency:"EUR":"symbol") }} </h5> -->
+                    <div>
+                        <!-- <p> Plazas libres: {{ (item.plazasLibres | currency:"EUR":"symbol") }} </p> -->
+                        <p> Plazas libres: {{ item.plazasLibres }} </p>
+                    </div>
+                </div>
+
+                <div class="claseIndividual__grid__card--menu">
+                    <img src="../../../../../assets/icons/puntitosMenu.png" alt="Menú de despliegue">
+                </div>
+
+            </article>
+
+        </div>
+
+    </ng-template>
+
+</section>

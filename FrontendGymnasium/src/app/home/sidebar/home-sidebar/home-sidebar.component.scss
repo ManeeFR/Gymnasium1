@@ -1,0 +1,95 @@
+.actividad {
+
+    overflow: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    min-height: 70vh;
+    max-height: 75.3vh;
+    min-width: 25vw;
+
+    article {
+        margin: 5vh 0;
+
+        .fecha {
+            max-width: max-content;
+            padding: 1vh;
+            background-color: #90aec1;
+            border-radius: 30%;
+            color: white;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li.pago {
+
+                display: flex;
+                justify-content: space-between;
+                margin-right: 1vw;
+                border-bottom: solid 1px #b9bcbe96;
+
+                .pago__texto {
+                    padding: 1vh 0;
+                    padding-bottom: 0;
+                }
+                
+                .pago__cantidad {
+                    display: flex;
+                    flex-direction: row;
+
+                    padding-top: 1vh;
+
+                    p {
+                        margin-bottom: 0;
+
+                    }
+
+                    img {
+                        margin-bottom: 2vh;
+                        margin-top: 0.4vh;
+                        max-height: 3vh;
+                    }
+                }
+            }
+        }
+    }
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+
+        &:vertical {
+            width: 10px;
+        }
+
+        &-button {
+            display: none;
+
+            :increment {
+                display: none;
+            }
+        }
+
+        &-thumb {
+            background-color: #d3dee6;
+            border-radius: 20px;
+            border: 2px solid #f1f2f3;
+        }
+
+        &-track {
+            border-radius: 10px;
+        }
+
+    }
+
+}
+
+.necesidades {
+
+    padding-top: 3.5vh;
+    margin-bottom: 20vh;
+
+    h2 {
+        margin-bottom: 3vh;
+    }
+}

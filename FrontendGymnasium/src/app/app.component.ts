@@ -1,26 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
 
-  title = 'FrontendGymnasium';
-//   usuarios = [];
+    title = 'Gymnasium';
+    num = 0;
 
-//   constructor(private authService: AuthService){
+    constructor(private ruta: Router) {
 
-//   }
-//   ngOnInit(): void {
+        if (this.num == 0) {
+            this.num = 1;
+            console.log(this.num);
+            this.ruta.navigate(["home/clases"]);
+        }
 
-//     this.authService.getUser().subscribe((data: any) => {
-//       console.log(data);
-//       this.usuarios = data;
-//     })
+    }
 
-//   }
-  
 }

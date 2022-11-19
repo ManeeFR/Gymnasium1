@@ -1,0 +1,13 @@
+
+<div class="ultimoDia">
+
+    <div *ngFor="let item of Data['summary']; let i = index;" class="ultimoDia__{{Data['summary'][i].clase}}">
+
+            <p class="texto"> {{ item.titulo }} </p>
+
+            <!-- <p class="cantidad azul"> {{ (item.cantidad | currency:"EUR":"symbol") | euros: true }} </p> -->
+            <p class="cantidad azul"> {{ item.cantidad }} </p>
+            
+    </div>
+
+</div>  
