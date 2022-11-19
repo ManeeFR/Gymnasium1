@@ -5,6 +5,7 @@ import { HomeDashboardComponent } from './home-dashboard.component';
 import { CentrosComponent } from './bottom/centros/centros/centros.component';
 import { ProgresoComponent } from './bottom/progreso/progreso/progreso.component';
 import { ObjetivosComponent } from './bottom/objetivos/objetivos/objetivos.component';
+import { ClasesComponent } from '../clases/clases.component';
 // import { ClasesComponent } from '../clases/clases.component';
 
 
@@ -73,8 +74,23 @@ const routes: Routes = [
     //       { path: 'objetivos', component: ObjetivosComponent },
     //       { path: 'clases', component: ClasesComponent },
     //   ]
+    },
+    {
+      path: 'clases',
+    //   pathMatch: 'full',
+      component: ClasesComponent,
+    //   children: [
+    //       { path: 'centros', component: CentrosComponent },
+    //       { path: 'progreso', component: ProgresoComponent },
+    //       { path: 'objetivos', component: ObjetivosComponent },
+    //       { path: 'clases', component: ClasesComponent },
+    //   ]
     }
-  ];    // {   path: 'home/centros',
+  ];    
+  
+  
+  
+  // {   path: 'home/centros',
   //     // pathMatch: 'full', 
   //     component: CentrosComponent
   // },

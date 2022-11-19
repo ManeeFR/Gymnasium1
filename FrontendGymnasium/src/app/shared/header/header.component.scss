@@ -56,6 +56,10 @@ nav {
 
             &.logo {
                 padding: 0 1vw 0 2vw;
+
+                a > i > img {
+                    max-width: 55px;
+                }
             }
 
             &.reservas,

@@ -10,16 +10,11 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
     title = 'Gymnasium';
-    num = 0;
 
     constructor(private ruta: Router) {
 
-        if (this.num == 0) {
-            this.num = 1;
-            console.log(this.num);
-            this.ruta.navigate(["home/clases"]);
-        }
-
+        this.ruta.navigate(["home/clases"]);
     }
+
 
 }

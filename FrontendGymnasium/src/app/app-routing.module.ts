@@ -7,29 +7,32 @@ import { ClasesLayoutComponent } from './home/bottom/clases/clases-layout/clases
 import { CentrosComponent } from './home/bottom/centros/centros/centros.component';
 import { ProgresoComponent } from './home/bottom/progreso/progreso/progreso.component';
 import { ObjetivosComponent } from './home/bottom/objetivos/objetivos/objetivos.component';
-// import { ClasesComponent } from './clases/clases.component';
+import { ClasesComponent } from './clases/clases.component';
+import { AppComponent } from './app.component';
 
 
 const routes: Routes = [
     {
-      path: 'home',
-    //   pathMatch: 'full',
-      component: HomeDashboardComponent,
-      children: [
-          { path: 'centros', component: CentrosComponent },
-          { path: 'progreso', component: ProgresoComponent },
-          { path: 'objetivos', component: ObjetivosComponent },
-          { path: 'clases', component: ClasesLayoutComponent },
-      ]
+        path: 'home',
+        //   pathMatch: 'full',
+        component: HomeDashboardComponent,
+        children: [
+            { path: 'centros', component: CentrosComponent },
+            { path: 'progreso', component: ProgresoComponent },
+            { path: 'objetivos', component: ObjetivosComponent },
+            { path: 'clases', component: ClasesLayoutComponent },
+        ]
     },
     // {
-    //   path: 'clases',
-    // //   pathMatch: 'full',
-    //   component: ClasesComponent,
-
+    //     path: 'clases',
+    //     //   pathMatch: 'full',
+    //     component: AppComponent,
+    //     children: [
+    //         { path: 'clases', component: ClasesComponent },
+    //     ]
     // }
-  ];
- 
+];
+
 
 //   const routes: Routes = [
 //     {
