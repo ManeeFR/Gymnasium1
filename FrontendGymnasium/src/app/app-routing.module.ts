@@ -7,11 +7,21 @@ import { ClasesLayoutComponent } from './home/bottom/clases/clases-layout/clases
 import { CentrosComponent } from './home/bottom/centros/centros/centros.component';
 import { ProgresoComponent } from './home/bottom/progreso/progreso/progreso.component';
 import { ObjetivosComponent } from './home/bottom/objetivos/objetivos/objetivos.component';
-import { ClasesComponent } from './clases/clases.component';
+// import { ClasesComponent } from './clases/clases.component';
 import { AppComponent } from './app.component';
+import { ClasesDashboardLayoutComponent } from './clases/clases-layout/clases-dashboard-layout.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 
 
 const routes: Routes = [
+
+    { path: "", component: AppComponent, pathMatch: "full" },
+
+    { path: "login", component: LoginComponent, pathMatch: "full" },
+
+    { path: "register", component: RegisterComponent, pathMatch: "full" },
+    
     {
         path: 'home',
         //   pathMatch: 'full',
@@ -23,14 +33,14 @@ const routes: Routes = [
             { path: 'clases', component: ClasesLayoutComponent },
         ]
     },
-    // {
-    //     path: 'clases',
-    //     //   pathMatch: 'full',
-    //     component: AppComponent,
-    //     children: [
-    //         { path: 'clases', component: ClasesComponent },
-    //     ]
-    // }
+    {
+        path: 'clases',
+        //   pathMatch: 'full',
+        component: ClasesDashboardLayoutComponent,
+        children: [
+            { path: 'listado', component: ClasesDashboardLayoutComponent },
+        ]
+    }
 ];
 
 

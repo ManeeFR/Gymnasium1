@@ -1,27 +1,31 @@
+<ng-container *ngIf="logged">
 
-<div class="body">
+    <div class="body">
 
-    <header>
+        <header>
 
             <app-header></app-header>
 
-    </header>
+        </header>
 
+        <main>
 
-
-    <main> 
-             
             <router-outlet></router-outlet>
 
-    </main> 
+        </main>
 
-
-
-    <footer>
+        <footer>
 
             <app-footer></app-footer>
 
-    </footer>
+        </footer>
 
-</div>
+    </div>
 
+</ng-container>
+
+<ng-container *ngIf="!logged">
+
+    <router-outlet></router-outlet>
+
+</ng-container>

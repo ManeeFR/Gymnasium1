@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from "./auth/auth.service";
+
 
 @Component({
     selector: 'app-root',
@@ -9,12 +11,24 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
 
-    title = 'Gymnasium';
+    title: string = 'Gymnasium';
 
-    constructor(private ruta: Router) {
+    logged: boolean = false;
 
-        this.ruta.navigate(["home/clases"]);
+    constructor(private ruta: Router, private authService: AuthService) {
+
+        if (!authService.userLogged && !authService.getToken()) {
+            
+            this.logged = false;
+            this.ruta.navigate(["login"]);
+            
+        } else {
+            
+            this.logged = true;
+            this.ruta.navigate(["home/clases"]);
+
+        }
+
     }
-
 
 }

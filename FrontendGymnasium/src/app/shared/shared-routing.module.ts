@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeDashboardComponent } from '../home/home-dashboard.component';
-import { ClasesComponent } from '../clases/clases.component';
+// import { ClasesComponent } from '../clases/clases.component';
 
 
 
@@ -13,11 +13,11 @@ const routes: Routes = [
         // pathMatch: 'full',
         component: HomeDashboardComponent
     },
-    {
-        path: 'clases',
-        // pathMatch: 'full',
-        component: ClasesComponent
-    },
+    // {
+    //     path: 'clases',
+    //     // pathMatch: 'full',
+    //     component: ClasesComponent
+    // },
 
 
 

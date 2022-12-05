@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, Inject, Injector, OnInit } from '@angular/core';
-// import { Observable } from 'rxjs';
-import { CoursesService } from './courses/courses.service';
-import { Clase } from './model/clase.interface';
-import { AppConfig, CONFIG_TOKEN } from './config';
-import { COURSES } from '../../db-data';
-// import { CourseTitleComponent } from './course-title/course-title.component';
+import { Observable } from 'rxjs';
+import { CoursesService } from '../courses/courses.service';
+import { Clase } from '../model/clase.interface';
+import { AppConfig, APP_CONFIG, CONFIG_TOKEN } from '../config';
+import { COURSES } from '../../../db-data';
+import { CourseTitleComponent } from '../course-title/course-title.component';
 // import { CourseCardComponent } from './courses/course-card/course-card.component';
 // import { createCustomElement } from '@angular/elements';
 import { Router } from '@angular/router';
@@ -12,20 +12,20 @@ import { Router } from '@angular/router';
 
 
 @Component({
-    selector: 'app-clases',
-    templateUrl: './clases.component.html',
-    styleUrls: ['./clases.component.scss'],
+    selector: 'app-clases-dashboard-layout',
+    templateUrl: './clases-dashboard-layout.component.html',
+    styleUrls: ['./clases-dashboard-layout.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    // providers: [ 
-    //     // { provide: CONFIG_TOKEN, useFactory: () => APP_CONFIG }
-    //     // { provide: CONFIG_TOKEN, useValue: APP_CONFIG },
-    //     CoursesService
-    // ],
+    providers: [ 
+        // { provide: CONFIG_TOKEN, useFactory: () => APP_CONFIG }
+        { provide: CONFIG_TOKEN, useValue: APP_CONFIG },
+        CoursesService
+    ],
     
 })
 
 
-export class ClasesComponent implements OnInit {
+export class ClasesDashboardLayoutComponent implements OnInit {
     
     // title: string = 'Project001';
     
@@ -79,7 +79,14 @@ export class ClasesComponent implements OnInit {
 
         // this.courses$ = this.coursesService.loadCourses();
 
-        this.coursesService.loadCourses().subscribe(courses => this.coursesList = courses);
+        this.coursesService.loadCourses().subscribe(courses => {
+            this.coursesList = courses;
+            console.log('this.coursesList');
+            console.log(this.coursesList);
+        });
+        let aux = this.coursesList;
+        this.coursesList = [...aux];
+
 
         // const htmlElement = createCustomElement(CourseTitleComponent, { injector: this.injector });
 
@@ -131,17 +138,36 @@ export class ClasesComponent implements OnInit {
         // console.log(this.courses$);
         // return this.courses$.filter(x => x);
         // return this.courses$;
+        console.log('this.coursesList3');
+        console.log(this.coursesList);
         return this.coursesList;
     }
 
-
-    concreteStyles(first: boolean, last: boolean, even: boolean, odd: boolean): Object {
-        return {'is-first': first, 
-                'is-last': last, 
-                'is-even': even, 
-                'is-odd': odd }
+    validClass(clase: Clase): boolean {
+        console.log('clase');
+        console.log(clase);
+        console.log('this.coursesList');
+        console.log(this.coursesList);
+        return true;
     }
 
+
+    // concreteStyles(first: boolean, last: boolean, even: boolean, odd: boolean): Object {
+    //     return {'is-first': first, 
+    //             'is-last': last, 
+    //             'is-even': even, 
+    //             'is-odd': odd }
+    // }
+    concreteStyles(url: string) {
+        console.log('url');
+        console.log(url);
+
+        return { 'background-image': 'url(' + url + ')',
+                 'background-size': 'cover',
+                 'background-repeat': 'round'
+               };
+
+    } 
 
     // onToggle(display: boolean): void {
 

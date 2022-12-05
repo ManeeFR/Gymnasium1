@@ -1,4 +1,4 @@
-import { Clase } from './app/clases/model/clase.interface';
+// import { Clase } from './app/clases/model/clase.interface';
 
 
 export const COURSES: any = [
@@ -73,7 +73,7 @@ export const COURSES: any = [
         iconUrl: "assets/img/zumba.jpeg",
         category: 'ADVANCED'
     },
-
+ 
     {
         id: 8,
         description: 'Body Combat',
@@ -101,7 +101,8 @@ export const COURSES: any = [
 ];
 
 
-export function findCourseById(courseId: number): Clase {
+export function findCourseById(courseId: number) {
+// export function findCourseById(courseId: number): Clase {
 
     return COURSES.filter((x: undefined) => {
         return x !== undefined;

@@ -1,0 +1,64 @@
+<!-- <div class="top-menu" [appHighlighted]="false" [activateToggle]="false" #hl="hl" (dblclick)="hl.doToggle()"> -->
+
+
+    <div class="demo">
+
+        <button> Editar lista de clases </button>
+        <!-- <button i18n> Editar lista de clases </button> -->
+    
+    </div>
+    
+    
+    <!-- <ng-container i18n>{ coursesCount, plural, =0 {No hay clases disponibles.} -->
+    <!-- <ng-container>{ coursesCount, plural, =0 {No hay clases disponibles.}
+                  =1 {Una clase disponible.}
+                  other {Un total de {{coursesCount}} clases están disponibles.}  } 
+    </ng-container> -->
+    
+    
+    <div class="courses" *ngIf="courses">
+        <!-- <h4 i18n="welcome message | Greet the user a greeting at the beginning of the course.@@welcomeMessage"> Bienvenido a Gymnasium </h4> -->
+        <ng-container *ngFor="let course of courses(); index as i; first as isFirst;
+                              last as isLast; even as isEven; odd as isOdd;">
+                              
+            <ng-container *ngIf="validClass(course) === true">
+     
+                <app-course-card [course]="course"
+                                      [cardIndex]="i+1"
+                                      [ngStyle]="concreteStyles(course.iconUrl)"
+                                      [noImage]="noImage"
+                                      type="learning"
+                                      (courseChanged)="onCourseEdited($event)"
+                                      [appHighlighted]="false">
+                                      <!-- [ngClass]="concreteStyles(isFirst, isLast, isEven, isOdd)" -->
+    
+                    <!-- <app-course-image [src]="course.iconUrl"
+                                      class="course-image">
+                    </app-course-image> -->
+    
+    
+                    <ng-template #noImage let-courseName="description">
+    
+                        <p [style]="{'color': !course.iconUrl ? 'gray' : ''}"> {{
+                            courseName }} has no image yet. </p>
+    
+                        <img src="../assets/empty-image.png" alt="Not available
+                            image">
+    
+                    </ng-template>
+    
+                    <div class="course-description">
+    
+                        {{ course.longDescription }}
+    
+                    </div>
+    
+                </app-course-card>
+    
+    
+            </ng-container>
+    
+        </ng-container>
+    
+    </div>
+    

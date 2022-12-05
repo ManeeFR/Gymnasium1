@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClasesComponent } from './clases.component';
+import { ClasesDashboardLayoutComponent } from './clases-layout/clases-dashboard-layout.component';
 
 
 const routes: Routes = [
     {
       path: 'clases',
-      component: ClasesComponent,
+      component: ClasesDashboardLayoutComponent,
 
     }
   ];    
