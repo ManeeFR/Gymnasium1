@@ -3,10 +3,6 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Clase } from '../model/clase.interface';
 
-
-let counter = 0;
-
-
 @Injectable({
     providedIn: 'root',
     // useClass: '',
@@ -14,16 +10,12 @@ let counter = 0;
     // deps: ''
 })
 
+export class ClasesService {
+
+    constructor(private http: HttpClient) { }
 
 
-export class CoursesService {
-
-    constructor(private http: HttpClient) {
-
-    }
-
-
-    loadCourses(): Observable<Clase[]> {
+    loadClases(): Observable<Clase[]> {
         
         const params = new HttpParams().set("page", "1").set("pageSize", "10");
 
@@ -35,11 +27,11 @@ export class CoursesService {
 
     }
 
-    saveCourse(course: Clase): Observable<Object> {
+    saveClase(clase: Clase): Observable<Object> {
 
         const headers = new HttpHeaders().set("X-Auth", "userId");
 
-        return this.http.put(`/api/courses/${course.id}`, course, { headers } );
+        return this.http.put(`/api/courses/${clase.id}`, clase, { headers } );
         
     }
 

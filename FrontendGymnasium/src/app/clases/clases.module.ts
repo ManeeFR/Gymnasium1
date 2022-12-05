@@ -4,13 +4,12 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
-import { HighlightedDirective } from './courses/directives/highlighted.directive';
-import { CourseTitleComponent } from './course-title/course-title.component';
+import { HighlightedDirective } from './clases-directives/highlighted.directive';
+import { ClaseTitleComponent } from './clase-title/clase-title.component';
 import { ClasesDashboardLayoutComponent } from './clases-layout/clases-dashboard-layout.component';
-// import { CourseCardComponent } from './courses/course-card/course-card.component';
 import { AppComponent } from '../app.component';
-import { CourseCardComponent } from './course-card/course-card.component';
-import { CourseImageComponent } from './course-image/course-image.component';
+import { ClaseCardComponent } from './clase-card/clase-card.component';
+import { ClaseImageComponent } from './clase-image/clase-image.component';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
@@ -19,15 +18,15 @@ import { HomeRoutingModule } from './clases-routing.module';
 import { RouterModule } from '@angular/router';
 import { ClasesComponent } from './clases.component';
 import { HomeModule } from '../home/home.module';
+import { ClasesService } from './clases-service/clases.service';
 
 @NgModule({
     declarations: [
-        // CourseCardComponent,
         HighlightedDirective,
-        CourseTitleComponent,
+        ClaseTitleComponent,
         ClasesDashboardLayoutComponent,
-        CourseCardComponent,
-        CourseImageComponent,
+        ClaseCardComponent,
+        ClaseImageComponent,
         ClasesComponent
     ],
     imports: [
@@ -43,8 +42,8 @@ import { HomeModule } from '../home/home.module';
         RouterModule,
         HomeModule
     ],
-    providers: [],
+    providers: [ClasesService],
     bootstrap: [AppComponent],
-    entryComponents: [CourseTitleComponent]
+    entryComponents: [ClaseTitleComponent]
 })
 export class ClasesModule { }

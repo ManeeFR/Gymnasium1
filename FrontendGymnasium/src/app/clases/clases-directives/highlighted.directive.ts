@@ -1,5 +1,5 @@
 import { Directive, HostBinding, HostListener, Input, Output, EventEmitter, Host } from '@angular/core';
-import { CoursesService } from '../courses.service';
+import { ClasesService } from '../clases-service/clases.service';
 
 @Directive({
     selector: '[appHighlighted]',
@@ -17,7 +17,7 @@ export class HighlightedDirective {
 
 
     // constructor(@Host() private coursesService: CoursesService) { 
-    constructor(private coursesService: CoursesService) { 
+    constructor(private clasesService: ClasesService) { 
         // console.log('Service instantiated for highlighted with id: ' + this.coursesService.id);
     }
 

@@ -1,17 +1,16 @@
 import { Component, ElementRef, EventEmitter, Input, Output, TemplateRef, Attribute, ChangeDetectionStrategy } from '@angular/core';
 import { Clase } from '../model/clase.interface';
-import { Observable } from 'rxjs';
 
 @Component({
-    selector: 'app-course-card',
-    templateUrl: './course-card.component.html',
-    styleUrls: ['./course-card.component.scss'],
+    selector: 'app-clase-card',
+    templateUrl: './clase-card.component.html',
+    styleUrls: ['./clase-card.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class CourseCardComponent {
+export class ClaseCardComponent {
 
-    @Input() course!: Clase;
+    @Input() clase!: Clase;
 
     @Input() cardIndex!: number;
 
@@ -19,7 +18,7 @@ export class CourseCardComponent {
 
     // @Output('courseSelected') courseEmitter = new EventEmitter<Course>();
 
-    @Output('courseChanged') courseEditEmitter = new EventEmitter<Clase>();
+    @Output('claseChanged') claseEditEmitter = new EventEmitter<Clase>();
     
     // @Output('descriptionChanged') descriptionEditEmitter = new EventEmitter<Course>();
     
@@ -49,41 +48,41 @@ export class CourseCardComponent {
 
         
 
-        if (this.course.category === this.categories[0]) 
+        if (this.clase.category === this.categories[0]) 
             return 'beginner';
         
-        if (this.course.category === this.categories[1]) 
+        if (this.clase.category === this.categories[1]) 
             return 'intermediate';
         
-        if (this.course.category === this.categories[2]) 
+        if (this.clase.category === this.categories[2]) 
             return 'advanced';
         
         return 'all-levels';
     }
 
 
-    onCourseViewed(): void {
+    onClaseViewed(): void {
 
     //     this.courseEmitter.emit(this.course);
 
-        console.log(this.course);
+        console.log(this.clase);
     }
 
 
-    isImageVisible(course: Clase): boolean {
-        if (course && course.iconUrl)
+    isImageVisible(clase: Clase): boolean {
+        if (clase && clase.iconUrl)
             return true;
         return false;
     }
 
 
     onDescriptionChange(newDescription: string): void {
-        this.course.description = newDescription;
+        this.clase.description = newDescription;
     }
 
 
     onSaveClicked(description: string): void {
-        this.courseEditEmitter.emit({...this.course, description});
+        this.claseEditEmitter.emit({...this.clase, description});
     }
 
 

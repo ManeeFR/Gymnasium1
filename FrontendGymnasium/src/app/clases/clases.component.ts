@@ -1,11 +1,9 @@
 import { ChangeDetectionStrategy, Component, Inject, Injector, OnInit } from '@angular/core';
-// import { Observable } from 'rxjs';
-import { CoursesService } from './courses/courses.service';
+import { ClasesService } from './clases-service/clases.service';
 import { Clase } from './model/clase.interface';
-import { AppConfig, CONFIG_TOKEN } from './config';
-import { COURSES } from '../../db-data';
-// import { CourseTitleComponent } from './course-title/course-title.component';
-// import { CourseCardComponent } from './courses/course-card/course-card.component';
+import { AppConfig, APP_CONFIG, CONFIG_TOKEN } from './config';
+import { CLASES } from '../../db-data';
+// import { ClaseTitleComponent } from './clase-title/clase-title.component';
 // import { createCustomElement } from '@angular/elements';
 import { Router } from '@angular/router';
 
@@ -16,11 +14,11 @@ import { Router } from '@angular/router';
     templateUrl: './clases.component.html',
     styleUrls: ['./clases.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    // providers: [ 
-    //     // { provide: CONFIG_TOKEN, useFactory: () => APP_CONFIG }
-    //     // { provide: CONFIG_TOKEN, useValue: APP_CONFIG },
-    //     CoursesService
-    // ],
+    providers: [ 
+        // { provide: CONFIG_TOKEN, useFactory: () => APP_CONFIG },
+        { provide: CONFIG_TOKEN, useValue: APP_CONFIG },
+        ClasesService
+    ],
     
 })
 
@@ -57,12 +55,12 @@ export class ClasesComponent implements OnInit {
     // To use pipe async
     // courses$!: Observable<Clase[]>;
 
-    coursesList!: Clase[];
+    clasesList!: Clase[];
 
-    coursesCount = COURSES.filter((x: any) => x).length;
+    clasesCount = CLASES.filter((x: any) => x).length;
 
 
-    constructor(private coursesService: CoursesService, 
+    constructor(private clasesService: ClasesService, 
                 @Inject(CONFIG_TOKEN) private config: AppConfig, 
                 private injector: Injector,
                 private ruta: Router) {
@@ -79,7 +77,7 @@ export class ClasesComponent implements OnInit {
 
         // this.courses$ = this.coursesService.loadCourses();
 
-        this.coursesService.loadCourses().subscribe(courses => this.coursesList = courses);
+        this.clasesService.loadClases().subscribe(clases => this.clasesList = clases);
 
         // const htmlElement = createCustomElement(CourseTitleComponent, { injector: this.injector });
 
@@ -93,9 +91,9 @@ export class ClasesComponent implements OnInit {
     // }
     
 
-    onCourseEdited(course: Clase): void {
+    onClaseEdited(clase: Clase): void {
 
-        this.coursesService.saveCourse(course).subscribe();
+        this.clasesService.saveClase(clase).subscribe();
         
         // this.courses$ = this.coursesService.loadCourses();
 
@@ -127,11 +125,11 @@ export class ClasesComponent implements OnInit {
     // }
 
 
-    courses(): Clase[] {
+    clases(): Clase[] {
         // console.log(this.courses$);
         // return this.courses$.filter(x => x);
         // return this.courses$;
-        return this.coursesList;
+        return this.clasesList;
     }
 
 

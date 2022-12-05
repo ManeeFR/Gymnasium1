@@ -13,9 +13,7 @@ export class RegisterComponent {
     email!: string;
     password!: string;
     confirmPassword!: string;
-    passwordError!: boolean;
-
-    token: string = "ey67FG7849WSWENF49498CH894320F3JCSOF039T8C9WCH"; 
+    // passwordError!: boolean;
 
 
     constructor(public authService: AuthService, public router: Router) { }
@@ -26,9 +24,10 @@ export class RegisterComponent {
 
         this.authService.register(user).subscribe(data => {
 
-            this.authService.setToken(this.token);
+            console.log('data99');
+            console.log(data);
 
-            this.router.navigateByUrl('/home/clases');
+            this.router.navigate(['/home/clases']);
 
         });
 

@@ -16,20 +16,20 @@
     </ng-container> -->
     
     
-    <div class="courses" *ngIf="courses">
+    <div class="clases" *ngIf="clases">
         <!-- <h4 i18n="welcome message | Greet the user a greeting at the beginning of the course.@@welcomeMessage"> Bienvenido a Gymnasium </h4> -->
-        <ng-container *ngFor="let course of courses(); index as i; first as isFirst;
+        <ng-container *ngFor="let clase of clases(); index as i; first as isFirst;
                               last as isLast; even as isEven; odd as isOdd;">
                               
-            <ng-container *ngIf="validClass(course) === true">
+            <ng-container *ngIf="validClass(clase) === true">
      
-                <app-course-card [course]="course"
-                                      [cardIndex]="i+1"
-                                      [ngStyle]="concreteStyles(course.iconUrl)"
-                                      [noImage]="noImage"
-                                      type="learning"
-                                      (courseChanged)="onCourseEdited($event)"
-                                      [appHighlighted]="false">
+                <app-clase-card [clase]="clase"
+                                [cardIndex]="i+1"
+                                [ngStyle]="concreteStyles(clase.iconUrl)"
+                                [noImage]="noImage"
+                                 type="learning"
+                                (claseChanged)="onClaseEdited($event)"
+                                [appHighlighted]="false">
                                       <!-- [ngClass]="concreteStyles(isFirst, isLast, isEven, isOdd)" -->
     
                     <!-- <app-course-image [src]="course.iconUrl"
@@ -37,23 +37,22 @@
                     </app-course-image> -->
     
     
-                    <ng-template #noImage let-courseName="description">
+                    <ng-template #noImage let-claseName="description">
     
-                        <p [style]="{'color': !course.iconUrl ? 'gray' : ''}"> {{
-                            courseName }} has no image yet. </p>
+                        <p [style]="{'color': !clase.iconUrl ? 'gray' : ''}"> {{
+                            claseName }} has no image yet. </p>
     
-                        <img src="../assets/empty-image.png" alt="Not available
-                            image">
+                        <img src="../assets/empty-image.png" alt="Not available image">
     
                     </ng-template>
     
-                    <div class="course-description">
+                    <div class="clase-description">
     
-                        {{ course.longDescription }}
+                        {{ clase.longDescription }}
     
                     </div>
     
-                </app-course-card>
+                </app-clase-card>
     
     
             </ng-container>

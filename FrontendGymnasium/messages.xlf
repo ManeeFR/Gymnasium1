@@ -3,14 +3,14 @@
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="63f48208a5b3a7e4d1cd246f5421254960bb90e1" datatype="html">
-        <source> Edit course&apos;s list </source>
+        <source> Edit clase&apos;s list </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">7,9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="47d0dce567f9d87969c9a90f3d1a5fe969e625d0" datatype="html">
-        <source>{VAR_PLURAL, plural, =0 {No courses available.} =1 {One course is available.} other {A total of <x id="INTERPOLATION"/> courses are available.}}</source>
+        <source>{VAR_PLURAL, plural, =0 {No clases available.} =1 {One class is available.} other {A total of <x id="INTERPOLATION"/> classes are available.}}</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">9,15</context>
@@ -18,25 +18,25 @@
       </trans-unit>
       <trans-unit id="274c9d2b7bc48323f04b5e1b96542b1b6a922f47" datatype="html">
         <source><x id="ICU" equiv-text="urse is available.}
-              other {A total of {{coursesCount}} courses are available.}  }"/> </source>
+              other {A total of {{clasesCount}} classes are available.}  }"/> </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">9,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="welcomeMessage" datatype="html">
-        <source> Welcome to the Angular Core Course </source>
+        <source> Welcome to the Angular Core Class </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
           <context context-type="linenumber">17,21</context>
         </context-group>
-        <note priority="1" from="description"> Greet the user a greeting at the beginning of the course.</note>
+        <note priority="1" from="description"> Greet the user a greeting at the beginning of the class.</note>
         <note priority="1" from="meaning">welcome message </note>
       </trans-unit>
       <trans-unit id="2a480746a7934886e2faed844614f3a7b43094bc" datatype="html">
         <source>{VAR_SELECT, select, BEGINNER {Beginner} INTERMEDIATE {Intermediate} ADVANCED {Advanced}}</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/courses/course-card/course-card.component.html</context>
+          <context context-type="sourcefile">src/app/clases/clase-card/clase-card.component.html</context>
           <context context-type="linenumber">51,57</context>
         </context-group>
       </trans-unit>

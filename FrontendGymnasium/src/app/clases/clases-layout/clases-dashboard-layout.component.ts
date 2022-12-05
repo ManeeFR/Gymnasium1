@@ -1,11 +1,8 @@
 import { ChangeDetectionStrategy, Component, Inject, Injector, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { CoursesService } from '../courses/courses.service';
+import { ClasesService } from '../clases-service/clases.service';
 import { Clase } from '../model/clase.interface';
 import { AppConfig, APP_CONFIG, CONFIG_TOKEN } from '../config';
-import { COURSES } from '../../../db-data';
-import { CourseTitleComponent } from '../course-title/course-title.component';
-// import { CourseCardComponent } from './courses/course-card/course-card.component';
+import { CLASES } from '../../../db-data';
 // import { createCustomElement } from '@angular/elements';
 import { Router } from '@angular/router';
 
@@ -19,7 +16,7 @@ import { Router } from '@angular/router';
     providers: [ 
         // { provide: CONFIG_TOKEN, useFactory: () => APP_CONFIG }
         { provide: CONFIG_TOKEN, useValue: APP_CONFIG },
-        CoursesService
+        ClasesService
     ],
     
 })
@@ -57,18 +54,18 @@ export class ClasesDashboardLayoutComponent implements OnInit {
     // To use pipe async
     // courses$!: Observable<Clase[]>;
 
-    coursesList!: Clase[];
+    clasesList!: Clase[];
 
-    coursesCount = COURSES.filter((x: any) => x).length;
+    clasesCount = CLASES.filter((x: any) => x).length;
 
 
-    constructor(private coursesService: CoursesService, 
+    constructor(private clasesService: ClasesService, 
                 @Inject(CONFIG_TOKEN) private config: AppConfig, 
                 private injector: Injector,
                 private ruta: Router) {
 
                     // console.log(this.coursesCount);
-        // this.ruta.navigate(["clases"]);
+                    // this.ruta.navigate(["clases"]);
 
     }
 
@@ -79,13 +76,13 @@ export class ClasesDashboardLayoutComponent implements OnInit {
 
         // this.courses$ = this.coursesService.loadCourses();
 
-        this.coursesService.loadCourses().subscribe(courses => {
-            this.coursesList = courses;
-            console.log('this.coursesList');
-            console.log(this.coursesList);
+        this.clasesService.loadClases().subscribe((clases: any) => {
+            this.clasesList = clases;
+            console.log('this.clasesList');
+            console.log(this.clasesList);
         });
-        let aux = this.coursesList;
-        this.coursesList = [...aux];
+        let aux = this.clasesList;
+        this.clasesList = [...aux];
 
 
         // const htmlElement = createCustomElement(CourseTitleComponent, { injector: this.injector });
@@ -100,9 +97,9 @@ export class ClasesDashboardLayoutComponent implements OnInit {
     // }
     
 
-    onCourseEdited(course: Clase): void {
+    onClaseEdited(clase: Clase): void {
 
-        this.coursesService.saveCourse(course).subscribe();
+        this.clasesService.saveClase(clase).subscribe();
         
         // this.courses$ = this.coursesService.loadCourses();
 
@@ -134,21 +131,25 @@ export class ClasesDashboardLayoutComponent implements OnInit {
     // }
 
 
-    courses(): Clase[] {
+    clases(): Clase[] {
+
         // console.log(this.courses$);
         // return this.courses$.filter(x => x);
         // return this.courses$;
-        console.log('this.coursesList3');
-        console.log(this.coursesList);
-        return this.coursesList;
+        console.log('this.clasesList3');
+        console.log(this.clasesList);
+        return this.clasesList;
+        
     }
 
     validClass(clase: Clase): boolean {
+
         console.log('clase');
         console.log(clase);
-        console.log('this.coursesList');
-        console.log(this.coursesList);
+        console.log('this.clasesList');
+        console.log(this.clasesList);
         return true;
+
     }
 
 
@@ -158,7 +159,9 @@ export class ClasesDashboardLayoutComponent implements OnInit {
     //             'is-even': even, 
     //             'is-odd': odd }
     // }
+
     concreteStyles(url: string) {
+
         console.log('url');
         console.log(url);
 

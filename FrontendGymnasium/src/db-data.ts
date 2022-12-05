@@ -1,7 +1,7 @@
 // import { Clase } from './app/clases/model/clase.interface';
 
 
-export const COURSES: any = [
+export const CLASES: any = [
 
     undefined,
 
@@ -101,11 +101,10 @@ export const COURSES: any = [
 ];
 
 
-export function findCourseById(courseId: number) {
-// export function findCourseById(courseId: number): Clase {
+export function findClaseById(claseId: number) {
 
-    return COURSES.filter((x: undefined) => {
+    return CLASES.filter((x: undefined) => {
         return x !== undefined;
-    }).find((course: { id: number; }) => course.id == courseId);
+    }).find((clase: { id: number; }) => clase.id == claseId);
     
 }

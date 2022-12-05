@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'home-dashboard-layout',
@@ -14,21 +14,39 @@ export class HomeDashboardComponent {
     // this.ruta.navigate(["home"]);
     //   }
 
-    constructor(public authService: AuthService) { }
+    constructor(public authService: AuthService, private router: Router) { }
 
     ngOnInit() {
-        this.getUserLogged();
+
+        console.log('this.authService.userLogged');
+        console.log(this.authService.userLogged);
+        console.log('this.authService.getToken()');
+        console.log(this.authService.getToken());
+
+        if (this.authService.userLogged && this.authService.getToken() !== undefined) {
+
+            // this.router.navigateByUrl('/home/clases');
+            this.router.navigate(["/home/clases"]);
+
+        } else {
+
+            this.router.navigate(["login"]);
+            // this.router.navigateByUrl('/login');
+
+        }
+
+        // this.getUserLogged();
     }
 
-    getUserLogged() {
+    // getUserLogged() {
 
-        this.authService.getUser(2).subscribe((user: any) => {
+    //     this.authService.getUserAPI(2).subscribe((user: any) => {
 
-            console.log(user);
+    //         console.log(user);
 
-        });
+    //     });
 
-    }
+    // }
 
 }
 

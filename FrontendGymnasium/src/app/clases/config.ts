@@ -2,12 +2,12 @@ import { InjectionToken } from "@angular/core";
 
 export interface AppConfig {
     apiUrl: string;
-    courseCacheSize: number;
+    claseCacheSize: number;
 }
 
 export const APP_CONFIG: AppConfig = {
     apiUrl: 'http://localhost:9000',
-    courseCacheSize: 10
+    claseCacheSize: 10
 }
 
 export const CONFIG_TOKEN = 

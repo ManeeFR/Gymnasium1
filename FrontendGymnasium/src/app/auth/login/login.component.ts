@@ -26,7 +26,7 @@ export class LoginComponent {
             console.log('data');
             console.log(data);
 
-            this.authService.setToken(this.token);
+            // this.authService.setToken(data.token);
 
             this.router.navigateByUrl('/home/clases');
 

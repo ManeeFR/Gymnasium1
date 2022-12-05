@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { Application } from "express";
-import { getAllCourses } from './server/get-courses.route';
-import { saveCourse } from './server/save-course.route';
+import { getAllClases } from './server/get-clases.route';
+import { saveClase } from './server/save-clase.route';
 
 const cors = require('cors');
 
@@ -13,9 +13,9 @@ const app: Application = express();
 app.use(cors({ origin: true }));
 app.use(bodyParser.json());
 
-app.route('/api/courses').get(getAllCourses);
+app.route('/api/courses').get(getAllClases);
 
-app.route('/api/courses/:id').put(saveCourse);
+app.route('/api/courses/:id').put(saveClase);
 
 
 

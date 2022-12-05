@@ -1,34 +1,34 @@
-<div class="course-card" [ngClass]="classesForCards()">
+<div class="clase-card" [ngClass]="classesForCards()">
 
 
     <!-- <div class="course-title" [style]="{'color': !course.iconUrl ? 'gray' : ''}">
         {{ cardIndex + ' ' + course.description }}
     </div> -->
-    <div class="course-title" [style]="{'color': !course.iconUrl ? 'gray' : ''}">
-        <course-title [title]="course.description"></course-title> 
+    <div class="clase-title" [style]="{'color': !clase.iconUrl ? 'gray' : ''}">
+        <clase-title [title]="clase.description"></clase-title> 
     </div>
 
 
     <!-- Just using my custom directive appNgxUnless: -->
     <!-- <ng-content *appNgxUnless="!isImageVisible(course)" select=".course-image"></ng-content> -->
-    <ng-content *ngIf="isImageVisible(course) else noImageTemplate" select=".course-image"></ng-content>
+    <ng-content *ngIf="isImageVisible(clase) else noImageTemplate" select=".clase-image"></ng-content>
      
     <ng-template #noImageTemplate>
         
-        <ng-container *ngTemplateOutlet="noImage; context: { description: course.description } "></ng-container>
+        <ng-container *ngTemplateOutlet="noImage; context: { description: clase.description } "></ng-container>
         
     </ng-template>
 
     
 
-    <ng-content select=".course-description"></ng-content>
+    <ng-content select=".clase-description"></ng-content>
 
-    <div class="course-editDescription">
+    <div class="clase-editDescription">
 
-        Editar descripción <input #courseDescription
-                                  [value]="course.description" 
-                                  (keyup)="onDescriptionChange(courseDescription.value)"
-                                  title="description"> 
+        Editar descripción <input #claseDescription
+                                  [value]="clase.description" 
+                                  (keyup)="onDescriptionChange(claseDescription.value)"
+                                   title="description"> 
     </div>
 
     
@@ -50,11 +50,11 @@
     </div> -->
 
     
-    <div class="course-category">
+    <div class="clase-category">
 
         <div class="category"> 
             {
-                course.category,
+                clase.category,
                 select,
                 BEGINNER {Beginner}
                 INTERMEDIATE {Intermediate}
@@ -64,9 +64,9 @@
     
     </div>
 
-    <button (click)="onCourseViewed()"> Ver clase </button>
+    <button (click)="onClaseViewed()"> Ver clase </button>
 
-    <button (click)="onSaveClicked(courseDescription.value)"> Editar clase </button>
+    <button (click)="onSaveClicked(claseDescription.value)"> Editar clase </button>
 
 </div>
 
