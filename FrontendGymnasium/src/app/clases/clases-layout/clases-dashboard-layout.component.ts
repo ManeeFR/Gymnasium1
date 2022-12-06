@@ -78,8 +78,6 @@ export class ClasesDashboardLayoutComponent implements OnInit {
 
         this.clasesService.loadClases().subscribe((clases: any) => {
             this.clasesList = clases;
-            console.log('this.clasesList');
-            console.log(this.clasesList);
         });
         let aux = this.clasesList;
         this.clasesList = [...aux];
@@ -136,18 +134,12 @@ export class ClasesDashboardLayoutComponent implements OnInit {
         // console.log(this.courses$);
         // return this.courses$.filter(x => x);
         // return this.courses$;
-        console.log('this.clasesList3');
-        console.log(this.clasesList);
         return this.clasesList;
         
     }
 
     validClass(clase: Clase): boolean {
 
-        console.log('clase');
-        console.log(clase);
-        console.log('this.clasesList');
-        console.log(this.clasesList);
         return true;
 
     }
@@ -161,9 +153,6 @@ export class ClasesDashboardLayoutComponent implements OnInit {
     // }
 
     concreteStyles(url: string) {
-
-        console.log('url');
-        console.log(url);
 
         return { 'background-image': 'url(' + url + ')',
                  'background-size': 'cover',

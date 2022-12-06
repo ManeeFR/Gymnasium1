@@ -35,15 +35,17 @@
 
                             img {
                                 max-height: 3.5vh;
-                                @media screen and (max-width: 576px) { 
+
+                                @media screen and (max-width: 576px) {
                                     display: none;
                                 }
                             }
-                            
+
                             p {
                                 padding: 0 1vw;
                                 margin: 0;
-                                @media screen and (max-width: 576px) { 
+
+                                @media screen and (max-width: 576px) {
                                     margin-left: 1vw;
                                 }
                             }
@@ -54,6 +56,7 @@
                         }
 
                     }
+
                     @media screen and (max-width: 876px) {
                         padding-top: 1vh;
                     }
@@ -61,8 +64,8 @@
 
                 button {
                     border: 0;
-                    background-color: transparent; 
-                    
+                    background-color: transparent;
+
                     img {
 
                         @media screen and (max-width: 876px) {
@@ -70,6 +73,7 @@
                             min-height: 4vh;
                             max-height: 4vh;
                         }
+
                         @media screen and (max-width: 680px) {
                             height: 3.5vh;
                             min-height: 3.5vh;
@@ -82,7 +86,7 @@
                     padding: 0;
                     gap: 0;
                 }
-                
+
             }
 
             @media screen and (max-width: 876px) {
@@ -103,11 +107,13 @@
         &__card {
 
             background-color: white;
-            min-width: 18vw;
+            max-width: 18vw;
             max-height: 57vh;
             border: solid 1px rgba(192, 192, 192, 0.575);
             box-shadow: 3px 3px rgba(223, 221, 221, 0.405);
             justify-content: space-between;
+            background-size: cover;
+            color: white;
 
             &--menu {
                 margin: 1vh 1vh 1vh 90%;
@@ -138,11 +144,15 @@
             &--title {
 
                 padding-left: 4vh;
+                min-height: 10vh;
+                min-width: 25vw;
+
 
                 p {
-                    color: gray;
+                    // color: gray;
                     font-size: smaller;
                 }
+
                 @media screen and (max-width: 876px) {
                     padding-left: 7vw;
                 }
@@ -155,15 +165,17 @@
                 padding-bottom: 3vh;
 
                 h3 {
-                    color: #017dd7;
+                    // color: #017dd7;
                 }
+
                 p {
                     @media screen and (max-width: 876px) {
                         margin-top: 0.4vh;
                     }
                 }
+
                 @media screen and (max-width: 876px) {
-                    display:flex; 
+                    display: flex;
                     flex-direction: column;
                     gap: 3vw;
                     margin-left: 4vw;
@@ -186,7 +198,7 @@
 
                 img {
                     border-radius: 100%;
-                    max-height: 4vh;
+                    max-height: 7vh;
 
                     @media screen and (max-width: 1279px) {
                         margin-right: 1.1em;
@@ -213,20 +225,17 @@
             }
 
             @media screen and (max-width: 1279px) {
-                min-height: 44.8vh;
-                max-height: 44.8vh;
+                max-height: 52vh;
+                min-width: 28vw;
             }
 
             @media screen and (max-width: 876px) {
-
-                height: 47.5vh;
-                width: 50vw;
-                min-height: 47.5vh;
-                min-width: 50vh;
-                max-height: 47.5vh;
-                max-width: 50vh;
+                width: 69vw;
+                min-height: 50vh;
+                max-width: 69vh;
             }
         }
+
 
         @media screen and (max-width: 876px) {
 
@@ -318,6 +327,7 @@
                     @media screen and (max-width: 1279px) {
                         min-width: 24vw;
                     }
+
                     @media screen and (max-width: 876px) {
                         width: 37vw;
                         min-width: 37vw;
@@ -337,7 +347,7 @@
                         min-width: 20vw;
                     }
 
-                    color: #017dd7;
+                    // color: #017dd7;
                 }
 
                 div {
@@ -346,6 +356,7 @@
 
                     p {
                         color: black;
+
                         @media screen and (max-width: 876px) {
                             display: none;
                         }

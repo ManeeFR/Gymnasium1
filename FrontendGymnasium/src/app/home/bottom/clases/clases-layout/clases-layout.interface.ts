@@ -1,20 +1,26 @@
 export interface Clases {
-    individuales:  claseIndividual[];
+    individuales: claseIndividual[];
     grupales: claseGrupal[];
 }
 
 export interface claseIndividual {
-    titulo:       string;
-    codigo:       string;
-    duracion:     string;
-    plazas:       number;
-    plazasLibres: number;
-    instructor:   string;
+    titulo: string;
+    sala: number;
+    duracion: number;
+    fecha: string;
+    plazas: number;
+    plazasMax: number;
+    instructor: string;
+    icon: string;
 }
 
 export interface claseGrupal {
-    titular:  string;
-    codigo:   number;
-    dinero:   number;
-    objetivo: number;
+    titulo: string;
+    sala: number;
+    duracion: number;
+    fecha: string;
+    plazas: number;
+    plazasMax: number;
+    instructor: string;
+    icon: string;
 }

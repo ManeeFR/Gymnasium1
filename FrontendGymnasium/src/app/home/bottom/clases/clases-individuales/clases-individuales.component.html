@@ -37,11 +37,11 @@
  
         </div>
 
-    </div>
+    </div> 
 
     <div *ngIf="layout=='flex'; else grid" class="claseIndividual__flex">
 
-        <article *ngFor="let item of Data['individuales'];" class="claseIndividual__flex__card">
+        <article *ngFor="let item of Data['individuales'];" class="claseIndividual__flex__card" style="background-image: url({{item.icon}});">
 
             <div class="claseIndividual__flex__card--menu">
                 <img src="../../../../../assets/icons/puntitosMenu.png" alt="Menú de despliegue"> 
@@ -49,18 +49,18 @@
 
             <div class="claseIndividual__flex__card--title">
                 <h5> {{ item.titulo }} </h5>
-                <p> {{ item.codigo }} </p>
+                <p>  Sala {{ item.sala }} </p> 
             </div>
 
             <div class="claseIndividual__flex__card--cantidad">
-                <h3> {{ item.duracion }} </h3>
+                <h3> {{ item.duracion }} minutos </h3>
                 <!-- <h3> {{ (item.duracion | currency:"EUR":"symbol") }} </h3> -->
                 <!-- <p> Plazas libres: {{ (item.plazasLibres | currency:"EUR":"symbol") }} </p> -->
-                <p> Plazas libres: {{ item.plazasLibres }} </p>
+                <p> Plazas libres: {{ item.plazasMax - item.plazas }} </p>
             </div>
-
+ 
             <div class="claseIndividual__flex__card--movimientos">
-                <img src="../../../../../assets/icons/mensaje.png" alt="Icono de mensaje">
+                <img src="../../../../../assets/img/trainerMan.png" alt="Icono de mensaje">
                 <p> {{ item.instructor }} </p>
             </div> 
 
@@ -77,7 +77,7 @@
 
                 <div class="claseIndividual__grid__card--title">
                     <h5> {{ item.titulo }} </h5>
-                    <p> {{ item.codigo }} </p>
+                    <p>  Sala {{ item.sala }} </p>
                 </div>
 
                 <div class="claseIndividual__grid__card--cantidad">
@@ -85,7 +85,7 @@
                     <!-- <h5> {{ (item.duracion | currency:"EUR":"symbol") }} </h5> -->
                     <div>
                         <!-- <p> Plazas libres: {{ (item.plazasLibres | currency:"EUR":"symbol") }} </p> -->
-                        <p> Plazas libres: {{ item.plazasLibres }} </p>
+                        <p> Plazas libres: {{ item.plazasMax - item.plazas }} </p>
                     </div>
                 </div>
 

@@ -18,11 +18,6 @@ export class HomeDashboardComponent {
 
     ngOnInit() {
 
-        console.log('this.authService.userLogged');
-        console.log(this.authService.userLogged);
-        console.log('this.authService.getToken()');
-        console.log(this.authService.getToken());
-
         if (this.authService.userLogged && this.authService.getToken() !== undefined) {
 
             // this.router.navigateByUrl('/home/clases');

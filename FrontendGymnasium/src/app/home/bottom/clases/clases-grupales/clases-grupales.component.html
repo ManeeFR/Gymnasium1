@@ -9,31 +9,31 @@
     <div class="claseGrupal__resultados">
 
 
-        <ng-template *ngFor="let item of Data['grupales']; let i = index;" class="claseGrupal__resultados__card">
+        <div *ngFor="let item of Data['grupales']" class="claseGrupal__resultados__card">
 
             <div class="claseGrupal__resultados__card--img">
 
-                <img src="../../../../../assets/icons/tarjetita.png" alt="Imagen">
+                <img src={{item.icon}} alt="Imagen">
 
             </div> 
 
             <div class="claseGrupal__resultados__card--titular">
-                <p> {{ item.titular }} </p>
+                <p> {{ item.titulo }} </p>
             </div>
 
             <div class="claseGrupal__resultados__card--numero">
-                <p> ...{{ item.codigo }} </p>
+                <p> Sala {{ item.sala }} </p>
             </div>
 
             <div class="claseGrupal__resultados__card--porcentaje">
                 <div>
-                    <p> {{ (item.dinero | currency:"EUR":"symbol") }} </p>
-                    <p class="gris"> /  {{ (item.objetivo | currency:"EUR":"symbol") }} </p>
+                    <p> {{ item.instructor }} </p>
+                    <p class="gris"> {{ item.plazas }} /  {{ item.plazasMax }} plazas </p>
                 </div>
-                <img src="../../../../../assets/icons/barra.png" alt="Barra de porcentaje">
+                <!-- <img src="../../../../../assets/icons/barra.png" alt="Barra de porcentaje"> -->
             </div>
 
-        </ng-template>
+        </div>
 
     </div>
 

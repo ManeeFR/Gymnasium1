@@ -23,9 +23,6 @@ export class LoginComponent {
 
         this.authService.login(user).subscribe(data => {
 
-            console.log('data');
-            console.log(data);
-
             // this.authService.setToken(data.token);
 
             this.router.navigateByUrl('/home/clases');

@@ -24,9 +24,6 @@ export class RegisterComponent {
 
         this.authService.register(user).subscribe(data => {
 
-            console.log('data99');
-            console.log(data);
-
             this.router.navigate(['/home/clases']);
 
         });

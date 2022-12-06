@@ -2,65 +2,105 @@
     "individuales": [
         {
             "titulo": "Boxeo",
-            "codigo": "Sala 7",
-            "duracion": "1 hora y media",
-            "plazas": 2,
-            "plazasLibres": 1,
-            "instructor": "Manuel Fernández"
-        },
-        {
-            "titulo": "Alterofilia",
-            "codigo": "Sala 11",
-            "duracion": "1 hora",
-            "plazas": 2,
-            "plazasLibres": 2,
-            "instructor": "Manuel Fernández"
-        },
-        {
-            "titulo": "Entrenamiento personal",
-            "codigo": "Sala 2",
-            "duracion": "2 horas",
+            "sala": 7,
+            "duracion": 90,
+            "fecha": "13/12/2022 17:30",
             "plazas": 1,
-            "plazasLibres": 1,
-            "instructor": "Manuel Fernández"
+            "plazasMax": 2,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/boxeoIcon.png"
+        },
+        {
+            "titulo": "CrossFit",
+            "sala": 11,
+            "duracion": 90,
+            "fecha": "13/12/2022 17:30",
+            "plazas": 4,
+            "plazasMax": 10,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/crossFit.jpeg"
+        },
+        {
+            "titulo": "Personal training",
+            "sala": 2,
+            "duracion": 120,
+            "fecha": "13/12/2022 17:30",
+            "plazas": 0,
+            "plazasMax": 1,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/personalTrainingIcon.webp"
         }
     ],
     "grupales": [
         {
-            "titular": "CrossFit",
-            "codigo": 7354,
-            "dinero": 90000,
-            "objetivo": 120000
+            "titulo": "CrossFit",
+            "sala": 3,
+            "duracion": 90,
+            "fecha": "13/12/2022 17:30",
+            "plazas": 5,
+            "plazasMax": 20,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/crossFit.jpeg"
         },
         {
-            "titular": "CrossFit",
-            "codigo": 8498,
-            "dinero": 75000,
-            "objetivo": 100000
+            "titulo": "Halterofilia",
+            "sala": 1,
+            "duracion": 45,
+            "fecha": "13/12/2022 18:30",
+            "plazas": 3,
+            "plazasMax": 8,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/halterofiliaIcon.jpg"
         },
         {
-            "titular": "CrossFit",
-            "codigo": 7354,
-            "dinero": 90000,
-            "objetivo": 120000
+            "titulo": "Boxeo",
+            "sala": 3,
+            "duracion": 60,
+            "fecha": "14/12/2022 11:30",
+            "plazas": 5,
+            "plazasMax": 12,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/boxeoIcon.png"
         },
         {
-            "titular": "CrossFit",
-            "codigo": 8498,
-            "dinero": 75000,
-            "objetivo": 100000
+            "titulo": "CrossFit",
+            "sala": 3,
+            "duracion": 90,
+            "fecha": "13/12/2022 17:30",
+            "plazas": 5,
+            "plazasMax": 20,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/crossFit.jpeg"
         },
         {
-            "titular": "CrossFit",
-            "codigo": 7354,
-            "dinero": 90000,
-            "objetivo": 120000
+            "titulo": "Boxeo",
+            "sala": 3,
+            "duracion": 60,
+            "fecha": "14/12/2022 11:30",
+            "plazas": 5,
+            "plazasMax": 12,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/boxeoIcon.png"
         },
         {
-            "titular": "CrossFit",
-            "codigo": 8498,
-            "dinero": 75000,
-            "objetivo": 100000
+            "titulo": "Halterofilia",
+            "sala": 1,
+            "duracion": 45,
+            "fecha": "13/12/2022 18:30",
+            "plazas": 3,
+            "plazasMax": 8,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/halterofiliaIcon.jpg"
+        },
+        {
+            "titulo": "Boxeo",
+            "sala": 3,
+            "duracion": 60,
+            "fecha": "14/12/2022 11:30",
+            "plazas": 5,
+            "plazasMax": 12,
+            "instructor": "Manuel Fernández",
+            "icon": "../../../../../assets/img/boxeoIcon.png"
         }
     ]
 }
