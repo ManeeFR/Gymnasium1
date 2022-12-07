@@ -7,7 +7,7 @@ import { ClasesLayoutComponent } from './home/bottom/clases/clases-layout/clases
 import { CentrosComponent } from './home/bottom/centros/centros/centros.component';
 import { ProgresoComponent } from './home/bottom/progreso/progreso/progreso.component';
 import { ObjetivosComponent } from './home/bottom/objetivos/objetivos/objetivos.component';
-// import { ClasesComponent } from './clases/clases.component';
+
 import { AppComponent } from './app.component';
 import { ClasesDashboardLayoutComponent } from './clases/clases-layout/clases-dashboard-layout.component';
 import { RegisterComponent } from './auth/register/register.component';

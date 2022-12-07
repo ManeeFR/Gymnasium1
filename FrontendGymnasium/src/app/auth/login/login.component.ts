@@ -13,25 +13,22 @@ export class LoginComponent {
     email!: string;
     password!: string;
 
-    token: string = "ey67FG7849WSWENF49498CH894320F3JCSOF039T8C9WCH"; 
 
     constructor(public authService: AuthService, public router: Router) { }
 
     login() {
 
-        const user = { email: this.email, password: this.password };
-
-        this.authService.login(user).subscribe(data => {
-
-            // this.authService.setToken(data.token);
-
+        this.authService.login({ email: this.email, password: this.password }).subscribe((x: any) => {
+            
             this.router.navigateByUrl('/home/clases');
 
         });
 
     }
 
+
     register() {
         this.router.navigateByUrl('/register');
     }
+
 }

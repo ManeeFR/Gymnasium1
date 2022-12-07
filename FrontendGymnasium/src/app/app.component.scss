@@ -15,6 +15,7 @@
     main {
         height: 80%;
         background-color: #ffffff;
+
         @media screen and (max-width: 876px) {
             width: 90vw;
             min-width: 90vw;
@@ -27,6 +28,7 @@
         background-color: #444b53;
         display: flex;
         align-items: center;
+
         @media screen and (max-width: 876px) {
             height: auto;
         }

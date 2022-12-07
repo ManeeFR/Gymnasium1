@@ -20,11 +20,9 @@ export class RegisterComponent {
 
     register() {
 
-        const user = { email: this.email, password: this.password };
-
-        this.authService.register(user).subscribe(data => {
-
-            this.router.navigate(['/home/clases']);
+        this.authService.register({ email: this.email, password: this.password }).subscribe((x: any) => {
+            
+            this.router.navigateByUrl('/home/clases');
 
         });
 

@@ -20,7 +20,6 @@ export class HomeDashboardComponent {
 
         if (this.authService.userLogged && this.authService.getToken() !== undefined) {
 
-            // this.router.navigateByUrl('/home/clases');
             this.router.navigate(["/home/clases"]);
 
         } else {

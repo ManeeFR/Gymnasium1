@@ -86,10 +86,6 @@ nav {
                         img {
                             min-width: 2vw;
                             margin-top: 1vh;
-
-                            // @media screen and (max-width: 1279px) {
-                            //     margin-top: 1em;
-                            // }
                         }
 
                         @media screen and (max-width: 876px) { 
@@ -185,7 +181,6 @@ nav {
 
                 .despliegue {
                     padding-right: 3vw;
-                    // margin-right: 3vw;
                     align-self: flex-start;
                 }
 
