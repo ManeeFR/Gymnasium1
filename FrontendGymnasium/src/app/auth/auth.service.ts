@@ -16,82 +16,115 @@ export class AuthService {
 
     constructor(private http: HttpClient, private cookies: CookieService) { }
     
+    
 
     login(user: any): Observable<any> {
 
-        const tokenAPI: any = this.http.post("https://reqres.in/api/login", user);
+        // let token = "";
+        // this.http.post("https://reqres.in/api/login", user).subscribe((resp: any) => {
+            
+        //         token = resp.token;
+                    
+        // });
         
-        const usersAPI: any = this.http.post("https://reqres.in/api/users", user);
+        this.http.get("https://reqres.in/api/users").subscribe((resp: any) => {
+    
+            resp.data.forEach((currentUser: any) => {
 
-        if (tokenAPI && usersAPI) {
+                if (currentUser.email === user.email) {
 
-            this.setToken(this.token);
-        
-            this.UserSessionStorage = user;
+                    this.setCredentials(user);
+                    
+                }
 
-            this.userLogged = true;
-        }
-
-        return tokenAPI;
-
-    }
-
-    register(user: any): Observable<any> {
-        
-        let userAPI: any[] = [];
-        let usersAPI: any[] = [];
-        let tokenAPI: any[] = [];
-
-        this.http.post("https://reqres.in/api/user", user).subscribe((data: any) => {
-            userAPI = data;
-            console.log('userAPI');
-            console.log(userAPI);
+            });
+            
         });
-
-        this.http.post("https://reqres.in/api/users", user).subscribe((data: any) => {
-            usersAPI = data;
-            console.log('usersAPI');
-            console.log(usersAPI);
-        });
-        this.http.post("https://reqres.in/api/login", user).subscribe((data: any) => {
-            tokenAPI = data;
-            console.log('tokenAPI');
-            console.log(tokenAPI);
-        });
-
-
-        
-        if (userAPI && usersAPI && tokenAPI) {
-
-            this.UserSessionStorage = user;
-            this.setToken(this.token);
-        
-        }
 
 
         return this.http.post("https://reqres.in/api/users", user);
 
-        // Cuando esté lista la BD habrá que rehacer este método para que quede como éste:
-        // saveUser(user: User): Observable<Object> {
+    }
 
-        //     const headers = new HttpHeaders().set("X-Auth", "userId");
+
+    register(user: any): Observable<any> {
+        
+        this.http.get("https://reqres.in/api/users").subscribe((resp: any) => {
     
-        //     return this.http.put(`/api/users/${user.id}`, user, { headers } );
-            
-        // }
+            let repeated: boolean = false;
+
+            resp.data.forEach((currentUser: any) => {
+
+                if (currentUser.email === user.email) {
+
+                    repeated = true;
+
+                }
+
+            });
+
+            if (!repeated) {
+
+                this.setCredentials(user);
+
+            }
+
+        });
+
+        return this.http.post("https://reqres.in/api/users", user);
 
     }
 
+    // register(user: any): Observable<any> {
+        
+    //     let userAPI: any[] = [];
+    //     let usersAPI: any[] = [];
+    //     let tokenAPI: any[] = [];
+
+    //     this.http.post("https://reqres.in/api/user", user).subscribe((data: any) => {
+    //         userAPI = data;
+    //         console.log('userAPI');
+    //         console.log(userAPI);
+    //     });
+
+    //     this.http.post("https://reqres.in/api/users", user).subscribe((data: any) => {
+    //         usersAPI = data;
+    //         console.log('usersAPI');
+    //         console.log(usersAPI);
+    //     });
+    //     this.http.post("https://reqres.in/api/login", user).subscribe((data: any) => {
+    //         tokenAPI = data;
+    //         console.log('tokenAPI');
+    //         console.log(tokenAPI);
+    //     });
+
+        
+    //     if (userAPI && usersAPI && tokenAPI) {
+
+    //         this.UserSessionStorage = user;
+    //         this.setToken(this.token);
+        
+    //     }
+
+
+    //     return this.http.post("https://reqres.in/api/users", user);
+
+    //     // Cuando esté lista la BD habrá que rehacer este método para que quede como éste:
+    //     // saveUser(user: User): Observable<Object> {
+
+    //     //     const headers = new HttpHeaders().set("X-Auth", "userId");
+    
+    //     //     return this.http.put(`/api/users/${user.id}`, user, { headers } );
+            
+    //     // }
+
+    // }
+
+    
     setToken(token: string) {
-
-        if (token !== undefined && token !== '') {
-
-            this.userLogged = true;
-            
-            this.cookies.set("token", token);
-            
-        }
-
+        
+        this.cookies.set("token", token);
+        
     }
 
     getToken() {
@@ -147,6 +180,20 @@ export class AuthService {
 
         return this.http.get("https://reqres.in/api/users/" + currentUser.id);
 
+    }
+
+    setCredentials(user: any) {
+
+        this.http.post("https://reqres.in/api/login", user).subscribe((resp: any) => {
+
+            this.setToken(resp.token);
+        
+        });
+
+        this.UserSessionStorage = user;
+        
+        this.userLogged = true;
+        
     }
 
 }

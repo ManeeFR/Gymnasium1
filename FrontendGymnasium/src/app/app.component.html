@@ -1,31 +1,23 @@
-<ng-container *ngIf="logged">
+<div class="body">
 
-    <div class="body">
+    <header *ngIf="logueado()">
 
-        <header>
+        <app-header></app-header>
 
-            <app-header></app-header>
+    </header>
 
-        </header>
 
-        <main>
+    <main>
 
-            <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
 
-        </main>
+    </main>
 
-        <footer>
 
-            <app-footer></app-footer>
+    <footer *ngIf="logueado()">
 
-        </footer>
+        <app-footer></app-footer>
 
-    </div>
+    </footer>
 
-</ng-container>
-
-<ng-container *ngIf="!logged">
-
-    <router-outlet></router-outlet>
-
-</ng-container>
+</div>

@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { BottomModule } from '../home/bottom/bottom.module';
-import { HomeRoutingModule } from './clases-routing.module';
+import { ClasesRoutingModule } from './clases-routing.module';
 import { RouterModule } from '@angular/router';
 import { ClasesComponent } from './clases.component';
 import { HomeModule } from '../home/home.module';
@@ -38,7 +38,7 @@ import { ClasesService } from './clases-service/clases.service';
         SharedModule,
         AppRoutingModule,
         BottomModule,
-        HomeRoutingModule,
+        ClasesRoutingModule,
         RouterModule,
         HomeModule
     ],

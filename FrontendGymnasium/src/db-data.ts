@@ -101,10 +101,107 @@ export const CLASES: any = [
 ];
 
 
+
+export const CENTROS: any = [
+
+    {
+        id: 1,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 2,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 3,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 4,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 5,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 6,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 7,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 8,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 9,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    },    {
+        id: 10,
+        poblacion: "Utrera",
+        provincia: "Sevilla",
+        metrosCuadrados: 130,
+        nombre: "Hispano Fitness",
+        mensualidad: 25,
+        imagen: "../../../../../assets/img/boxeoIcon.png"
+    }
+
+];
+
+
 export function findClaseById(claseId: number) {
 
     return CLASES.filter((x: undefined) => {
         return x !== undefined;
     }).find((clase: { id: number; }) => clase.id == claseId);
+    
+}
+
+
+export function findCentroById(centroId: number) {
+
+    return CENTROS.filter((x: undefined) => {
+        return x !== undefined;
+    }).find((centro: { id: number; }) => centro.id == centroId);
     
 }

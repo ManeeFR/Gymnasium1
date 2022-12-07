@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeDashboardComponent } from '../home/home-dashboard.component';
-
+import { CentroLayoutComponent } from '../centro-layout/centro-layout.component';
 
 
 const routes: Routes = [
-
     {
-        path: 'home/clases',
-        // pathMatch: 'full',
-        component: HomeDashboardComponent
+      path: 'centro',
+      component: CentroLayoutComponent,
+
     }
-
-];
-
-
-
+  ];    
+  
+  
 @NgModule({
     imports: [
         RouterModule.forRoot(routes),
@@ -24,4 +20,4 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class SharedRoutingModule { }
+export class CentrosRoutingModule { }

@@ -1,0 +1,73 @@
+<div class="centro-card" [ngClass]="classesForCards()">
+
+
+    <!-- <div class="course-title" [style]="{'color': !course.iconUrl ? 'gray' : ''}">
+        {{ cardIndex + ' ' + course.description }}
+    </div> -->
+    <div class="centro-title" [style]="{'color': !centro.imagen ? 'gray' : ''}">
+        <app-centro-title [title]="centro.nombre"></app-centro-title> 
+    </div>
+
+
+    <!-- Just using my custom directive appNgxUnless: -->
+    <!-- <ng-content *appNgxUnless="!isImageVisible(course)" select=".course-image"></ng-content> -->
+    <ng-content *ngIf="isImageVisible(centro) else noImageTemplate" select=".centro-image"></ng-content>
+     
+    <ng-template #noImageTemplate>
+        
+        <ng-container *ngTemplateOutlet="noImage; context: { nombre: centro.nombre } "></ng-container>
+        
+    </ng-template>
+
+    
+
+    <ng-content select=".centro-nombre"></ng-content>
+
+    <div class="centro-editNombre">
+
+        Editar nombre <input #centroNombre
+                                  [value]="centro.nombre" 
+                                  (keyup)="onNombreChange(centroNombre.value)"
+                                   title="nombre"> 
+    </div>
+
+    
+
+    <!-- <div class="course-category" [ngSwitch]="course.category">
+
+        <ng-container *ngFor="let category of categories">
+
+            <ng-container *ngSwitchCase="category"> 
+
+                <div class="category"> {{ category | titlecase }} </div>
+
+            </ng-container>
+            
+        </ng-container>
+
+        <div class="category" *ngSwitchDefault> all levels </div>
+    
+    </div> -->
+
+    
+    <!-- INTENTAR USAR ESTO PARA LAS MENSUALIDADES -->
+    <!-- <div class="centro-mensualidad">
+
+        <div class="mensualidad"> 
+            {
+                centro.mensualidad,
+                select,
+                BEGINNER {Beginner}
+                INTERMEDIATE {Intermediate}
+                ADVANCED {Advanced}
+            }
+        </div>
+    
+    </div> -->
+
+    <button (click)="onCentroViewed()"> Ver centro </button>
+
+    <button (click)="onSaveClicked(centroNombre.value)"> Editar centro </button>
+
+</div>
+

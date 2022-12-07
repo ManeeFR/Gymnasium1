@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'saludo'
 })
+
 export class SaludoPipe implements PipeTransform {
 
     transform(hora: Date): string {
@@ -12,8 +13,11 @@ export class SaludoPipe implements PipeTransform {
         let horaActual = hora.getHours();
 
         if (horaActual >= 5 && horaActual < 13) {
+
             saludo = saludo + "os días, ";
+
         } else if (horaActual >= 13 && horaActual < 21) {
+            
             saludo = saludo + "as tardes, ";
             
         } else {

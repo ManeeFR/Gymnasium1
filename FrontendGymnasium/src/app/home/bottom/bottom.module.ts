@@ -17,21 +17,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { BottomRoutingModule } from './bottom-routing.module';
 import { HomeRoutingModule } from '../home-routing.module';
 import { BottomLayoutModule } from './bottom-layout/bottom-layout.module';
+import { CentroCardComponent } from './centros/centro-card/centro-card.component';
+import { CentroImageComponent } from './centros/centro-image/centro-image.component';
+import { CentroTitleComponent } from './centros/centro-title/centro-title.component';
+import { CentroLayoutComponent } from './centros/centro-layout/centro-layout.component';
+import { CentrosModule } from './centros/centros/centros.module';
 
 
 
 @NgModule({
     declarations: [
-        CentrosComponent,
         ProgresoComponent,
         ClasesLayoutComponent,
         ClasesIndividualesComponent,
         ClasesGrupalesComponent,
         DashboardFiltersComponent,
-        // BottomLayoutComponent
-        // CobrosPagosComponent,
-        // BottomComponent,
-        // EurosPipe
     ],
     imports: [
         CommonModule,
@@ -41,21 +41,16 @@ import { BottomLayoutModule } from './bottom-layout/bottom-layout.module';
         BottomRoutingModule,
         HomeRoutingModule,
         AppRoutingModule,
-        BottomLayoutModule
-        // SharedModule,
-        // HomeModule
+        BottomLayoutModule,
+        CentrosModule
     ],
     exports: [
         CentrosComponent,
         ProgresoComponent,
-        // CobrosPagosComponent,
         ClasesLayoutComponent,
         ClasesIndividualesComponent,
         ClasesGrupalesComponent,
-        DashboardFiltersComponent,
-        // BottomLayoutComponent,
-        // BottomLayoutComponent
-        // BottomComponent
+        DashboardFiltersComponent
     ]
 })
 export class BottomModule { }
