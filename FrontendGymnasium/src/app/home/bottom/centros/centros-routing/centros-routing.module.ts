@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClasesDashboardLayoutComponent } from './clases-layout/clases-dashboard-layout.component';
+import { CentroLayoutComponent } from '../centro-layout/centro-layout.component';
 
 
 const routes: Routes = [
     {
-      path: 'clases',
-      component: ClasesDashboardLayoutComponent,
+      path: 'centro',
+      component: CentroLayoutComponent,
 
     }
   ];    
@@ -20,4 +20,4 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class ClasesRoutingModule { }
+export class CentrosRoutingModule { }

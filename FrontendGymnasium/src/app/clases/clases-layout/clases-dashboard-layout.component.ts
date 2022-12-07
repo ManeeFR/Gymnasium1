@@ -79,6 +79,7 @@ export class ClasesDashboardLayoutComponent implements OnInit {
         this.clasesService.loadClases().subscribe((clases: any) => {
             this.clasesList = clases;
         });
+        
         let aux = this.clasesList;
         this.clasesList = [...aux];
 

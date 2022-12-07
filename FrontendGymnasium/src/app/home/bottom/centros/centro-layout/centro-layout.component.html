@@ -1,0 +1,38 @@
+
+<div class="demo">
+
+    <button> Editar lista de centros </button>
+
+</div>
+
+
+<div class="centros" *ngIf="centros">
+    
+    <ng-container *ngFor="let centro of centros(); index as i;">
+
+        <ng-container *ngIf="validClass(centro) === true">
+
+            <app-centro-card [centro]="centro"
+                             [cardIndex]="i+1"
+                             [noImage]="noImage"
+                             (centroChanged)="onCentroEdited($event)">
+
+                <ng-template #noImage let-centroName="name">
+
+                    <p [style]="{'color': !centro.imagen ? 'gray' : ''}"> 
+                        {{ centroName }} has no image yet. 
+                    </p>
+
+                    <img src="../assets/empty-image.png" alt="Not available image">
+
+                </ng-template>
+
+                <div class="centro-nombre"> {{ centro.nombre }} </div>
+
+            </app-centro-card>
+
+        </ng-container>
+
+    </ng-container>
+
+</div>

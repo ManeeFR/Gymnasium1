@@ -19,7 +19,7 @@ export class ClasesService {
         
         const params = new HttpParams().set("page", "1").set("pageSize", "10");
 
-        return this.http.get<Clase[]>('/api/courses', { params } );
+        return this.http.get<Clase[]>('/api/clases', { params } );
 
         // this.http.get('/api/courses', { params } ).subscribe(res => 
         //     this.listCourses = JSON.parse(JSON.stringify(res))
@@ -29,9 +29,9 @@ export class ClasesService {
 
     saveClase(clase: Clase): Observable<Object> {
 
-        const headers = new HttpHeaders().set("X-Auth", "userId");
+        const headers = new HttpHeaders().set("X-Auth", "claseId");
 
-        return this.http.put(`/api/courses/${clase.id}`, clase, { headers } );
+        return this.http.put(`/api/clases/${clase.id}`, clase, { headers } );
         
     }
 

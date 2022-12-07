@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
         // { provide: CONFIG_TOKEN, useFactory: () => APP_CONFIG },
         { provide: CONFIG_TOKEN, useValue: APP_CONFIG },
         ClasesService
-    ],
+    ]
     
 })
 
