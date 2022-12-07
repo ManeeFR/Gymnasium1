@@ -19,7 +19,7 @@ export class ClasesService {
         
         const params = new HttpParams().set("page", "1").set("pageSize", "10");
 
-        return this.http.get<Clase[]>('/api/clases', { params } );
+        return this.http.get<Clase[]>('http://localhost:8000/api/clases', { params } );
 
         // this.http.get('/api/courses', { params } ).subscribe(res => 
         //     this.listCourses = JSON.parse(JSON.stringify(res))

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -10,7 +10,7 @@ class UsuarioController extends Controller
 
     public function index(){
 
-        $users = User::all();
+        $users = Usuario::all();
         return response() -> json($users, 200);
     }
 }

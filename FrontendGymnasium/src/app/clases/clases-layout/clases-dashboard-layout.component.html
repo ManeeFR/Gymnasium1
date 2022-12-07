@@ -37,7 +37,7 @@
                     </app-course-image> -->
     
     
-                    <ng-template #noImage let-claseName="description">
+                    <ng-template #noImage let-claseName="title">
     
                         <p [style]="{'color': !clase.iconUrl ? 'gray' : ''}"> 
                             {{ claseName }} has no image yet. 
@@ -47,7 +47,7 @@
     
                     </ng-template>
     
-                    <div class="clase-description">
+                    <div class="clase-nombre">
     
                         {{ clase.longDescription }}
     

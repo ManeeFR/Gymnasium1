@@ -76,13 +76,13 @@ export class ClaseCardComponent {
     }
 
 
-    onDescriptionChange(newDescription: string): void {
-        this.clase.description = newDescription;
+    onTitleChange(newTitle: string): void {
+        this.clase.title = newTitle;
     }
 
 
-    onSaveClicked(description: string): void {
-        this.claseEditEmitter.emit({...this.clase, description});
+    onSaveClicked(title: string): void {
+        this.claseEditEmitter.emit({...this.clase, title});
     }
 
 
