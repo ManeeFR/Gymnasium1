@@ -7,4 +7,9 @@ export interface Clase {
     longDescription?: string;
     category?: string;
     lessonsCount?: number;
+    typeClass?: string;
+    instructor?: string;
+    plazasMaximas?: number;
+    duracion?: number;
+    sala?: number;
 }

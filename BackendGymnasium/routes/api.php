@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ListadoclasesController;
 use App\Http\Controllers\UsuarioController;
+use App\Models\Listadoclases;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +22,5 @@ Route::get('/users', [UsuarioController::class, 'index']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/clases', [ListadoclasesController::class, 'index']);
