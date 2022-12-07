@@ -27,11 +27,11 @@ export class AuthService {
                     
         // });
         
-        this.http.get("https://reqres.in/api/users").subscribe((resp: any) => {
+        this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
     
             resp.data.forEach((currentUser: any) => {
 
-                if (currentUser.email === user.email) {
+                if (currentUser.email === user.email && currentUser.password === user.password) {
 
                     this.setCredentials(user);
                     
@@ -40,6 +40,19 @@ export class AuthService {
             });
             
         });
+        // this.http.get("https://reqres.in/api/users").subscribe((resp: any) => {
+    
+        //     resp.data.forEach((currentUser: any) => {
+
+        //         if (currentUser.email === user.email) {
+
+        //             this.setCredentials(user);
+                    
+        //         }
+
+        //     });
+            
+        // });
 
 
         return this.http.post("https://reqres.in/api/users", user);
@@ -49,7 +62,7 @@ export class AuthService {
 
     register(user: any): Observable<any> {
         
-        this.http.get("https://reqres.in/api/users").subscribe((resp: any) => {
+        this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
     
             let repeated: boolean = false;
 
