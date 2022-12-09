@@ -20,11 +20,17 @@ export class RegisterComponent {
 
     register() {
 
-        this.authService.register({ email: this.email, password: this.password }).subscribe((x: any) => {
-            
-            this.router.navigateByUrl('/home/clases');
+        if (this.password === this.confirmPassword) {
 
-        });
+            this.authService.register({
+                email: this.email,
+                password: this.password,
+                confirmPassword: this.confirmPassword
+            });
+
+        } else {
+            // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE NO COINCIDEN LAS PASSWORDS
+        }
 
     }
 

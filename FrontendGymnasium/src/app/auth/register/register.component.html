@@ -2,32 +2,32 @@
 
     <form class="custom-form" method="post">
 
-        <h1>Register</h1>
+        <h1>Registrarse</h1>
 
         <input  type="email"
                 name="email"
                 [(ngModel)]="email"
-                placeholder="Email"
+                placeholder="Correo electrónico"
                 required="required"
         />
 
         <input  type="password"
                 name="password"
                 [(ngModel)]="password"
-                placeholder="Password"
+                placeholder="Contraseña"
                 required="required"
         />
 
         <input  type="password"
                 name="password"
                 [(ngModel)]="confirmPassword"
-                placeholder="Repeat the password"
+                placeholder="Repita la contraseña"
                 required="required"
         />
 
-        <button type="submit" (click)="register()">Get register</button>
+        <button type="submit" (click)="register()">Registrarme</button>
 
-        <button type="submit" (click)="login()">Log in</button>
+        <button type="submit" (click)="login()">Iniciar sesión</button>
 
     </form>
 

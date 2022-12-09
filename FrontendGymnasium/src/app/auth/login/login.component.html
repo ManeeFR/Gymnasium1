@@ -1,27 +1,27 @@
 <div class="login">
 
     <form class="custom-form" method="post">
-        
-        <h1>Login</h1>
+
+        <h1>Iniciar sesión</h1>
 
         <input  type="email"
                 name="email"
                 [(ngModel)]="email"
-                placeholder="Email"
+                placeholder="Correo electrónico"
                 required="required"
         />
 
-        
+
         <input  type="password"
                 name="password"
                 [(ngModel)]="password"
-                placeholder="Password"
+                placeholder="Contraseña"
                 required="required"
         />
 
-        <button type="submit" (click)="login()">Log in</button>
+        <button type="submit" (click)="login()">Iniciar sesión</button>
 
-        <button type="submit" (click)="register()">Register</button>
+        <button type="submit" (click)="register()">Registrarme</button>
 
     </form>
 

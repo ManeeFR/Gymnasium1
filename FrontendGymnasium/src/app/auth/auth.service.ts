@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "../../../node_modules/rxjs";
 import { CookieService } from "ngx-cookie-service";
+import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: "root"
@@ -14,130 +15,72 @@ export class AuthService {
     token: string = "ey78fFGEf3h783rBF378RFBF7G3H73TRGfdh2osph8d2783fg378d";
 
 
-    constructor(private http: HttpClient, private cookies: CookieService) { }
-    
-    
+    constructor(private http: HttpClient, private router: Router, private cookies: CookieService) { }
 
-    login(user: any): Observable<any> {
 
-        // let token = "";
-        // this.http.post("https://reqres.in/api/login", user).subscribe((resp: any) => {
-            
-        //         token = resp.token;
-                    
-        // });
-        
+
+    login(user: any): void {
+
         this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
-    
-            resp.data.forEach((currentUser: any) => {
+
+            resp.forEach((currentUser: any) => {
 
                 if (currentUser.email === user.email && currentUser.password === user.password) {
 
-                    this.setCredentials(user);
-                    
+                    this.setCredentials(currentUser);
+
                 }
 
             });
-            
+
         });
-        // this.http.get("https://reqres.in/api/users").subscribe((resp: any) => {
-    
-        //     resp.data.forEach((currentUser: any) => {
-
-        //         if (currentUser.email === user.email) {
-
-        //             this.setCredentials(user);
-                    
-        //         }
-
-        //     });
-            
-        // });
-
-
-        return this.http.post("https://reqres.in/api/users", user);
 
     }
 
 
-    register(user: any): Observable<any> {
-        
-        this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
-    
-            let repeated: boolean = false;
+    register(user: any): void {
 
-            resp.data.forEach((currentUser: any) => {
+        this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
+
+            resp.forEach((currentUser: any) => {
 
                 if (currentUser.email === user.email) {
 
-                    repeated = true;
+                    // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE YA HAY UN USUARIO REGISTRADO CON ESE EMAIL
+                    return;
 
                 }
 
             });
 
-            if (!repeated) {
+            // AQUÍ HAY QUE HACER UNA CONSULTA SQL A LA BD DONDE INSERTEMOS EL USUARIO
+            // this.http.put("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
 
-                this.setCredentials(user);
+            //     console.log("resp");
+            //     console.log(resp);
 
-            }
+            //     this.setCredentials(user);
+
+            // });
 
         });
 
-        return this.http.post("https://reqres.in/api/users", user);
-
     }
-
-    // register(user: any): Observable<any> {
-        
-    //     let userAPI: any[] = [];
-    //     let usersAPI: any[] = [];
-    //     let tokenAPI: any[] = [];
-
-    //     this.http.post("https://reqres.in/api/user", user).subscribe((data: any) => {
-    //         userAPI = data;
-    //         console.log('userAPI');
-    //         console.log(userAPI);
-    //     });
-
-    //     this.http.post("https://reqres.in/api/users", user).subscribe((data: any) => {
-    //         usersAPI = data;
-    //         console.log('usersAPI');
-    //         console.log(usersAPI);
-    //     });
-    //     this.http.post("https://reqres.in/api/login", user).subscribe((data: any) => {
-    //         tokenAPI = data;
-    //         console.log('tokenAPI');
-    //         console.log(tokenAPI);
-    //     });
-
-        
-    //     if (userAPI && usersAPI && tokenAPI) {
-
-    //         this.UserSessionStorage = user;
-    //         this.setToken(this.token);
-        
-    //     }
-
-
-    //     return this.http.post("https://reqres.in/api/users", user);
 
     //     // Cuando esté lista la BD habrá que rehacer este método para que quede como éste:
     //     // saveUser(user: User): Observable<Object> {
 
     //     //     const headers = new HttpHeaders().set("X-Auth", "userId");
-    
+
     //     //     return this.http.put(`/api/users/${user.id}`, user, { headers } );
-            
+
     //     // }
 
-    // }
 
-    
     setToken(token: string) {
-        
+
         this.cookies.set("token", token);
-        
+
     }
 
     getToken() {
@@ -151,7 +94,7 @@ export class AuthService {
         return sessionStorage.getItem("userEmail")!;
 
     }
-    
+
     public set UserSessionStorage(user: any) {
 
         sessionStorage.setItem("userEmail", user.email);
@@ -173,7 +116,7 @@ export class AuthService {
 
     getUserLogged(currentUser: any) {
 
-        // Aquí iría el endpoint para devolver el usuario para un token, 
+        // Aquí iría el endpoint para devolver el usuario para un token,
         // pero esta API no contiene token
 
         // return this.http.get("https://reqres.in/api/users/" + this.getToken());
@@ -188,7 +131,7 @@ export class AuthService {
 
             }
         });
-        
+
         // return this.http.get("https://reqres.in/api/users/" + this.getToken());
 
         return this.http.get("https://reqres.in/api/users/" + currentUser.id);
@@ -197,16 +140,34 @@ export class AuthService {
 
     setCredentials(user: any) {
 
-        this.http.post("https://reqres.in/api/login", user).subscribe((resp: any) => {
+        this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
 
-            this.setToken(resp.token);
-        
+            resp.forEach((currentUser: any) => {
+
+                if (currentUser.email === user.email) {
+
+                    this.setToken(currentUser.remember_token);
+
+                    this.UserSessionStorage = user;
+
+                    this.userLogged = true;
+
+                    this.router.navigateByUrl('/home/clases');
+
+                }
+
+            });
+
         });
 
-        this.UserSessionStorage = user;
-        
-        this.userLogged = true;
-        
+        // this.http.post("https://reqres.in/api/login", user).subscribe((resp: any) => {
+
+        //     this.setToken(user.remember_token);
+
+        // });
+
+
+
     }
 
 }
