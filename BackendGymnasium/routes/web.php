@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/clases', [ListadoclasesController::class, 'index']);
+Route::post('/usuarios', [UsuarioController::class, 'store']);

@@ -27,4 +27,4 @@ Route::get('/clases', [ListadoclasesController::class, 'index']);
 Route::get('/usuarios', [UsuarioController::class, 'index']);
 
 
-Route::put('/usuarios', [UsuarioController::class, 'index']);
+Route::post('/usuarios', [UsuarioController::class, 'register']);

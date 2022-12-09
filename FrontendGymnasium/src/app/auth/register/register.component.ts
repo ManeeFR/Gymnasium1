@@ -13,6 +13,7 @@ export class RegisterComponent {
     email!: string;
     password!: string;
     confirmPassword!: string;
+    nombre!: string;
     // passwordError!: boolean;
 
 
@@ -25,7 +26,7 @@ export class RegisterComponent {
             this.authService.register({
                 email: this.email,
                 password: this.password,
-                confirmPassword: this.confirmPassword
+                nombre: this.nombre
             });
 
         } else {

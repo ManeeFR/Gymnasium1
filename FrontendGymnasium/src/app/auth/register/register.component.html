@@ -1,6 +1,6 @@
 <div class="register">
 
-    <form class="custom-form" method="post">
+    <form class="custom-form" method="post" action="/usuarios">
 
         <h1>Registrarse</h1>
 
@@ -8,6 +8,13 @@
                 name="email"
                 [(ngModel)]="email"
                 placeholder="Correo electrónico"
+                required="required"
+        />
+
+        <input  type="text"
+                name="nombre"
+                [(ngModel)]="nombre"
+                placeholder="Nombre"
                 required="required"
         />
 
@@ -27,7 +34,7 @@
 
         <button type="submit" (click)="register()">Registrarme</button>
 
-        <button type="submit" (click)="login()">Iniciar sesión</button>
+        <button type="button" (click)="login()">Iniciar sesión</button>
 
     </form>
 

@@ -12,11 +12,8 @@ export class AuthService {
 
     userLogged: boolean = false;
 
-    token: string = "ey78fFGEf3h783rBF378RFBF7G3H73TRGfdh2osph8d2783fg378d";
-
 
     constructor(private http: HttpClient, private router: Router, private cookies: CookieService) { }
-
 
 
     login(user: any): void {
@@ -40,18 +37,18 @@ export class AuthService {
 
     register(user: any): void {
 
-        this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
+        this.http.post("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
 
-            resp.forEach((currentUser: any) => {
+            // resp.forEach((currentUser: any) => {
 
-                if (currentUser.email === user.email) {
+            //     if (currentUser.email === user.email) {
 
-                    // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE YA HAY UN USUARIO REGISTRADO CON ESE EMAIL
-                    return;
+            //         // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE YA HAY UN USUARIO REGISTRADO CON ESE EMAIL
+            //         return;
 
-                }
+            //     }
 
-            });
+            // });
 
             // AQUÍ HAY QUE HACER UNA CONSULTA SQL A LA BD DONDE INSERTEMOS EL USUARIO
             // this.http.put("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
@@ -91,14 +88,14 @@ export class AuthService {
 
     public get UserEmailSessionStorage() : string {
 
-        return sessionStorage.getItem("userEmail")!;
+        return sessionStorage.getItem("email")!;
 
     }
 
     public set UserSessionStorage(user: any) {
 
-        sessionStorage.setItem("userEmail", user.email);
-        sessionStorage.setItem("userPassword", user.password);
+        sessionStorage.setItem("email", user.email);
+        sessionStorage.setItem("password", user.password);
 
     }
 
@@ -114,29 +111,22 @@ export class AuthService {
 
     }
 
-    getUserLogged(currentUser: any) {
+    // getUserLogged(currentUser: any) {
 
-        // Aquí iría el endpoint para devolver el usuario para un token,
-        // pero esta API no contiene token
+    //     const users = this.getAllUsersAPI();
 
-        // return this.http.get("https://reqres.in/api/users/" + this.getToken());
+    //     console.log('users');
+    //     console.log(users);
 
-        const users = this.getAllUsersAPI();
+    //     users.forEach((user: any) => {
+    //         if (user.email === currentUser) {
 
-        console.log('users');
-        console.log(users);
+    //         }
+    //     });
 
-        users.forEach((user: any) => {
-            if (user.email === currentUser) {
+    //     return this.http.get("https://reqres.in/api/users/" + currentUser.id);
 
-            }
-        });
-
-        // return this.http.get("https://reqres.in/api/users/" + this.getToken());
-
-        return this.http.get("https://reqres.in/api/users/" + currentUser.id);
-
-    }
+    // }
 
     setCredentials(user: any) {
 
@@ -159,14 +149,6 @@ export class AuthService {
             });
 
         });
-
-        // this.http.post("https://reqres.in/api/login", user).subscribe((resp: any) => {
-
-        //     this.setToken(user.remember_token);
-
-        // });
-
-
 
     }
 
