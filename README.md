@@ -1,2 +1,1 @@
-# Gymnasium1
-asdasdsasad
+# Gymnasium
