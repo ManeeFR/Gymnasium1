@@ -18,9 +18,9 @@ class UsuarioFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => $this->faker->name(),
+            'nombre' => $this->faker->tok(),
             'email' => $this->faker->unique()->safeEmail(),
-            'remember_token' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+            'remember_token' => bin2hex(openssl_random_pseudo_bytes((25 - (25 % 2)) / 2)),
             'password' => Str::random(15)
         ];
     }

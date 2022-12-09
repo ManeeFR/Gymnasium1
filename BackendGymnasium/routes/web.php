@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/clases', [ListadoclasesController::class, 'index']);
-Route::post('/usuarios', [UsuarioController::class, 'store']);
+Route::post('/usuarios', [UsuarioController::class, 'register']);
+Route::get('/usuarios/{email}', [UsuarioController::class, 'userByEmail']);
+Route::get('/login', [UsuarioController::class, 'login']);

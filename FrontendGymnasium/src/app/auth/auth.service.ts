@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "../../../node_modules/rxjs";
 import { CookieService } from "ngx-cookie-service";
@@ -8,12 +8,20 @@ import { Router } from '@angular/router';
     providedIn: "root"
 })
 
-export class AuthService {
+export class AuthService implements OnInit {
 
     userLogged: boolean = false;
+    userRegistered: boolean = false;
+    userExists: boolean = false;
 
 
     constructor(private http: HttpClient, private router: Router, private cookies: CookieService) { }
+
+    ngOnInit(): void {
+        this.userLogged = false;
+        this.userRegistered = false;
+        this.userExists = false;
+    }
 
 
     login(user: any): void {
@@ -37,30 +45,47 @@ export class AuthService {
 
     register(user: any): void {
 
-        this.http.post("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
+        try {
+            this.http.post("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
 
-            // resp.forEach((currentUser: any) => {
+                this.userRegistered = true;
 
-            //     if (currentUser.email === user.email) {
+                // resp.forEach((currentUser: any) => {
 
-            //         // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE YA HAY UN USUARIO REGISTRADO CON ESE EMAIL
-            //         return;
+                //     if (currentUser.email === user.email) {
 
-            //     }
+                //         // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE YA HAY UN USUARIO REGISTRADO CON ESE EMAIL
+                //         return;
 
-            // });
+                //     }
 
-            // AQUÍ HAY QUE HACER UNA CONSULTA SQL A LA BD DONDE INSERTEMOS EL USUARIO
-            // this.http.put("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
+                // });
 
-            //     console.log("resp");
-            //     console.log(resp);
+                // AQUÍ HAY QUE HACER UNA CONSULTA SQL A LA BD DONDE INSERTEMOS EL USUARIO
+                // this.http.put("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
 
-            //     this.setCredentials(user);
+                //     console.log("resp");
+                //     console.log(resp);
 
-            // });
+                //     this.setCredentials(user);
 
-        });
+                // });
+                console.log("resp");
+                console.log(resp);
+                if (resp === "userExists") {
+                    this.userExists = true;
+                } else {
+                    this.userExists = false;
+                }
+
+            });
+        } catch(e) {
+            console.log(e);
+        }
+
+
+
+        // return '/login';
 
     }
 

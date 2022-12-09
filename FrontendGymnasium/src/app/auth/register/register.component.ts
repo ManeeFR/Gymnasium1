@@ -29,16 +29,27 @@ export class RegisterComponent {
                 nombre: this.nombre
             });
 
+
+
         } else {
             // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE NO COINCIDEN LAS PASSWORDS
         }
+
+        if (this.authService.userRegistered) {
+            this.login();
+        }
+
 
     }
 
     login() {
 
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('login');
 
+    }
+
+    userExists() {
+        return this.authService.userExists;
     }
 
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use App\Providers\RouteServiceProvider as ServiceProvider;
 
 class UsuarioController extends Controller {
 
@@ -17,13 +18,55 @@ class UsuarioController extends Controller {
     // Encargado de almacenar en la BD
     public function register(Request $request) {
 
-        $usuario = new Usuario();
+        $user = UsuarioController::userByEmail($request->email);
 
-        $usuario->email = $request->email;
-        $usuario->password = $request->password;
-        $usuario->nombre = $request->nombre;
+        if (!$user) {
 
-        $usuario->save();
+            $usuario = new Usuario();
+
+            $usuario->email = $request->email;
+            $usuario->password = $request->password;
+            $usuario->nombre = $request->nombre;
+            $usuario->remember_token = bin2hex(openssl_random_pseudo_bytes((45 - (45 % 2)) / 2));
+
+            $usuario->save();
+
+            return redirect(ServiceProvider::LOGIN);
+
+            // redirect()->route('/login');
+
+        } else {
+            return "userExists";
+        }
+
+
+
+
+        // $users = Usuario::all();
+
+        // $repetido = false;
+
+        // for ($i=0; $i < count($users); $i++) {
+        //     if ($users[$i]->email === $request->email) {
+        //         $repetido = true;
+        //     }
+        // }
+
+        // if ($repetido) {
+
+        //     // Agregar texto en rojo que ponga "Ya existe un usuario registrado con ese email"
+
+        // } else {
+
+        //     $usuario = new Usuario();
+
+        //     $usuario->email = $request->email;
+        //     $usuario->password = $request->password;
+        //     $usuario->nombre = $request->nombre;
+
+        //     $usuario->save();
+
+        // }
 
         // if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 
@@ -52,5 +95,27 @@ class UsuarioController extends Controller {
         //     // return redirect()->route('pageError');
 
         // }
+    }
+
+
+    public function userByEmail(String $email) {
+
+        // Quedaría mejor usar una consulta SQL (que busque por email) en vez de un for
+
+        $users = Usuario::all();
+
+        for ($i = 0; $i < count($users); $i++) {
+
+            if ($users[$i]->email == $email) {
+
+                return $users[$i];
+
+            }
+        }
+
+    }
+
+    public function login() {
+        return redirect()->route('login');
     }
 }
