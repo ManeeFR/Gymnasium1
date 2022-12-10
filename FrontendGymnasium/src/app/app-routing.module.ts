@@ -10,18 +10,21 @@ import { ObjetivosComponent } from './home/bottom/objetivos/objetivos/objetivos.
 
 import { AppComponent } from './app.component';
 import { ClasesDashboardLayoutComponent } from './clases/clases-layout/clases-dashboard-layout.component';
-import { RegisterComponent } from './auth/register/register.component';
+import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 const routes: Routes = [
 
-    { path: "", component: AppComponent, pathMatch: "full" },
+    { path: "", component: IndexComponent, pathMatch: "full" },
+
+    // { path: "index", component: IndexComponent, pathMatch: "full" },
 
     { path: "login", component: LoginComponent, pathMatch: "full" },
 
     { path: "register", component: RegisterComponent, pathMatch: "full" },
-    
+
     {
         path: 'home',
         //   pathMatch: 'full',

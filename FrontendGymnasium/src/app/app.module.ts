@@ -17,11 +17,12 @@ import { RouterModule } from '@angular/router';
 import { ClasesModule } from './clases/clases.module';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { IndexComponent } from './index/index.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, IndexComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

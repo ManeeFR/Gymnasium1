@@ -14,6 +14,7 @@ export class AuthService implements OnInit {
     userRegistered: boolean = false;
     userExists!: boolean;
     userIncorrect!: boolean;
+    // iniciado!: boolean;
 
 
     constructor(private http: HttpClient, private router: Router, private cookies: CookieService) { }
@@ -27,9 +28,9 @@ export class AuthService implements OnInit {
 
     login(user: any): void {
 
-      this.userIncorrect = true;
-
         this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
+
+            this.userIncorrect = true;
 
             resp.forEach((currentUser: any) => {
 

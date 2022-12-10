@@ -25,7 +25,16 @@ export class AppComponent {
         } else {
 
             this.logged = false;
-            this.ruta.navigate(["login"]);
+
+            // if (this.authService.iniciado) {
+
+            //     // this.ruta.navigate(["login"]);
+
+            // } else {
+
+            //     // this.ruta.navigate([""]);
+
+            // }
 
         }
 
