@@ -18,12 +18,12 @@ export class AppComponent {
     constructor(private ruta: Router, private authService: AuthService) {
 
         if (authService.userLogged && authService.getToken()) {
-            
+
             this.logged = true;
             this.ruta.navigate(["home/clases"]);
-            
+
         } else {
-            
+
             this.logged = false;
             this.ruta.navigate(["login"]);
 
@@ -34,11 +34,11 @@ export class AppComponent {
 
     logueado() {
 
-        if (this.authService.userLogged && this.authService.getToken()) 
+        if (this.authService.userLogged && this.authService.getToken())
             return true;
-         else 
+         else
             return false;
-        
+
     }
 
 }

@@ -30,13 +30,16 @@ export class RegisterComponent {
             });
 
 
-
         } else {
             // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE NO COINCIDEN LAS PASSWORDS
         }
 
-        if (this.authService.userRegistered) {
-            this.login();
+        if (!this.authService.userExists) {
+            console.log("this.authService.userExists");
+            console.log(this.authService.userExists);
+            // this.login();
+        } else {
+            this.router.navigateByUrl('register');
         }
 
 

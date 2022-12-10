@@ -30,4 +30,8 @@ export class LoginComponent {
         this.router.navigateByUrl('/register');
     }
 
+    userIncorrect() {
+        return this.authService.userIncorrect;
+    }
+
 }

@@ -2,39 +2,55 @@
 
     <form class="custom-form" method="post" action="/usuarios">
 
-        <h1>Registrarse<span *ngIf="userExists()">Ya existe un usuario registrado con ese email.</span></h1>
+        <div class="text-form">
 
-        <input  type="email"
-                name="email"
-                [(ngModel)]="email"
-                placeholder="Correo electrónico"
-                required="required"
-        />
+            <h1>Registrarse</h1>
 
-        <input  type="text"
-                name="nombre"
-                [(ngModel)]="nombre"
-                placeholder="Nombre"
-                required="required"
-        />
+            <span *ngIf="userExists()">
+                Ya existe un usuario registrado con ese email.
+            </span>
 
-        <input  type="password"
-                name="password"
-                [(ngModel)]="password"
-                placeholder="Contraseña"
-                required="required"
-        />
+        </div>
 
-        <input  type="password"
-                name="password"
-                [(ngModel)]="confirmPassword"
-                placeholder="Repita la contraseña"
-                required="required"
-        />
+        <div class="inputs-form">
 
-        <button type="submit" (click)="register()">Registrarme</button>
+            <input  type="email"
+                    name="email"
+                    [(ngModel)]="email"
+                    placeholder="Correo electrónico"
+                    required="required"
+            />
 
-        <button type="button" (click)="login()">Iniciar sesión</button>
+            <input  type="text"
+                    name="nombre"
+                    [(ngModel)]="nombre"
+                    placeholder="Nombre"
+                    required="required"
+            />
+
+            <input  type="password"
+                    name="password"
+                    [(ngModel)]="password"
+                    placeholder="Contraseña"
+                    required="required"
+            />
+
+            <input  type="password"
+                    name="password"
+                    [(ngModel)]="confirmPassword"
+                    placeholder="Repita la contraseña"
+                    required="required"
+            />
+
+        </div>
+
+        <div class="buttons-form">
+
+            <input type="submit" (click)="register()" value="Registrarme"/>
+
+            <button type="button" (click)="login()">Iniciar sesión</button>
+
+        </div>
 
     </form>
 

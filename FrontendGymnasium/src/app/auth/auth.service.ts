@@ -1,5 +1,5 @@
 import { Injectable, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "../../../node_modules/rxjs";
 import { CookieService } from "ngx-cookie-service";
 import { Router } from '@angular/router';
@@ -12,7 +12,8 @@ export class AuthService implements OnInit {
 
     userLogged: boolean = false;
     userRegistered: boolean = false;
-    userExists: boolean = false;
+    userExists!: boolean;
+    userIncorrect!: boolean;
 
 
     constructor(private http: HttpClient, private router: Router, private cookies: CookieService) { }
@@ -20,11 +21,13 @@ export class AuthService implements OnInit {
     ngOnInit(): void {
         this.userLogged = false;
         this.userRegistered = false;
-        this.userExists = false;
+        this.userIncorrect = false;
     }
 
 
     login(user: any): void {
+
+      this.userIncorrect = true;
 
         this.http.get("http://localhost:8000/api/usuarios").subscribe((resp: any) => {
 
@@ -32,6 +35,7 @@ export class AuthService implements OnInit {
 
                 if (currentUser.email === user.email && currentUser.password === user.password) {
 
+                    this.userIncorrect = false;
                     this.setCredentials(currentUser);
 
                 }
@@ -45,43 +49,49 @@ export class AuthService implements OnInit {
 
     register(user: any): void {
 
-        try {
-            this.http.post("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
+        this.userExists = false;
 
-                this.userRegistered = true;
+        const headers = new HttpHeaders().set("Access-Control-Allow-Origin", "*/*");
 
-                // resp.forEach((currentUser: any) => {
+        this.http.post("http://localhost:8000/api/usuarios", user, { headers } ).subscribe((resp: any) => {
 
-                //     if (currentUser.email === user.email) {
+            this.userRegistered = true;
 
-                //         // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE YA HAY UN USUARIO REGISTRADO CON ESE EMAIL
-                //         return;
+            // this.userExists = true;
 
-                //     }
 
-                // });
+            // resp.forEach((currentUser: any) => {
 
-                // AQUÍ HAY QUE HACER UNA CONSULTA SQL A LA BD DONDE INSERTEMOS EL USUARIO
-                // this.http.put("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
+            //     if (currentUser.email === user.email) {
 
-                //     console.log("resp");
-                //     console.log(resp);
+            //         // INDICAR CON UN PEQUEÑO TEXTO ROJO QUE YA HAY UN USUARIO REGISTRADO CON ESE EMAIL
+            //         return;
 
-                //     this.setCredentials(user);
+            //     }
 
-                // });
-                console.log("resp");
-                console.log(resp);
-                if (resp === "userExists") {
-                    this.userExists = true;
-                } else {
-                    this.userExists = false;
-                }
+            // });
 
-            });
-        } catch(e) {
-            console.log(e);
-        }
+            // AQUÍ HAY QUE HACER UNA CONSULTA SQL A LA BD DONDE INSERTEMOS EL USUARIO
+            // this.http.put("http://localhost:8000/api/usuarios", user).subscribe((resp: any) => {
+
+            //     console.log("resp");
+            //     console.log(resp);
+
+            //     this.setCredentials(user);
+
+            // });
+            console.log("resp");
+            console.log(resp);
+
+            if (resp.resp != "success") {
+                this.userExists = true;
+            } else {
+              this.userExists = false;
+              this.router.navigateByUrl('login');
+            }
+
+        });
+
 
 
 
@@ -124,34 +134,6 @@ export class AuthService implements OnInit {
 
     }
 
-    getUserAPI(id: number) {
-
-        return this.http.get("https://reqres.in/api/users/" + id);
-
-    }
-
-    getAllUsersAPI() {
-
-        return this.http.get("https://reqres.in/api/users/");
-
-    }
-
-    // getUserLogged(currentUser: any) {
-
-    //     const users = this.getAllUsersAPI();
-
-    //     console.log('users');
-    //     console.log(users);
-
-    //     users.forEach((user: any) => {
-    //         if (user.email === currentUser) {
-
-    //         }
-    //     });
-
-    //     return this.http.get("https://reqres.in/api/users/" + currentUser.id);
-
-    // }
 
     setCredentials(user: any) {
 

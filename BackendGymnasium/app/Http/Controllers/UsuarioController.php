@@ -31,13 +31,18 @@ class UsuarioController extends Controller {
 
             $usuario->save();
 
-            return redirect(ServiceProvider::LOGIN);
 
-            // redirect()->route('/login');
+            // return redirect(ServiceProvider::LOGIN);
+            $json = '{"resp":"success"}';
+
 
         } else {
-            return "userExists";
+            $json = '{"resp":"error"}';
+
+            // return redirect(ServiceProvider::REGISTER);
+            // return redirect()->route('/register');
         }
+        return json_decode($json);
 
 
 
@@ -98,7 +103,7 @@ class UsuarioController extends Controller {
     }
 
 
-    public function userByEmail(String $email) {
+    public function userByEmail($email) {
 
         // Quedaría mejor usar una consulta SQL (que busque por email) en vez de un for
 

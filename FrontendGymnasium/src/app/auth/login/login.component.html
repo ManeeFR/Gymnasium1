@@ -2,26 +2,42 @@
 
     <form class="custom-form" method="post">
 
-        <h1>Iniciar sesión</h1>
+        <div class="text-form">
 
-        <input  type="email"
-                name="email"
-                [(ngModel)]="email"
-                placeholder="Correo electrónico"
-                required="required"
-        />
+            <h1>Iniciar sesión</h1>
+
+            <span *ngIf="userIncorrect()">
+                Usuario o contraseña incorrectros. Inténtelo de nuevo.
+            </span>
+
+        </div>
+
+        <div class="inputs-form">
+
+            <input  type="email"
+                    name="email"
+                    [(ngModel)]="email"
+                    placeholder="Correo electrónico"
+                    required="required"
+            />
 
 
-        <input  type="password"
-                name="password"
-                [(ngModel)]="password"
-                placeholder="Contraseña"
-                required="required"
-        />
+            <input  type="password"
+                    name="password"
+                    [(ngModel)]="password"
+                    placeholder="Contraseña"
+                    required="required"
+            />
 
-        <button type="submit" (click)="login()">Iniciar sesión</button>
+            <div class="buttons-form">
 
-        <button type="submit" (click)="register()">Registrarme</button>
+                <input type="submit" (click)="login()" value="Iniciar sesión"/>
+
+                <button type="submit" (click)="register()">Registrarme</button>
+
+            </div>
+
+        </div>
 
     </form>
 

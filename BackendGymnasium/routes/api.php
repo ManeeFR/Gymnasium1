@@ -23,6 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/login', [UsuarioController::class, 'login']);
+Route::get('/register', [UsuarioController::class, 'register']);
 Route::get('/clases', [ListadoclasesController::class, 'index']);
 Route::get('/usuarios', [UsuarioController::class, 'index']);
 Route::get('/usuarios/{email}', [UsuarioController::class, 'userByEmail']);
