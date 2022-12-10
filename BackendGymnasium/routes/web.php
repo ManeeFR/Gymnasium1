@@ -19,7 +19,11 @@ Route::get('/', function () {
 });
 
 Route::get('/clases', [ListadoclasesController::class, 'index']);
+
 Route::post('/usuarios', [UsuarioController::class, 'register']);
 Route::get('/usuarios/{email}', [UsuarioController::class, 'userByEmail']);
+
 Route::get('/login', [UsuarioController::class, 'login']);
 Route::get('/register', [UsuarioController::class, 'register']);
+
+Route::post('/reservas', [UsuarioController::class, 'create']);
