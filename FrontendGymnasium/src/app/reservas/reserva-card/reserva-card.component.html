@@ -1,0 +1,29 @@
+<div class="reserva-card">
+
+    <div class="reserva-title">
+        <app-reserva-title [title]="reserva.fecha"></app-reserva-title>
+    </div>
+
+    <div class="reserva-franja">
+        <div>Hora: {{reserva.franja}}</div>
+    </div>
+
+    <div class="reserva-pista">
+        <div>Pista número {{reserva.id_pista}}</div>
+    </div>
+
+    <div class="reserva-editTitle">
+
+        Editar fecha <input #reservaTitle
+                                  [value]="reserva.fecha"
+                                  (keyup)="onTitleChange(reserva.fecha)"
+                                   title="title">
+    </div>
+
+
+    <button (click)="onReservaViewed()"> Ver reserva </button>
+
+    <button (click)="onSaveClicked(reserva, reservaTitle.value)"> Editar reserva </button>
+
+</div>
+

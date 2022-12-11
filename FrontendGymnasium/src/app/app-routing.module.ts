@@ -13,6 +13,7 @@ import { ClasesDashboardLayoutComponent } from './clases/clases-layout/clases-da
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { ReservasComponent } from './reservas/reservas/reservas.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,11 @@ const routes: Routes = [
         children: [
             { path: 'listado', component: ClasesDashboardLayoutComponent },
         ]
+    },
+    {
+        path: 'reservas',
+        //   pathMatch: 'full',
+        component: ReservasComponent
     }
 ];
 

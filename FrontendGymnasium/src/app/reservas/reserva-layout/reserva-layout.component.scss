@@ -1,0 +1,31 @@
+.top-menu {
+    background: #1976d2;
+    padding: 2px 15px;
+}
+
+.logo {
+  max-height: 55px;
+}
+
+
+.reservas {
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+textarea {
+    padding: 30vh auto;
+}
+
+button {
+    margin: 1vh;
+    cursor: pointer;
+}
+
+.reserva-title {
+    color: white;
+    background-color: rgba(156, 156, 156, 0.563);
+    width: 80%;
+    display: inline-flex;
+    margin-top: 14vh;
+}

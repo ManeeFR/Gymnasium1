@@ -18,6 +18,7 @@ import { ClasesModule } from './clases/clases.module';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { IndexComponent } from './index/index.component';
+import { ReservasModule } from './reservas/reservas.module';
 
 
 
@@ -32,7 +33,8 @@ import { IndexComponent } from './index/index.component';
     HomeModule,
     RouterModule,
     ClasesModule,
-    RouterModule
+    RouterModule,
+    ReservasModule
   ],
   exports: [
     EurosPipe,

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Reservas;
 use Illuminate\Support\Str;
 
 class ReservasFactory extends Factory {
@@ -12,7 +13,7 @@ class ReservasFactory extends Factory {
      *
      * @return string
      */
-    protected $model = Reserva::class;
+    protected $model = Reservas::class;
 
     /**
      * Define the model's default state.

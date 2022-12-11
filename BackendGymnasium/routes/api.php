@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ListadoclasesController;
 use App\Http\Controllers\UsuarioController;
-use App\Models\Listadoclases;
+use App\Http\Controllers\ReservasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +32,5 @@ Route::get('/usuarios', [UsuarioController::class, 'index']);
 Route::get('/usuarios/{email}', [UsuarioController::class, 'userByEmail']);
 Route::post('/usuarios', [UsuarioController::class, 'register']);
 
-Route::post('/reservas', [UsuarioController::class, 'create']);
+Route::get('/reservas', [ReservasController::class, 'index']);
+Route::post('/reservas', [ReservasController::class, 'store']);

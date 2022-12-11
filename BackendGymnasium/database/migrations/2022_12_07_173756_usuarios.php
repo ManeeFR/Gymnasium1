@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('nombre');
             $table->rememberToken();
             $table->timestamps();
-            
-        
+
+
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-    Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('usuarios');
     }
 };

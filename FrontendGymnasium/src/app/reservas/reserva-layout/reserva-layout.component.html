@@ -1,0 +1,29 @@
+
+
+    <div class="demo">
+
+        <button> Editar lista de reservas </button>
+
+    </div>
+
+
+
+    <div class="reservas" *ngIf="reservas">
+        <ng-container *ngFor="let reserva of reservas(); index as i;">
+
+            <ng-container *ngIf="validReserva(reserva) === true">
+
+                <app-reserva-card [reserva]="reserva"
+                                  [cardIndex]="i+1"
+                                  (reservaChanged)="onReservaEdited($event)">
+
+
+
+
+                </app-reserva-card>
+
+            </ng-container>
+
+        </ng-container>
+
+    </div>

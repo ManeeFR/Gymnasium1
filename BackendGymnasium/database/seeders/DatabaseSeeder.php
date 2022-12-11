@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Reservas;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Usuario;
 
@@ -16,5 +15,5 @@ class DatabaseSeeder extends Seeder {
         Usuario::factory(25)->create();
 
     }
-    
+
 }

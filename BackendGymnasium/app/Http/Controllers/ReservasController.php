@@ -4,15 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Reserva;
-use App\Models\Pista;
 use App\Models\Reservas;
 
 session_start();
 
 
-class ReservaController extends Controller
+class ReservasController extends Controller
 {
+
+    public function index() {
+
+        $reservas = Reservas::all();
+        return response()->json($reservas, 200);
+
+    }
 
     public function create()
     {
@@ -54,16 +59,16 @@ class ReservaController extends Controller
     }
 
     // Encargado de almacenar en la BD
-    public function store(Request $request, $id_pista)
+    public function store(Request $request)
     {
-        if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
+        // if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 
-            $consulta = Reservas::where('id_pista', '=', $id_pista)->where('franja', '=', $request->franja)->where('fecha', '=', $request->fecha)->get();
+            $consulta = Reservas::where('id_pista', '=', $request->id_pista)->where('franja', '=', $request->franja)->where('fecha', '=', $request->fecha)->get();
 
             if (count($consulta) == 0) {
                 $reserva = new Reservas();
-                $reserva->email_user = $_SESSION['email'];
-                $reserva->id_pista = $id_pista;
+                $reserva->email_user = $request->email_user;
+                $reserva->id_pista = $request->id_pista;
                 $reserva->franja = $request->franja;
                 $reserva->fecha = $request->fecha;
 
@@ -74,9 +79,9 @@ class ReservaController extends Controller
                  */
             }
 
-            return redirect()->route('contactanos');
-        } else {
-            return redirect()->route('pageError');
-        }
+            // return redirect()->route('contactanos');
+        // } else {
+            // return redirect()->route('pageError');
+        // }
     }
 }
