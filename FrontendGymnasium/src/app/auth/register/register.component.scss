@@ -58,7 +58,8 @@ body {
         font-size: 0.875rem;
         color: #ffffff;
         font-weight: bold;
-        background: #bcd8c1;
+        // background: #5f5f5f;
+        // border-color: #d6b747;
         width: 100%;
         display: block;
         padding: 0.875rem 1rem;
@@ -67,4 +68,11 @@ body {
         cursor: pointer;
         margin-top: 3vh;
     }
+}
+
+.form-registro{
+    background-color: #d6b747 ;
+}
+.form-login{
+    background-color:  #5f5f5f;
 }
