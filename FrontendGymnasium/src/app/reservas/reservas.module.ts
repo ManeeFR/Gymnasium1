@@ -9,6 +9,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ReservaRoutingModule } from './reserva-routing.module';
 import { ReservaService } from './reserva-service/reserva.service';
 import { AppComponent } from '../app.component';
+import { ListadoClasesComponent } from './listado-clases/listado-clases.component';
+import { ClasesService } from '../clases/clases-service/clases.service';
 
 
 
@@ -18,14 +20,15 @@ import { AppComponent } from '../app.component';
     ReservaCardComponent,
     ReservaImageComponent,
     ReservaTitleComponent,
-    ReservaLayoutComponent
+    ReservaLayoutComponent,
+    ListadoClasesComponent
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
     ReservaRoutingModule
   ],
-  providers: [ReservaService],
+  providers: [ReservaService, ClasesService],
   bootstrap: [AppComponent],
 })
 export class ReservasModule { }

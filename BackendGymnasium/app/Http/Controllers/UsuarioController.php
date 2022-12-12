@@ -6,6 +6,8 @@ use App\Models\Usuario;
 use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider as ServiceProvider;
 
+session_start();
+
 class UsuarioController extends Controller {
 
     public function index() {
@@ -30,6 +32,9 @@ class UsuarioController extends Controller {
             $usuario->remember_token = bin2hex(openssl_random_pseudo_bytes((45 - (45 % 2)) / 2));
 
             $usuario->save();
+
+            $_SESSION['email_user'] = $request->email;
+            $_SESSION['password_user'] = $request->password;
 
 
             // return redirect(ServiceProvider::LOGIN);
@@ -120,7 +125,16 @@ class UsuarioController extends Controller {
 
     }
 
-    public function login() {
+    public function login(Request $request) {
+
+        $usuario = Usuario::where('email', '=', $request->email)
+                          ->where('password', '=', $request->password)
+                          ->get();
+
+        if (count($usuario) === 1) {
+            $_SESSION['email_user'] = $request->email;
+            $_SESSION['password_user'] = $request->password;
+        }
         return redirect()->route('login');
     }
 }

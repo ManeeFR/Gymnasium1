@@ -2,14 +2,10 @@
 
 export interface Clase {
     id: number;
-    title: string;
-    iconUrl: string;
-    longDescription: string;
-    category: string;
-    lessonsCount: number;
-    typeClass: string;
+    deporte: string;
+    imagen: string;
+    descripcion: string;
+    aforo: number;
     instructor: string;
-    plazasMaximas: number;
     duracion: number;
-    sala: number;
 }

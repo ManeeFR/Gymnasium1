@@ -1,68 +1,29 @@
-<div class="clase-card" [ngClass]="classesForCards()">
+<div class="clase-card">
 
-
-    <!-- <div class="course-title" [style]="{'color': !course.iconUrl ? 'gray' : ''}">
-        {{ cardIndex + ' ' + course.description }}
-    </div> -->
-    <div class="clase-title" [style]="{'color': !clase.iconUrl ? 'gray' : ''}">
-        <clase-title [title]="clase.title"></clase-title> 
+    <div class="clase-title" [style]="{'color': !clase.imagen ? 'gray' : ''}">
+        <clase-title [title]="clase.deporte"></clase-title>
     </div>
 
-
-    <!-- Just using my custom directive appNgxUnless: -->
-    <!-- <ng-content *appNgxUnless="!isImageVisible(course)" select=".course-image"></ng-content> -->
     <ng-content *ngIf="isImageVisible(clase) else noImageTemplate" select=".clase-image"></ng-content>
-     
+
     <ng-template #noImageTemplate>
-        
-        <ng-container *ngTemplateOutlet="noImage; context: { title: clase.title } "></ng-container>
-        
+
+        <ng-container *ngTemplateOutlet="noImage; context: { title: clase.deporte } "></ng-container>
+
     </ng-template>
 
-    
+
 
     <ng-content select=".clase-nombre"></ng-content>
 
     <div class="clase-editTitle">
 
         Editar título <input #claseTitle
-                                  [value]="clase.title" 
+                                  [value]="clase.deporte"
                                   (keyup)="onTitleChange(claseTitle.value)"
-                                   title="title"> 
+                                   title="title">
     </div>
 
-    
-
-    <!-- <div class="course-category" [ngSwitch]="course.category">
-
-        <ng-container *ngFor="let category of categories">
-
-            <ng-container *ngSwitchCase="category"> 
-
-                <div class="category"> {{ category | titlecase }} </div>
-
-            </ng-container>
-            
-        </ng-container>
-
-        <div class="category" *ngSwitchDefault> all levels </div>
-    
-    </div> -->
-
-    
-    <div class="clase-category">
-
-        <div class="category"> 
-            {
-                clase.category,
-                select,
-                BEGINNER {Beginner}
-                INTERMEDIATE {Intermediate}
-                ADVANCED {Advanced}
-            }
-        </div>
-    
-    </div>
 
     <button (click)="onClaseViewed()"> Ver clase </button>
 

@@ -29,3 +29,11 @@ button {
     display: inline-flex;
     margin-top: 14vh;
 }
+
+
+.reservasLayout {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}

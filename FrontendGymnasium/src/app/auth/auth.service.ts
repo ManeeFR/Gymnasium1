@@ -128,6 +128,12 @@ export class AuthService implements OnInit {
 
     }
 
+    public get UserPasswordSessionStorage() : string {
+
+        return sessionStorage.getItem("password")!;
+
+    }
+
     public set UserSessionStorage(user: any) {
 
         sessionStorage.setItem("email", user.email);

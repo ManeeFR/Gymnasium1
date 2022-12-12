@@ -25,12 +25,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/clases', [ListadoclasesController::class, 'index']);
 
-Route::get('/login', [UsuarioController::class, 'login']);
-Route::get('/register', [UsuarioController::class, 'register']);
 
 Route::get('/usuarios', [UsuarioController::class, 'index']);
-Route::get('/usuarios/{email}', [UsuarioController::class, 'userByEmail']);
+Route::get('/login', [UsuarioController::class, 'login']);
+Route::get('/register', [UsuarioController::class, 'register']);
 Route::post('/usuarios', [UsuarioController::class, 'register']);
+Route::get('/usuarios/{email}', [UsuarioController::class, 'userByEmail']);
 
 Route::get('/reservas', [ReservasController::class, 'index']);
+Route::get('/reservas/nextDays', [ReservasController::class, 'showNextDays']);
 Route::post('/reservas', [ReservasController::class, 'store']);
