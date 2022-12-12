@@ -6683,3 +6683,74 @@ form div {
   right: auto;
   margin-top: 20px
 }
+.gallery {
+    // margin-left: 25%;
+    // margin-top: 40%;
+    margin-bottom: 4%;
+    // width: 700px;
+    height: 700px;
+    display: grid;
+    grid-gap: 11px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "img1 img3 img6"
+      "img2 img4 img6"
+      "img2 img5 img7";
+
+      div:hover{
+        transform: scale(1.1);
+        transition: transform 0.5s;
+      }
+  }
+  
+  .gallery .img1 {
+    background-size: cover;
+    background-image: url(https://synergym.es/assets/images/gyms/global/2019/04/El-Exito-de-la-Expansion-de-los-gimnasios-Synergym.-Club-del-Mes-600x323.jpg);
+    grid-column-start: img1;
+    grid-column-end: img1;
+  }
+  
+  .gallery .img2 {
+    background-size: cover;
+    background-image: url(https://synergym.es/assets/images/gyms/global/2019/04/El-Exito-de-la-Expansion-de-los-gimnasios-Synergym.-Club-del-Mes-600x323.jpg);
+    grid-area: img2;
+  }
+  
+  .gallery .img3 {
+    background-size: cover;
+    background-image: url(https://synergym.es/assets/images/gyms/global/2019/04/El-Exito-de-la-Expansion-de-los-gimnasios-Synergym.-Club-del-Mes-600x323.jpg);
+    grid-area: img3;
+  }
+  
+  .gallery .img4 {
+    background-size: cover;
+    background-image: url(https://synergym.es/assets/images/gyms/global/2019/04/El-Exito-de-la-Expansion-de-los-gimnasios-Synergym.-Club-del-Mes-600x323.jpg);
+    grid-area: img4;
+    
+  }
+  
+  .gallery .img5 {
+    background-size: cover;
+    background-image: url(https://synergym.es/assets/images/gyms/global/2019/04/El-Exito-de-la-Expansion-de-los-gimnasios-Synergym.-Club-del-Mes-600x323.jpg);
+    grid-area: img5;
+  }
+  
+  .gallery .img6 {
+    background-size: cover;
+    background-image: url(https://synergym.es/assets/images/gyms/global/2019/04/El-Exito-de-la-Expansion-de-los-gimnasios-Synergym.-Club-del-Mes-600x323.jpg);
+    grid-area: img6;
+  }
+  .gallery .img7 {
+    background-size: cover;
+    background-image: url(https://synergym.es/assets/images/gyms/global/2019/04/El-Exito-de-la-Expansion-de-los-gimnasios-Synergym.-Club-del-Mes-600x323.jpg);
+    grid-area: img7;
+  }
+
+  .main__galeria__imagenes {
+    img:hover {
+            transform: scale(1.2);
+            transition: transform 1s;
+        }
+    }
+    
