@@ -24,8 +24,10 @@ class ReservasController extends Controller
 
         $reservas = Reservas::where('email_user', $request->email)
                             ->orWhereDate('fecha', date("Y-m-d"))
-                            ->orWhereDate('fecha', date("Y-m-d", strtotime("-1 day")))
-                            ->orWhereDate('fecha', date("Y-m-d", strtotime("-2 days")))
+                            ->orWhereDate('fecha', date("Y-m-d", strtotime("+1 day")))
+                            ->orWhereDate('fecha', date("Y-m-d", strtotime("+2 days")))
+                            ->orWhereDate('fecha', date("Y-m-d", strtotime("+3 days")))
+                            ->orWhereDate('fecha', date("Y-m-d", strtotime("+4 days")))
                             ->orderBy('fecha','desc')
                             ->get();
 

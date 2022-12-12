@@ -23,8 +23,11 @@ import { Clase } from 'src/app/clases/model/clase.interface';
 
 export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
+    currentDay: number = new Date().getDate();
+
     reservasList!: Reserva[];
     clasesList!: Clase[];
+
 
 
     constructor(private reservaService: ReservaService,
@@ -84,6 +87,17 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
     }
 
     validReserva(reserva: Reserva): boolean {
+        console.log("this.currentDay");
+        console.log(this.currentDay);
+        console.log("reserva.fecha.getDate()");
+        // console.log(reserva.fecha.getDate());
+
+        const date = new Date(reserva.fecha).getDate();
+
+        if (date !== this.currentDay) {
+            this.currentDay = date;
+            return false;
+        }
 
         return true;
 
