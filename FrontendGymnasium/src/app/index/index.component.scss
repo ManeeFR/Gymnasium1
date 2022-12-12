@@ -251,11 +251,6 @@
   display: none !important;
 }
 
-.fluid-width-video-wrapper {
-  width: 100%;
-  position: relative;
-  padding: 0;
-}
 
 .fluid-width-video-wrapper iframe,
 .fluid-width-video-wrapper object,
@@ -1177,6 +1172,7 @@ body .signup-progress span {
 
 .imagenLogo>img {
   height: 20vh;
+  
 }
 
 .location-finder .media-content {
@@ -4240,11 +4236,13 @@ header:before {
 header:after {
   clear: both
 }
-
-.no-modules header,
-.wysiwyg-first header {
-  background: #4a4a50
+.titulo-instalaciones{
+    padding-top: 70px;
 }
+// .no-modules header,
+// .wysiwyg-first header {
+//   background: #4a4a50
+// }
 
 header .container-header {
   float: left;
@@ -4253,7 +4251,8 @@ header .container-header {
   grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
   display: grid;
   -ms-flex-align: center;
-  align-items: center
+  align-items: center;
+  height: 140px;
 }
 
 .logo-ct {
@@ -4262,7 +4261,8 @@ header .container-header {
 
 .logo-ct .logo {
   display: block;
-  margin: 0
+  margin: 0;
+  
 }
 
 .logo-ct .logo a {
