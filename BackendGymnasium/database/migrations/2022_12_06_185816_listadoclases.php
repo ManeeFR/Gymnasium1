@@ -16,17 +16,13 @@ return new class extends Migration
         Schema::create('listadoclases', function(Blueprint $table){
 
             $table->id()->autoIncrement();
-            $table->string('title');
-            $table->string('iconUrl');
-            $table->string('longDescription');
-            $table->string('category');
-            $table->integer('lessonsCount');
-            $table->string('typeClass');
+            $table->string('deporte');
+            $table->string('imagen');
+            $table->string('descripcion');
+            $table->integer('aforo');
             $table->string('instructor');
-            $table->integer('plazasMaximas');
             $table->integer('duracion');
-            $table->integer('sala');
-        
+
         });
     }
 

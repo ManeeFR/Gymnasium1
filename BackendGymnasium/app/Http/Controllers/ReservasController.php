@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Reservas;
+use Illuminate\Support\Facades\Date;
 
 session_start();
 
@@ -18,6 +19,20 @@ class ReservasController extends Controller
         return response()->json($reservas, 200);
 
     }
+
+    public function showNextDays(Request $request) {
+
+        $reservas = Reservas::where('email_user', $request->email)
+                            ->orWhereDate('fecha', date("Y-m-d"))
+                            ->orWhereDate('fecha', date("Y-m-d", strtotime("-1 day")))
+                            ->orWhereDate('fecha', date("Y-m-d", strtotime("-2 days")))
+                            ->orderBy('fecha','desc')
+                            ->get();
+
+        return response() -> json($reservas, 200);
+    }
+
+
 
     public function create()
     {

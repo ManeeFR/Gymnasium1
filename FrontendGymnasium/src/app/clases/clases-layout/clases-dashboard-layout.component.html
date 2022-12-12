@@ -5,60 +5,59 @@
 
         <button> Editar lista de clases </button>
         <!-- <button i18n> Editar lista de clases </button> -->
-    
+
     </div>
-    
-    
+
+
     <!-- <ng-container i18n>{ coursesCount, plural, =0 {No hay clases disponibles.} -->
     <!-- <ng-container>{ coursesCount, plural, =0 {No hay clases disponibles.}
                   =1 {Una clase disponible.}
-                  other {Un total de {{coursesCount}} clases están disponibles.}  } 
+                  other {Un total de {{coursesCount}} clases están disponibles.}  }
     </ng-container> -->
-    
-    
+
+
     <div class="clases" *ngIf="clases">
         <!-- <h4 i18n="welcome message | Greet the user a greeting at the beginning of the course.@@welcomeMessage"> Bienvenido a Gymnasium </h4> -->
         <ng-container *ngFor="let clase of clases(); index as i; first as isFirst;
                               last as isLast; even as isEven; odd as isOdd;">
-                              
+
             <ng-container *ngIf="validClass(clase) === true">
-     
+
                 <app-clase-card [clase]="clase"
                                 [cardIndex]="i+1"
-                                [ngStyle]="concreteStyles(clase.iconUrl)"
+                                [ngStyle]="concreteStyles(clase.imagen)"
                                 [noImage]="noImage"
                                  type="learning"
                                 (claseChanged)="onClaseEdited($event)"
                                 [appHighlighted]="false">
                                       <!-- [ngClass]="concreteStyles(isFirst, isLast, isEven, isOdd)" -->
-    
+
                     <!-- <app-course-image [src]="course.iconUrl"
                                       class="course-image">
                     </app-course-image> -->
-    
-    
+
+
                     <ng-template #noImage let-claseName="title">
-    
-                        <p [style]="{'color': !clase.iconUrl ? 'gray' : ''}"> 
-                            {{ claseName }} has no image yet. 
+
+                        <p [style]="{'color': !clase.imagen ? 'gray' : ''}">
+                            {{ claseName }} has no image yet.
                         </p>
-    
+
                         <img src="../assets/empty-image.png" alt="Not available image">
-    
+
                     </ng-template>
-    
+
                     <div class="clase-nombre">
-    
-                        {{ clase.longDescription }}
-    
+
+                        {{ clase.descripcion }}
+
                     </div>
-    
+
                 </app-clase-card>
-    
-    
+
+
             </ng-container>
-    
+
         </ng-container>
-    
+
     </div>
-    
