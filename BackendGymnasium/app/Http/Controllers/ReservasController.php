@@ -13,62 +13,27 @@ session_start();
 class ReservasController extends Controller
 {
 
-    public function index() {
+    public function index()
+    {
 
         $reservas = Reservas::all();
         return response()->json($reservas, 200);
-
     }
 
-    public function showNextDays(Request $request) {
+    public function showNextDays(Request $request)
+    {
 
-        //HASTA AQUI ESTO FUNCIONA:
-        // $reservas = Reservas::where('email_user', $request->email)
-        //                     ->orderBy('fecha','desc')
-        //                     ->get();
-
+        // ESTO YA FUNCIONA, LO QUE PASA ES QUE NO HAY DATOS EN LA TABLA RESERVAS DE RESERVAS PARA DÍAS FUTUROS
+        // ESTARÍA BIEN CAMBIAR EL ATRIBUTO "FECHA" PARA QUE TAMBIÉN CONTENGA LA HORA, ASÍ SERÁ MÁS FÁCIL AL
+        // MOSTRAR LAS RESERVAS EN ORDEN
         $reservas = Reservas::where('email_user', $request->email)
-                            ->orWhereDate('fecha', date("Y-m-d"))
-                            ->orWhereDate('fecha', date("Y-m-d", strtotime("+1 day")))
-                            ->orWhereDate('fecha', date("Y-m-d", strtotime("+2 days")))
-                            ->orWhereDate('fecha', date("Y-m-d", strtotime("+3 days")))
-                            ->orWhereDate('fecha', date("Y-m-d", strtotime("+4 days")))
-                            ->orderBy('fecha','desc')
+                            ->where('fecha', '>=', date("Y-m-d"))
+                            ->where('fecha', '<=', date("Y-m-d", strtotime("+5 days")))
+                            ->orderBy('fecha','asc')
                             ->get();
 
-        return response() -> json($reservas, 200);
+        return response()->json($reservas, 200);
     }
-
-    // public function showNextDays(Request $request) {
-
-
-    //     // $reservas = DB::table('reservas')->select('SELECT * FROM reservas WHERE email_user,' . $request->email . ' AND fecha = ' . date("Y-m-d"));
-
-    //     // $reservas = Reservas::select('SELECT * FROM reservas WHERE email_user = ?', $request->email);
-
-    //     // $reservas = Reservas::where('email_user', $request->email)
-    //     //                     ->orWhereDate('fecha', date("Y-m-d"))
-    //     //                     ->orWhereDate('fecha', date("Y-m-d", strtotime("+1 day")))
-    //     //                     ->orWhereDate('fecha', date("Y-m-d", strtotime("+2 days")))
-    //     //                     ->orWhereDate('fecha', date("Y-m-d", strtotime("+3 days")))
-    //     //                     ->orWhereDate('fecha', date("Y-m-d", strtotime("+4 days")))
-    //     //                     ->orderBy('fecha','desc')
-    //     //                     ->get();
-
-    //     $reservas = Reservas::where('email_user', '=', $request->email)
-    //                                      ->where(function ($query) {
-    //                                         $query->whereDate('fecha', date("Y-m-d"))
-    //                                             ->orWhereDate('fecha', (date("Y-m-d", strtotime("+1 day"))))
-    //                                             ->orWhereDate('fecha', (date("Y-m-d", strtotime("+2 days"))))
-    //                                             ->orWhereDate('fecha', (date("Y-m-d", strtotime("+3 days"))))
-    //                                             ->orWhereDate('fecha', (date("Y-m-d", strtotime("+4 days"))));
-    //                                     })
-    //     ->get();
-
-
-    //     return response() -> json($reservas, 200);
-    // }
-
 
 
     public function create()
@@ -115,25 +80,25 @@ class ReservasController extends Controller
     {
         // if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 
-            $consulta = Reservas::where('id_pista', '=', $request->id_pista)->where('franja', '=', $request->franja)->where('fecha', '=', $request->fecha)->get();
+        $consulta = Reservas::where('id_pista', '=', $request->id_pista)->where('franja', '=', $request->franja)->where('fecha', '=', $request->fecha)->get();
 
-            if (count($consulta) == 0) {
-                $reserva = new Reservas();
-                $reserva->email_user = $request->email_user;
-                $reserva->id_pista = $request->id_pista;
-                $reserva->franja = $request->franja;
-                $reserva->fecha = $request->fecha;
+        if (count($consulta) == 0) {
+            $reserva = new Reservas();
+            $reserva->email_user = $request->email_user;
+            $reserva->id_pista = $request->id_pista;
+            $reserva->franja = $request->franja;
+            $reserva->fecha = $request->fecha;
 
-                $reserva->save();
-            } else {
-                /**
-                 * Aquí habría que poner un route() o algo que indique que esa pista a esa hora y día ya está reservada
-                 */
-            }
+            $reserva->save();
+        } else {
+            /**
+             * Aquí habría que poner un route() o algo que indique que esa pista a esa hora y día ya está reservada
+             */
+        }
 
-            // return redirect()->route('contactanos');
+        // return redirect()->route('contactanos');
         // } else {
-            // return redirect()->route('pageError');
+        // return redirect()->route('pageError');
         // }
     }
 }

@@ -20,7 +20,6 @@ export class ReservaService {
         return this.http.get<Reserva[]>('http://localhost:8000/api/reservas/nextDays', { params } );
 
     }
-
     /* HAY QUE CREAR UNA TABLA "PROXIMAS CLASES"
     QUE RELACIONE LAS TABLAS "CLASES" Y "RESERVAS",
     LUEGO, METERLE DATOS A "PROXIMAS CLASES" Y PINTAR

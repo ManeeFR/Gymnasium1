@@ -44,4 +44,5 @@ Route::get('/login', [UsuarioController::class, 'login']);
 Route::get('/register', [UsuarioController::class, 'register']);
 
 Route::get('/reservas', [ReservasController::class, 'index']);
+Route::get('/reservas/nextDays', [ReservasController::class, 'showNextDays']);
 Route::post('/reservas', [ReservasController::class, 'store']);
