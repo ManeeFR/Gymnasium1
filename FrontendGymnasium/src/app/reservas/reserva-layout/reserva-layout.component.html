@@ -1,29 +1,69 @@
 <div class="reservasLayout">
 
-    <div class="reservas" *ngIf="reservas">
+    <ng-container *ngIf="reservas && showReservasUser">
 
-        <h1>Mis reservas</h1>
+        <div class="reservas">
 
-        <h3>Hoy</h3>
-        <ng-container *ngFor="let reserva of reservas(); index as i;">
+            <h1>Mis reservas</h1>
+
+            <ng-container *ngFor="let reserva of reservas(); index as i; first as isFirst">
+
+                <ng-container *ngIf="isFirst && tieneReservaHoy()">
+
+                    <h3>Hoy</h3>
+
+                </ng-container>
+
+                <ng-container *ngIf="validReserva(reserva)">
+
+                    <h3>{{reserva.fecha}}</h3>
+
+                </ng-container>
+
+                <app-reserva-card [reserva]="reserva"
+                                [cardIndex]="i+1"
+                                (reservaChanged)="onReservaEdited($event)">
 
 
-            <ng-container *ngIf="validReserva(reserva) === false">
-
-                <h3>{{reserva.fecha}}</h3>
+                </app-reserva-card>
 
             </ng-container>
 
-            <app-reserva-card [reserva]="reserva" [cardIndex]="i+1" (reservaChanged)="onReservaEdited($event)">
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="showReservasAll">
+
+        <div class="reservasAll">
+
+            <h1>Próximas clases</h1>
+
+            <ng-container *ngFor="let reserva of reservasAll(); index as i; first as isFirst">
+
+                <ng-container *ngIf="isFirst && tieneReservaHoy()">
+
+                        <h3>Hoy</h3>
+
+                </ng-container>
+
+                <ng-container *ngIf="validReserva(reserva)">
+
+                    <h3>{{reserva.fecha}}</h3>
+
+                </ng-container>
+
+                <app-reserva-card [reserva]="reserva"
+                                  [cardIndex]="i+1"
+                                  (reservaChanged)="onReservaEdited($event)">
 
 
+                </app-reserva-card>
 
+            </ng-container>
 
-            </app-reserva-card>
+        </div>
 
-        </ng-container>
-
-    </div>
+    </ng-container>
 
     <div class="clases" *ngIf="clases">
 
@@ -33,7 +73,7 @@
 
             <ng-container *ngIf="validClase(clase)">
 
-                <app-listado-clases [clase]="clase"></app-listado-clases>
+                <app-listado-clases [clase]="clase" (click)="showReservas()"></app-listado-clases>
 
             </ng-container>
 

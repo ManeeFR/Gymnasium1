@@ -21,6 +21,18 @@ export class ReservaService {
 
     }
 
+    /* HAY QUE CREAR UNA TABLA "PROXIMAS CLASES"
+    QUE RELACIONE LAS TABLAS "CLASES" Y "RESERVAS",
+    LUEGO, METERLE DATOS A "PROXIMAS CLASES" Y PINTAR
+    LOS DATOS DESDE ESTE MÉTODO:*/
+    loadReservasAll(): Observable<Reserva[]> {
+
+        const params = new HttpParams().set("page", "1").set("pageSize", "10");
+
+        return this.http.get<Reserva[]>('http://localhost:8000/api/reservas', { params } );
+
+    }
+
     saveReserva(reserva: Reserva): Observable<Object> {
 
         const headers = new HttpHeaders().set("X-Auth", "reservaId");

@@ -22,6 +22,11 @@ class ReservasController extends Controller
 
     public function showNextDays(Request $request) {
 
+        //HASTA AQUI ESTO FUNCIONA:
+        // $reservas = Reservas::where('email_user', $request->email)
+        //                     ->orderBy('fecha','desc')
+        //                     ->get();
+
         $reservas = Reservas::where('email_user', $request->email)
                             ->orWhereDate('fecha', date("Y-m-d"))
                             ->orWhereDate('fecha', date("Y-m-d", strtotime("+1 day")))
@@ -33,6 +38,36 @@ class ReservasController extends Controller
 
         return response() -> json($reservas, 200);
     }
+
+    // public function showNextDays(Request $request) {
+
+
+    //     // $reservas = DB::table('reservas')->select('SELECT * FROM reservas WHERE email_user,' . $request->email . ' AND fecha = ' . date("Y-m-d"));
+
+    //     // $reservas = Reservas::select('SELECT * FROM reservas WHERE email_user = ?', $request->email);
+
+    //     // $reservas = Reservas::where('email_user', $request->email)
+    //     //                     ->orWhereDate('fecha', date("Y-m-d"))
+    //     //                     ->orWhereDate('fecha', date("Y-m-d", strtotime("+1 day")))
+    //     //                     ->orWhereDate('fecha', date("Y-m-d", strtotime("+2 days")))
+    //     //                     ->orWhereDate('fecha', date("Y-m-d", strtotime("+3 days")))
+    //     //                     ->orWhereDate('fecha', date("Y-m-d", strtotime("+4 days")))
+    //     //                     ->orderBy('fecha','desc')
+    //     //                     ->get();
+
+    //     $reservas = Reservas::where('email_user', '=', $request->email)
+    //                                      ->where(function ($query) {
+    //                                         $query->whereDate('fecha', date("Y-m-d"))
+    //                                             ->orWhereDate('fecha', (date("Y-m-d", strtotime("+1 day"))))
+    //                                             ->orWhereDate('fecha', (date("Y-m-d", strtotime("+2 days"))))
+    //                                             ->orWhereDate('fecha', (date("Y-m-d", strtotime("+3 days"))))
+    //                                             ->orWhereDate('fecha', (date("Y-m-d", strtotime("+4 days"))));
+    //                                     })
+    //     ->get();
+
+
+    //     return response() -> json($reservas, 200);
+    // }
 
 
 

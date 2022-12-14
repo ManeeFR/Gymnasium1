@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterViewChecked, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AfterContentChecked, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Reserva } from '../reserva-model/reserva.interface';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -24,8 +24,12 @@ import { Clase } from 'src/app/clases/model/clase.interface';
 export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
     currentDay: number = new Date().getDate();
+    tieneReservasHoy!: boolean;
+    showReservasAll!: boolean;
+    showReservasUser!: boolean;
 
     reservasList!: Reserva[];
+    reservasListAll!: Reserva[];
     clasesList!: Clase[];
 
 
@@ -70,59 +74,71 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
         }
 
+        this.showReservasUser = true;
+        this.showReservasAll = false;
+
     }
 
     onReservaEdited(reserva: Reserva): void {
 
         this.reservaService.saveReserva(reserva).subscribe();
-
     }
 
 
     reservas(): Reserva[] {
-        console.log("this.reservasList");
-        console.log(this.reservasList);
-        return this.reservasList;
 
+        return this.reservasList;
     }
 
+    reservasAll(): Reserva[] {
+
+        this.reservaService.loadReservasAll().subscribe((reservas: any) => {
+            this.reservasListAll = reservas;
+        });
+
+        return this.reservasListAll;
+    }
+
+
+    tieneReservaHoy(): boolean {
+
+        return this.reservasList.some(reserva => reserva.fecha.toString() === new Date().toISOString().split('T')[0] );
+    }
+
+
     validReserva(reserva: Reserva): boolean {
-        console.log("this.currentDay");
-        console.log(this.currentDay);
-        console.log("reserva.fecha.getDate()");
-        // console.log(reserva.fecha.getDate());
 
         const date = new Date(reserva.fecha).getDate();
 
         if (date !== this.currentDay) {
             this.currentDay = date;
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
+    }
+
+    showReservas() {
+
+        this.showReservasUser = false;
+        this.showReservasAll = true;
 
     }
 
     onClaseEdited(clase: Clase): void {
 
         this.claseService.saveClase(clase).subscribe();
-
     }
 
 
     clases(): Clase[] {
 
-        console.log("this.clasesList");
-        console.log(this.clasesList);
-
         return this.clasesList;
-
     }
 
     validClase(clase: Clase): boolean {
-        console.log("validClass = true");
-        return true;
 
+        return true;
     }
 
 
@@ -132,8 +148,6 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
                  'background-size': 'cover',
                  'background-repeat': 'round'
                };
-
     }
-
 
 }
