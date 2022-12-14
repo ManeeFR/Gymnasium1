@@ -42,13 +42,13 @@
     }
 }
 
-.btn.btn-red {
-  background-color: #d6b747;
+.btn.btn-yellow {
+  background-color: #caa500;
   color: #fff;
 }
 
-.btn.btn-red:hover {
-  background-color: #ad943a;
+.btn.btn-yellow:hover {
+  background-color: #a38603;
 }
 
 @media (max-width:1300px) {
@@ -367,6 +367,21 @@ header .container-header {
     .user-ct {
         width: 95vw;
     }
+
+}
+@media (max-width:495px) {
+  .user-ct{
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+
+    div>a{
+    padding: 0.2em;
+    }
+  }
+  .btn-mobile{
+    font-size: 0.95em;
+  }
 
 }
 
