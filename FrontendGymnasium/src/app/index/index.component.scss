@@ -13,11 +13,11 @@
 }
 @media (max-width:800px) {
     .logo-ct {
-        min-height: 26vw;
+        min-width: 26vw;
     }
     .logo-img {
-        min-width: 75%;
-        min-width: 75%;
+        min-width: 61%;
+        
     }
 }
 
@@ -368,6 +368,21 @@ header .container-header {
         width: 95vw;
     }
 
+}
+@media (max-width:495px) {
+  .user-ct{
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+
+    div>a{
+    padding: 0.2em;
+    }
+  }
+  .btn-mobile{
+    font-size: 0.95em;
+  }
+  
 }
 
 
