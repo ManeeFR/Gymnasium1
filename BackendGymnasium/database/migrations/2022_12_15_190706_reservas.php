@@ -17,10 +17,14 @@ return new class extends Migration
 
             $table->id()->autoIncrement()->unique();
             $table->string('email_user');
-            $table->integer('id_pista');
+            $table->integer('id_sala');
+            $table->string('deporte');
             $table->string('franja');
             $table->date('fecha');
             $table->timestamps();
+
+            $table->foreign('email_user')->references('email')->on('usuarios');
+            $table->foreign('id_sala')->references('sala')->on('listadoclases');
         });
     }
 

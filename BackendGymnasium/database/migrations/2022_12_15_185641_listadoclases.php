@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('listadoclases', function(Blueprint $table){
 
             $table->id()->autoIncrement();
+            $table->integer('sala')->unique();
             $table->string('deporte');
             $table->string('imagen');
             $table->string('descripcion');
