@@ -8,11 +8,6 @@ ul {
     min-width: 93vw;
     max-width: 93vw;
 
-    :first-child {
-        :hover {
-            margin-right: 0vw;
-        }
-    }
 
     li {
         justify-content: center;
@@ -20,10 +15,7 @@ ul {
         text-align: center;
         margin-right: 2.5vw;
 
-        :hover {
-            font-weight: 700;
-            margin-right: -0.7vw;
-        }
+        
 
         a {
             text-decoration: none;
