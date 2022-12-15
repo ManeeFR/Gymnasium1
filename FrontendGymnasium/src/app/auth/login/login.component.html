@@ -1,44 +1,50 @@
-<div class="login">
-
-    <form class="custom-form" method="post">
-
-        <div class="text-form">
-
-            <h1>Iniciar sesión</h1>
-
-            <span *ngIf="userIncorrect()">
-                Usuario o contraseña incorrectos. Inténtelo de nuevo.
-            </span>
-
+<html>
+    <body>
+        <div class="login">
+    
+            <form class="custom-form" method="post">
+        
+                <div class="text-form">
+        
+                    <h1>Iniciar sesión</h1>
+        
+                    <span *ngIf="userIncorrect()">
+                        Usuario o contraseña incorrectos. Inténtelo de nuevo.
+                    </span>
+        
+                </div>
+        
+                <div class="inputs-form">
+        
+                    <input  type="email"
+                            name="email"
+                            [(ngModel)]="email"
+                            placeholder="Correo electrónico"
+                            required="required"
+                    />
+        
+        
+                    <input  type="password"
+                            name="password"
+                            [(ngModel)]="password"
+                            placeholder="Contraseña"
+                            required="required"
+                    />
+        
+                    <div class="buttons-form">
+        
+                        <input type="submit"  class="form-login" (click)="login()" value="Iniciar sesión"/>
+        
+                        <button type="submit" class="form-registro" (click)="register()">Registrarme</button>
+        
+                    </div>
+        
+                </div>
+        
+            </form>
+    
         </div>
+    </body>
+    
+</html>
 
-        <div class="inputs-form">
-
-            <input  type="email"
-                    name="email"
-                    [(ngModel)]="email"
-                    placeholder="Correo electrónico"
-                    required="required"
-            />
-
-
-            <input  type="password"
-                    name="password"
-                    [(ngModel)]="password"
-                    placeholder="Contraseña"
-                    required="required"
-            />
-
-            <div class="buttons-form">
-
-                <input type="submit"  class="form-login" (click)="login()" value="Iniciar sesión"/>
-
-                <button type="submit" class="form-registro" (click)="register()">Registrarme</button>
-
-            </div>
-
-        </div>
-
-    </form>
-
-</div>

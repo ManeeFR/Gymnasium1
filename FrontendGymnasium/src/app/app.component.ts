@@ -41,13 +41,28 @@ export class AppComponent {
     }
 
 
-    logueado() {
+    logueado(): boolean {
 
-        if (this.authService.userLogged && this.authService.getToken())
+        if (this.authService.userLogged && this.authService.getToken()) {
+            this.logged = true;
+            console.log(this.logged);
+
             return true;
-         else
+        } else {
+            this.logged = false;
+            console.log(this.logged);   
             return false;
+        }
 
+
+
+
+
+    }
+
+    bgImage(): boolean {
+        console.log(this.logged);
+        return this.logged;
     }
 
 }
