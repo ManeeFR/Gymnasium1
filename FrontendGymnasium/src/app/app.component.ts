@@ -45,12 +45,10 @@ export class AppComponent {
 
         if (this.authService.userLogged && this.authService.getToken()) {
             this.logged = true;
-            console.log(this.logged);
 
             return true;
         } else {
             this.logged = false;
-            console.log(this.logged);   
             return false;
         }
 
@@ -61,7 +59,6 @@ export class AppComponent {
     }
 
     bgImage(): boolean {
-        console.log(this.logged);
         return this.logged;
     }
 

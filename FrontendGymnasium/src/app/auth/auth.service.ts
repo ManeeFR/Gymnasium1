@@ -81,8 +81,6 @@ export class AuthService implements OnInit {
             //     this.setCredentials(user);
 
             // });
-            console.log("resp");
-            console.log(resp);
 
             if (resp.resp != "success") {
                 this.userExists = true;

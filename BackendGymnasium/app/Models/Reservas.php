@@ -18,8 +18,9 @@ class Reservas extends Model
      */
     protected $fillable = [
         'email_user',
-        'id_pista',
+        'id_sala',
+        'deporte',
         'franja',
-        'fecha',
+        'fecha'
     ];
 }

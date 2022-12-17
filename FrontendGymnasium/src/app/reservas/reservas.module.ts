@@ -11,6 +11,7 @@ import { ReservaService } from './reserva-service/reserva.service';
 import { AppComponent } from '../app.component';
 import { ListadoClasesComponent } from './listado-clases/listado-clases.component';
 import { ClasesService } from '../clases/clases-service/clases.service';
+import { ProximasClasesComponent } from './proximas-clases/proximas-clases.component';
 
 
 
@@ -21,7 +22,8 @@ import { ClasesService } from '../clases/clases-service/clases.service';
     ReservaImageComponent,
     ReservaTitleComponent,
     ReservaLayoutComponent,
-    ListadoClasesComponent
+    ListadoClasesComponent,
+    ProximasClasesComponent
   ],
   imports: [
     CommonModule,

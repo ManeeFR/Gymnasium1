@@ -1,12 +1,12 @@
 
 
-export interface Reserva {
-    id?: number;
+export interface ProximaClase {
+    id: number;
     id_sala: number;
-    email_user: string;
     deporte: string;
     franja: string;
+    plazasLibres: number;
+    plazasMaximas: number;
     fecha: Date;
-    aforo?: number;
     iconUrl?: string;
 }

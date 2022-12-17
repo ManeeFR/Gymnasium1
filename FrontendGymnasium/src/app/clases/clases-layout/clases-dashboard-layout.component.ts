@@ -81,20 +81,15 @@ export class ClasesDashboardLayoutComponent implements OnInit {
             this.clasesList = clases;
         });
 
-        let aux = this.clasesList;
+        let aux = [...this.clasesList];
         this.clasesList = [...aux];
 
         if (this.authService.userLogged && this.authService.getToken() !== undefined) {
 
-            console.log("entra");
-
             this.ruta.navigate(["/clases"]);
 
         } else {
-
-            console.log("no entra");
             this.ruta.navigate(["/login"]);
-
         }
 
 

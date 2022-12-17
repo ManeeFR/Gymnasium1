@@ -8,9 +8,9 @@
 }
 
 
-.reservas {
-    max-width: 400px;
-    margin: 50px auto;
+.reservas, .reservasAll {
+    min-width: 60vw;
+    margin: 50px 10vw;
 }
 
 textarea {
@@ -34,6 +34,6 @@ button {
 .reservasLayout {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 
 }

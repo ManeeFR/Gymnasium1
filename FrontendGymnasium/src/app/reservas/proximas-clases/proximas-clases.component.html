@@ -1,0 +1,41 @@
+<div class="proximasClases">
+
+  <div class="proximasClases__deporte">
+
+    <app-reserva-title [title]="clase.deporte"></app-reserva-title>
+
+  </div>
+
+
+  <div class="proximasClases__aforo">
+
+    <div>Plazas libres: {{clase.plazasLibres}} / {{clase.plazasMaximas}}</div>
+
+  </div>
+
+  <div class="proximasClases__sala">
+
+    <div>Sala: {{clase.id_sala}}</div>
+
+  </div>
+
+  <div class="proximasClases__duracion">
+
+    <div>Hora: {{clase.franja}}</div>
+
+  </div>
+
+
+  <!-- <div class="proximasClases__editTitle">
+
+    Editar fecha <input #reservaTitle
+                              [value]="clase.fecha"
+                              (keyup)="onTitleChange(clase.fecha)"
+                               title="title"> -->
+</div>
+
+
+<button (click)="reservar()" class="botonReservar"> Reservar </button>
+
+<!-- <button (click)="onSaveClicked(clase, reservaTitle.value)"> Editar reserva </button> -->
+

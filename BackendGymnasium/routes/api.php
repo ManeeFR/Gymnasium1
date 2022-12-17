@@ -3,6 +3,7 @@
 use App\Http\Controllers\ListadoclasesController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ReservasController;
+use App\Http\Controllers\ProximasReservasController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,5 @@ Route::get('/usuarios/{email}', [UsuarioController::class, 'userByEmail']);
 Route::get('/reservas', [ReservasController::class, 'index']);
 Route::get('/reservas/nextDays', [ReservasController::class, 'showNextDays']);
 Route::post('/reservas', [ReservasController::class, 'store']);
+
+Route::get('/reservas/{deporte}', [ProximasReservasController::class, 'clasesByDeporte']);

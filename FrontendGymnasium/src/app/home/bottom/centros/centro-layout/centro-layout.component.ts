@@ -13,11 +13,11 @@ import { Observable } from 'rxjs/internal/Observable';
     templateUrl: './centro-layout.component.html',
     styleUrls: ['./centro-layout.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [ 
+    providers: [
         { provide: CONFIG_TOKEN, useValue: APP_CONFIG },
         CentrosService
     ],
-    
+
 })
 
 
@@ -28,18 +28,18 @@ export class CentroLayoutComponent implements OnInit {
     centrosCount = CENTROS.filter((x: any) => x).length;
 
 
-    constructor(private centrosService: CentrosService, 
-                @Inject(CONFIG_TOKEN) private config: AppConfig, 
+    constructor(private centrosService: CentrosService,
+                @Inject(CONFIG_TOKEN) private config: AppConfig,
                 private injector: Injector,
                 private ruta: Router) {
     }
 
- 
+
     ngOnInit(): void {
 
 
     }
-   
+
 
     onCentroEdited(centro: Centro): void {
 
@@ -51,18 +51,12 @@ export class CentroLayoutComponent implements OnInit {
     centros(): Centro[] {
 
         this.centrosService.loadCentros().subscribe((centros: any) => {
-
-            console.log('centros');
-            console.log(centros);
             this.centrosList = centros;
-            
+
         });
 
         let aux: Centro[] = this.centrosList;
         this.centrosList = [...aux];
-
-        console.log('this.centrosList');
-        console.log(this.centrosList);
 
         return this.centrosList;
 
@@ -71,7 +65,7 @@ export class CentroLayoutComponent implements OnInit {
         // console.log('this.centrosList$');
         // console.log(this.centrosList$);
         // return this.centrosList$;
-        
+
     }
 
 
@@ -89,6 +83,6 @@ export class CentroLayoutComponent implements OnInit {
                  'background-repeat': 'round'
                };
 
-    } 
+    }
 
-} 
+}

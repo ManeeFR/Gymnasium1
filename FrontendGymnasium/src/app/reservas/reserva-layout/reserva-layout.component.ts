@@ -1,10 +1,11 @@
-import { AfterContentChecked, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { Reserva } from '../reserva-model/reserva.interface';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ReservaService } from '../reserva-service/reserva.service';
 import { ClasesService } from '../../clases/clases-service/clases.service';
 import { Clase } from 'src/app/clases/model/clase.interface';
+import { ProximaClase } from 'src/app/reservas/reserva-model/proximaClase.interface';
 
 
 
@@ -12,7 +13,6 @@ import { Clase } from 'src/app/clases/model/clase.interface';
     selector: 'app-reserva-layout',
     templateUrl: './reserva-layout.component.html',
     styleUrls: ['./reserva-layout.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [
         ReservaService,
         ClasesService
@@ -29,7 +29,7 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
     showReservasUser!: boolean;
 
     reservasList!: Reserva[];
-    reservasListAll!: Reserva[];
+    reservasListAll!: ProximaClase[];
     clasesList!: Clase[];
 
 
@@ -62,16 +62,10 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
         if (this.authService.userLogged && this.authService.getToken() !== undefined) {
 
-            console.log("entra");
-
             this.ruta.navigate(["/reservas"]);
 
         } else {
-
-            console.log("no entra");
-
             this.ruta.navigate(["/login"]);
-
         }
 
         this.showReservasUser = true;
@@ -90,9 +84,9 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         return this.reservasList;
     }
 
-    reservasAll(): Reserva[] {
+    reservasAll(deporte: string): ProximaClase[] {
 
-        this.reservaService.loadReservasAll().subscribe((reservas: any) => {
+        this.reservaService.loadReservasAll(deporte).subscribe((reservas: any) => {
             this.reservasListAll = reservas;
         });
 
@@ -106,7 +100,7 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
     }
 
 
-    validReserva(reserva: Reserva): boolean {
+    validReserva(reserva: Reserva | ProximaClase): boolean {
 
         const date = new Date(reserva.fecha).getDate();
 
@@ -118,10 +112,18 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         return false;
     }
 
-    showReservas() {
+    showNextClasses(deporte: string) {
 
+        this.reservasAll(deporte);
         this.showReservasUser = false;
         this.showReservasAll = true;
+
+    }
+
+    showReservas() {
+
+        this.showReservasUser = true;
+        this.showReservasAll = false;
 
     }
 

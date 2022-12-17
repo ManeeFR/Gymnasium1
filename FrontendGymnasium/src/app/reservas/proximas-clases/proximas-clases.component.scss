@@ -1,0 +1,31 @@
+
+
+.proximasClases {
+
+  margin-bottom: 5vh;
+
+  &__deporte {
+    font-size: 27px;
+    font-weight: bold;
+  }
+
+  &__aforo {
+    max-width: 360px;
+    margin: 0 auto;
+    margin-top: 15px;
+    /* user-select: none; */
+  }
+
+  &__editTitle input {
+    font-size: 20px;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+
+.botonReservar {
+  margin-bottom: 5vh;
+}

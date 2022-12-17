@@ -35,8 +35,6 @@ export class RegisterComponent {
         }
 
         if (!this.authService.userExists) {
-            console.log("this.authService.userExists");
-            console.log(this.authService.userExists);
             // this.login();
         } else {
             this.router.navigateByUrl('register');

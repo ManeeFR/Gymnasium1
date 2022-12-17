@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProximasReservas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Reservas;
@@ -23,12 +24,9 @@ class ReservasController extends Controller
     public function showNextDays(Request $request)
     {
 
-        // ESTO YA FUNCIONA, LO QUE PASA ES QUE NO HAY DATOS EN LA TABLA RESERVAS DE RESERVAS PARA DÍAS FUTUROS
-        // ESTARÍA BIEN CAMBIAR EL ATRIBUTO "FECHA" PARA QUE TAMBIÉN CONTENGA LA HORA, ASÍ SERÁ MÁS FÁCIL AL
-        // MOSTRAR LAS RESERVAS EN ORDEN
         $reservas = Reservas::where('email_user', $request->email)
                             ->where('fecha', '>=', date("Y-m-d"))
-                            ->where('fecha', '<=', date("Y-m-d", strtotime("+5 days")))
+                            ->where('fecha', '<=', date("Y-m-d", strtotime("+15 days")))
                             ->orderBy('fecha','asc')
                             ->get();
 
@@ -39,7 +37,7 @@ class ReservasController extends Controller
     public function create()
     {
         if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
-            // $pistas = Pista::all();
+
             return view('pistas', compact('pistas'));
         } else {
             return redirect()->route('pageError');
@@ -75,30 +73,53 @@ class ReservasController extends Controller
         }
     }
 
+
     // Encargado de almacenar en la BD
     public function store(Request $request)
     {
-        // if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 
-        $consulta = Reservas::where('id_pista', '=', $request->id_pista)->where('franja', '=', $request->franja)->where('fecha', '=', $request->fecha)->get();
+        $consulta = Reservas::where('id_sala', $request->id_sala)
+                            ->where('franja', $request->franja)
+                            ->where('fecha', $request->fecha)
+                            ->get();
 
-        if (count($consulta) == 0) {
-            $reserva = new Reservas();
-            $reserva->email_user = $request->email_user;
-            $reserva->id_pista = $request->id_pista;
-            $reserva->franja = $request->franja;
-            $reserva->fecha = $request->fecha;
 
-            $reserva->save();
-        } else {
-            /**
-             * Aquí habría que poner un route() o algo que indique que esa pista a esa hora y día ya está reservada
-             */
+        if (count($consulta) < $request->aforo) {
+
+            $yaTieneReserva = false;
+            $json = '{"resp":"success"}';
+
+
+
+            // ESTE BUCLE ES PARA QUE NO SE INSERTE DOS RESERVAS IGUALES UN MISMO USUARIO
+
+            // PERO NO FUNCIONA
+            for ($i=0; $i < count($consulta); $i++) {
+
+                if ($consulta[$i]->email_user == $request->email_user) {
+
+                    $yaTieneReserva = true;
+                    $json = '{"resp":"error"}';
+                }
+            }
+
+            if (!$yaTieneReserva) {
+
+                $reserva = new Reservas();
+
+                $reserva->email_user = $request->email_user;
+                $reserva->id_sala = $request->id_sala;
+                $reserva->deporte = $request->deporte;
+                $reserva->franja = urldecode($request->franja);
+                $reserva->fecha = $request->fecha;
+
+                $reserva->save();
+
+                // AQUÍ HABRÍA QUE REDUCIR 1 EL NUMERO DE plazasDisponibles
+
+            }
         }
 
-        // return redirect()->route('contactanos');
-        // } else {
-        // return redirect()->route('pageError');
-        // }
+        return json_decode($json);
     }
 }

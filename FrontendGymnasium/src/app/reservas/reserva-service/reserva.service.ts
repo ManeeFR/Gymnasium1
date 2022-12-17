@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Reserva } from '../reserva-model/reserva.interface';
 import { AuthService } from 'src/app/auth/auth.service';
+import { ProximaClase } from '../reserva-model/proximaClase.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -24,11 +25,14 @@ export class ReservaService {
     QUE RELACIONE LAS TABLAS "CLASES" Y "RESERVAS",
     LUEGO, METERLE DATOS A "PROXIMAS CLASES" Y PINTAR
     LOS DATOS DESDE ESTE MÉTODO:*/
-    loadReservasAll(): Observable<Reserva[]> {
+    loadReservasAll(deporte: string): Observable<ProximaClase[]> {
 
-        const params = new HttpParams().set("page", "1").set("pageSize", "10");
+        const params = new HttpParams();
 
-        return this.http.get<Reserva[]>('http://localhost:8000/api/reservas', { params } );
+        const url = 'http://localhost:8000/api/reservas/' + deporte;
+
+
+        return this.http.get<ProximaClase[]>(url, { params } );
 
     }
 
@@ -36,7 +40,7 @@ export class ReservaService {
 
         const headers = new HttpHeaders().set("X-Auth", "reservaId");
 
-        return this.http.post(`/api/reservas/${reserva.id}`, reserva, { headers } );
+        return this.http.post('http://localhost:8000/api/reservas', reserva, { headers } );
 
     }
 

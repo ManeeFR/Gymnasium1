@@ -21,8 +21,8 @@
                 </ng-container>
 
                 <app-reserva-card [reserva]="reserva"
-                                [cardIndex]="i+1"
-                                (reservaChanged)="onReservaEdited($event)">
+                                  [cardIndex]="i+1"
+                                  (reservaChanged)="onReservaEdited($event)">
 
 
                 </app-reserva-card>
@@ -36,9 +36,11 @@
 
         <div class="reservasAll">
 
+          <button (click)="showReservas()">Volver a mis reservas</button>
+
             <h1>Próximas clases</h1>
 
-            <ng-container *ngFor="let reserva of reservasAll(); index as i; first as isFirst">
+            <ng-container *ngFor="let reserva of reservasListAll; index as i; first as isFirst">
 
                 <ng-container *ngIf="isFirst && tieneReservaHoy()">
 
@@ -52,12 +54,12 @@
 
                 </ng-container>
 
-                <app-reserva-card [reserva]="reserva"
-                                  [cardIndex]="i+1"
-                                  (reservaChanged)="onReservaEdited($event)">
+                <app-proximas-clases [clase]="reserva"
+                                     [cardIndex]="i+1"
+                                     (reservaChanged)="onReservaEdited($event)">
 
 
-                </app-reserva-card>
+                </app-proximas-clases>
 
             </ng-container>
 
@@ -73,7 +75,7 @@
 
             <ng-container *ngIf="validClase(clase)">
 
-                <app-listado-clases [clase]="clase" (click)="showReservas()"></app-listado-clases>
+                <app-listado-clases [clase]="clase" (click)="showNextClasses(clase.deporte)"></app-listado-clases>
 
             </ng-container>
 

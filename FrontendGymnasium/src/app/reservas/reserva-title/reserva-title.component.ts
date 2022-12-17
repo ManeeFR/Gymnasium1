@@ -9,7 +9,7 @@ export class ReservaTitleComponent {
 
   constructor() { }
 
-  @Input() title!: Date;
+  @Input() title!: string;
 
 
 }
