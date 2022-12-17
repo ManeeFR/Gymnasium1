@@ -12,14 +12,6 @@
 
             <ul>
                 <li>
-                    <button type="button" name="ocultas">
-                        <div class="muestraOcultas">
-                            <img src="../../../../../assets/icons/ojito.png" alt="Icono de un ojo">
-                            <p> Mostrar ocultas </p>
-                        </div>
-                    </button>
-                </li>
-                <li>
                     <button type="button" name="filtrar">
                         <div class="muestraFiltro">
                             <p> Filtra resultados </p>
@@ -34,22 +26,22 @@
                 </button>
             </ul>
 
- 
+
         </div>
 
-    </div> 
+    </div>
 
     <div *ngIf="layout=='flex'; else grid" class="claseIndividual__flex">
 
         <article *ngFor="let item of Data['individuales'];" class="claseIndividual__flex__card" style="background-image: url({{item.icon}});">
 
             <div class="claseIndividual__flex__card--menu">
-                <img src="../../../../../assets/icons/puntitosMenu.png" alt="Menú de despliegue"> 
+                <img src="../../../../../assets/icons/puntitosMenu.png" alt="Menú de despliegue">
             </div>
 
             <div class="claseIndividual__flex__card--title">
                 <h5> {{ item.titulo }} </h5>
-                <p>  Sala {{ item.sala }} </p> 
+                <p>  Sala {{ item.sala }} </p>
             </div>
 
             <div class="claseIndividual__flex__card--cantidad">
@@ -58,18 +50,18 @@
                 <!-- <p> Plazas libres: {{ (item.plazasLibres | currency:"EUR":"symbol") }} </p> -->
                 <p> Plazas libres: {{ item.plazasMax - item.plazas }} </p>
             </div>
- 
+
             <div class="claseIndividual__flex__card--movimientos">
                 <img src="../../../../../assets/img/trainerMan.png" alt="Icono de mensaje">
                 <p> {{ item.instructor }} </p>
-            </div> 
+            </div>
 
         </article>
-   
+
     </div>
 
     <ng-template #grid>
- 
+
         <div class="claseIndividual__grid">
 
             <article *ngFor="let item of Data['individuales']; let i = index;" class="claseIndividual__grid__card"

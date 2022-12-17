@@ -24,11 +24,12 @@ nav {
             min-width: 10vh;
             max-width: 100%;
             border-right: solid 1px rgba(217, 217, 217, 0.426);
+            cursor: pointer;
+            :hover {
+                background-color: #0c67ac;
+            }
 
             a {
-                :hover {
-                    background-color: #0c67ac;
-                }
 
                 display: block;
                 width: 100%;
@@ -55,7 +56,7 @@ nav {
             }
 
             &.logo {
-                padding: 0 1vw 0 2vw;
+                // padding: 0 1vw 0 2vw;
 
                 a > i > img {
                     max-width: 55px;
@@ -68,7 +69,7 @@ nav {
                 min-width: 12vw;
                 text-transform: uppercase;
 
-                @media screen and (max-width: 876px) { 
+                @media screen and (max-width: 876px) {
                     display: none;
                 }
 
@@ -88,7 +89,7 @@ nav {
                             margin-top: 1vh;
                         }
 
-                        @media screen and (max-width: 876px) { 
+                        @media screen and (max-width: 876px) {
                             padding-top: 1.4em;
                         }
 
@@ -111,7 +112,7 @@ nav {
                     @media screen and (max-width: 1023px) {
                         min-width: 20vw;
                     }
-                    @media screen and (max-width: 876px) { 
+                    @media screen and (max-width: 876px) {
                         min-width: 40vw;
                     }
                 }
