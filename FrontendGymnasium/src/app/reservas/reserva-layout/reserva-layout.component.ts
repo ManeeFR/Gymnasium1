@@ -71,6 +71,8 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         this.showReservasUser = true;
         this.showReservasAll = false;
 
+
+
     }
 
     onReservaEdited(reserva: Reserva): void {
@@ -88,6 +90,8 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
         this.reservaService.loadReservasAll(deporte).subscribe((reservas: any) => {
             this.reservasListAll = reservas;
+            console.log("this.reservasListAll");
+            console.log(this.reservasListAll);
         });
 
         return this.reservasListAll;
@@ -100,7 +104,16 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
     }
 
 
-    validReserva(reserva: Reserva | ProximaClase): boolean {
+    validReserva(reserva: Reserva | ProximaClase, index?: number): boolean {
+
+      console.log("HOLA");
+      console.log(reserva);
+
+      if (index) {
+
+          reserva.plazasLibres = this.reservasListAll[index].plazasLibres;
+
+      }
 
         const date = new Date(reserva.fecha).getDate();
 

@@ -47,7 +47,7 @@ export class ProximasClasesComponent {
   }
 
 
-  reservar() {
+  reservar(plazasLibres: number) {
 
 
     const reservaClase: Reserva = {
@@ -57,6 +57,7 @@ export class ProximasClasesComponent {
       deporte: this.clase.deporte,
       franja: encodeURI(this.clase.franja),
       fecha: this.clase.fecha,
+      plazasLibres: plazasLibres,
       aforo: this.clase.plazasMaximas
 
     };

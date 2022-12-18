@@ -7,6 +7,7 @@ export interface Reserva {
     deporte: string;
     franja: string;
     fecha: Date;
+    plazasLibres?: number;
     aforo?: number;
     iconUrl?: string;
 }

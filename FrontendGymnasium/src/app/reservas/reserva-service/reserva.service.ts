@@ -44,4 +44,31 @@ export class ReservaService {
 
     }
 
+    deleteReserva(reserva: Reserva): Observable<Object> {
+
+        // const options = { headers: new HttpHeaders().set('Content-type','application/Json') };
+
+        // const miReserva = {
+        //   email_user: 'mane',
+        //   id_sala: 6,
+        //   deporte: 'GAP',
+        //   franja: '19:00 - 20:00',
+        //   fecha: '2022-12-26',
+        // }
+
+        const params = new HttpParams().set("email_user", this.authService.UserEmailSessionStorage)
+                                       .set("id_sala", reserva.id_sala)
+                                       .set("deporte", reserva.deporte)
+                                       .set("franja", reserva.franja)
+                                       .set("plazasLibres", reserva.plazasLibres!)
+                                       .set("fecha", '2022-12-26');
+                                      //  .set("fecha", reserva.fecha.toISOString().split('T')[0]);
+
+                                      //  reserva.fecha.toString() === new Date().toISOString().split('T')[0]
+
+
+        return this.http.delete('http://localhost:8000/api/reservas/' + reserva.id, { params } );
+
+    }
+
 }

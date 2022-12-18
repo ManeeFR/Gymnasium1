@@ -15,15 +15,18 @@
     <div class="reserva-editTitle">
 
         Editar fecha <input #reservaTitle
-                                  [value]="reserva.fecha"
-                                  (keyup)="onTitleChange(reserva.fecha)"
-                                   title="title">
+                            [value]="reserva.fecha"
+                            (keyup)="onTitleChange(reserva.fecha)"
+                             title="title">
     </div>
 
 
     <button (click)="onReservaViewed()"> Ver reserva </button>
 
     <button (click)="onSaveClicked(reserva, reservaTitle.value)"> Editar reserva </button>
+
+    <button (click)="deleteReserva(reserva)" class="botonReservar"> Cancelar reserva </button>
+
 
 </div>
 
