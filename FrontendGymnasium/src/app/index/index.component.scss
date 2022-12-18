@@ -135,13 +135,9 @@ header .top-bar {
   }
 }
 
-// .imagenLogo>img {
-//   height: 20vh;
-
-// }
-
 .btn {
   text-decoration: none !important;
+  min-width: 112px;
 }
 
 @media (min-width:50em) {
