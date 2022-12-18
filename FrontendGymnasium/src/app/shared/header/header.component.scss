@@ -98,8 +98,54 @@ nav {
 
             }
 
-           
+            &.busqueda {
 
+                display: flex;
+
+                @media (max-width:876px) {
+                    display: none;
+                }
+
+                a {
+                    i {
+                        padding: 2vw;
+                        padding-top: 2.8vh;
+
+                        img {
+                            min-width: 2vw;
+
+                           
+                        }
+
+                        @media screen and (max-width: 876px) { 
+                            padding-top: 1.4em;
+                        }
+
+                    }
+                }
+
+                #buscador {
+
+                    display: block;
+                    min-width: 28.6vw;
+                    background-color: transparent;
+                    border: 0;
+                    margin-top: 1.5vh;
+                    outline: none;
+
+                    &::placeholder {
+                        color: #dee1e384;
+                    }
+
+                    @media screen and (max-width: 1023px) {
+                        min-width: 20vw;
+                    }
+                    @media screen and (max-width: 876px) { 
+                        min-width: 40vw;
+                    }
+                }
+
+            }
             &.perfil {
 
                 width: 32.4vw;
