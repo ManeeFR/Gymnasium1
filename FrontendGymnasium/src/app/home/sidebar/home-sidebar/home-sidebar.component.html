@@ -56,20 +56,52 @@
                 </div>
                 <div class="item__plazas">
 
-                        <p> {{ item.plazasLibres }} </p>
+                  <p> <img src="../../../../assets/icons/people.ico"/>{{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }} </p>
 
-                        <p> {{ item.franja }} </p>
+                  <p> {{ item.franja }} </p>
 
-                        <img *ngIf="item.plazasLibres == 0 else libre"
-                                src="../../../../assets/icons/puntitoRojo.png"
-                                alt="Icono de punto rojo">
+                  <img *ngIf="item.plazasLibres == 0 else libre"
+                          src="../../../../assets/icons/puntitoRojo.png"
+                          alt="Icono de punto rojo">
 
-                        <ng-template #libre>
-                                <img src="../../../../assets/icons/puntitoVerde.png"
-                                     alt="Icono de punto verde">
-                        </ng-template>
+                  <ng-template #libre>
+                          <img src="../../../../assets/icons/puntitoVerde.png"
+                               alt="Icono de punto verde">
+                  </ng-template>
 
+          </div>
+        </li>
+
+            </ul>
+
+    </article>
+
+    <article>
+
+        <p class="fecha">{{fecha}}</p>
+
+            <ul>
+
+              <li *ngFor="let item of Data(2);" class="item">
+                <div class="item__texto">
+                        {{ item.deporte }}
                 </div>
+                <div class="item__plazas">
+
+                  <p> <img src="../../../../assets/icons/people.ico"/>{{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }} </p>
+
+                  <p> {{ item.franja }} </p>
+
+                  <img *ngIf="item.plazasLibres == 0 else libre"
+                          src="../../../../assets/icons/puntitoRojo.png"
+                          alt="Icono de punto rojo">
+
+                  <ng-template #libre>
+                          <img src="../../../../assets/icons/puntitoVerde.png"
+                               alt="Icono de punto verde">
+                  </ng-template>
+
+          </div>
         </li>
 
             </ul>

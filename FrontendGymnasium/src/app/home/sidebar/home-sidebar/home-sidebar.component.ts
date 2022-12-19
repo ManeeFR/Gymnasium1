@@ -19,6 +19,8 @@ export class HomeSidebarComponent {
     datos!: ProximaClase[];
     datosMostrados!: any;
 
+    currentDate!: Date;
+
     // private _jsonURL = '../../../assets/data/sidebar.json';
 
     constructor(private http: HttpClient, private reservasService: ReservaService) {
@@ -35,43 +37,99 @@ export class HomeSidebarComponent {
     // }
     public Data(day: number): any {
 
-      console.log("this.datos");
-      console.log(this.datos);
-
       if (day == 0) {
 
         this.fecha = new Date(this.datos[0].fecha).getDate() + 1 + ' / ' + (new Date(this.datos[0].fecha).getMonth() + 1);
 
+        let data: ProximaClase[] = [];
+
+        this.datos.forEach((x: ProximaClase) => {
+
+          if (x.fecha == this.datos[0].fecha) {
+            data.push(x);
+          }
+
+        });
+
+        return data;
+
       }
+
+
+      let cambioEncontrado: boolean = false;
 
 
       if (day == 1) {
 
         this.datos.forEach((clase: any) => {
 
-          if (clase.fecha != this.datos[0].fecha) {
-            this.fecha = new Date(clase.fecha).getDate() + 1 + ' / ' + (new Date(clase.fecha).getMonth() + 1);
-          }
+          if (!cambioEncontrado) {
 
-          // this.datos.filter((x: any) => {
-          //   new Date(x.fecha).getDate() ==
-          // });
+            if (clase.fecha != this.datos[0].fecha) {
+
+              cambioEncontrado = true;
+
+              this.fecha = new Date(clase.fecha).getDate() + 1 + ' / ' + (new Date(clase.fecha).getMonth() + 1);
+
+              this.currentDate = clase.fecha;
+
+              return;
+            }
+
+          }
+        });
+
+
+        let data: ProximaClase[] = [];
+
+        this.datos.forEach((x: ProximaClase) => {
+
+          if (x.fecha == this.currentDate) {
+            data.push(x);
+          }
 
         });
 
+        return data;
+
+
       }
 
-      // if (day == 2) {
+      cambioEncontrado = false;
 
-      //   this.datos.forEach((clase: any) => {
+      if (day == 2) {
 
-      //     if (clase.fecha != this.datos[0].fecha) {
-      //       this.fecha = clase.fecha.getDate() + ' / ' + clase.fecha.getMonth();
-      //     }
+        this.datos.forEach((clase: any) => {
 
-      //   });
+          if (!cambioEncontrado) {
 
-      // }
+            if (clase.fecha != this.currentDate && clase.fecha != this.datos[0].fecha) {
+
+              cambioEncontrado = true;
+
+              this.fecha = new Date(clase.fecha).getDate() + 1 + ' / ' + (new Date(clase.fecha).getMonth() + 1);
+
+              this.currentDate = clase.fecha;
+
+              return;
+            }
+
+          }
+        });
+
+        let data: ProximaClase[] = [];
+
+        this.datos.forEach((x: ProximaClase) => {
+
+          if (x.fecha == this.currentDate) {
+            data.push(x);
+          }
+
+        });
+
+        return data;
+
+      }
 
         return this.datos;
     }
@@ -79,7 +137,7 @@ export class HomeSidebarComponent {
 
     public tieneReservaHoy(): boolean {
 
-      return this.datos.some((reserva: any) => reserva.fecha.toString() === new Date().toISOString().split('T')[0] );
+      return this.datos.some(reserva => reserva.fecha.toString() === new Date().toISOString().split('T')[0] );
 
     }
 

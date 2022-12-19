@@ -10,9 +10,6 @@ import { Router } from '@angular/router';
 
 export class HomeDashboardComponent {
 
-    //   constructor(private ruta: Router) {
-    // this.ruta.navigate(["home"]);
-    //   }
 
     constructor(public authService: AuthService, private router: Router) { }
 
@@ -25,22 +22,11 @@ export class HomeDashboardComponent {
         } else {
 
             this.router.navigate(["login"]);
-            // this.router.navigateByUrl('/login');
 
         }
 
-        // this.getUserLogged();
     }
 
-    // getUserLogged() {
-
-    //     this.authService.getUserAPI(2).subscribe((user: any) => {
-
-    //         console.log(user);
-
-    //     });
-
-    // }
 
 }
 
