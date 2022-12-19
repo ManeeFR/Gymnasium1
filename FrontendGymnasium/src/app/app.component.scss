@@ -1,3 +1,6 @@
+body{
+    overflow-y: hidden;
+}
 .body {
 
     display: flex;
@@ -35,6 +38,7 @@
     }
 
     overflow-x: hidden;
+    
 }
 
 .bgImageForms {
@@ -43,4 +47,6 @@
     background: url(../../src/assets/img/SL_042620_30310_19.jpg);
     background-size: cover;
     background-position: center;
+    
 }
+

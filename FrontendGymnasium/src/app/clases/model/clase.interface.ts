@@ -2,6 +2,7 @@
 
 export interface Clase {
     id: number;
+    sala:number;
     deporte: string;
     imagen: string;
     descripcion: string;
