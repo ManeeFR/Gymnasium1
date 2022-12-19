@@ -26,7 +26,7 @@ class ProximasReservasController extends Controller
 
         $clases = ProximasReservas::where('deporte', $request->deporte)
                                   ->where('fecha', '>=', date("Y-m-d"))
-                                  ->where('fecha', '<=', date("Y-m-d", strtotime("+15 days")))
+                                  ->where('fecha', '<=', date("Y-m-d", strtotime("+30 days")))
                                   ->orderBy('fecha','asc')
                                   ->get();
 
@@ -38,7 +38,7 @@ class ProximasReservasController extends Controller
     {
 
         $reservas = ProximasReservas::where('fecha', '>=', date("Y-m-d"))
-                                    ->where('fecha', '<=', date("Y-m-d", strtotime("+15 days")))
+                                    ->where('fecha', '<=', date("Y-m-d", strtotime("+30 days")))
                                     ->orderBy('fecha','asc')
                                     ->get();
 

@@ -26,7 +26,7 @@ class ReservasController extends Controller
 
         $reservas = Reservas::where('email_user', $request->email)
                             ->where('fecha', '>=', date("Y-m-d"))
-                            ->where('fecha', '<=', date("Y-m-d", strtotime("+15 days")))
+                            ->where('fecha', '<=', date("Y-m-d", strtotime("+30 days")))
                             ->orderBy('fecha','asc')
                             ->get();
 
