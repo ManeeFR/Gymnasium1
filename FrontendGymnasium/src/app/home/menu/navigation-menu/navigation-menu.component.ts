@@ -35,27 +35,4 @@ export class NavigationMenuComponent {
     }
 
 
-    // visitPage(url: string) {
-    //     this.router.navigate(['home/financiacion']);
-    // }
-
-
-    // goPlaces() {
-    // this.router.navigate(['financiacion'])
-    //     .then(nav => {
-    //         console.log(nav); // true if navigation is successful
-    //     }, err => {
-    //         console.log(err) // when there's an error
-    //     });
-    // }
-
-
-    // mostrarPagina(ruta: string) {
-
-    //     // this.router.navigate([ruta]);
-
-    //     this.router.navigate([]).then(result => { window.open(`/financiacion`); });
-
-    // }
-
 }

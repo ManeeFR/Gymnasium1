@@ -8,11 +8,5 @@ import { Component } from '@angular/core';
 })
 export class BottomLayoutComponent {
 
-    // constructor(private router: Router) {
 
-
-    //     // this.router.navigate(["cobros"]);
-    //     // router.navigateByUrl('home/financiacion');
-
-    // }
 }

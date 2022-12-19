@@ -16,6 +16,19 @@ export class LoginComponent implements OnInit {
 
     constructor(public authService: AuthService, public router: Router) {
 
+      if (this.authService.UserEmailSessionStorage && this.authService.getToken() !== undefined) {
+
+        console.log("entra");
+
+        this.router.navigate(["/home/clases"]);
+
+      } else {
+
+          console.log("no entra");
+          this.router.navigate(["/login"]);
+
+      }
+
     }
 
 

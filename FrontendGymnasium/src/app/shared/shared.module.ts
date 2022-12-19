@@ -7,6 +7,7 @@ import { EurosPipe } from './pipes/euros.pipe';
 import { SaludoPipe } from './pipes/saludo.pipe';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     FooterComponent,
     EurosPipe,
-    SaludoPipe
+    SaludoPipe,
+    ErrorPageComponent
   ],
   imports: [
     CommonModule,

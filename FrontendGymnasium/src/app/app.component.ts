@@ -17,10 +17,10 @@ export class AppComponent {
 
     constructor(private ruta: Router, private authService: AuthService) {
 
-      if (this.authService.UserEmailSessionStorage && this.authService.getToken()) {
+        if (this.authService.UserEmailSessionStorage && this.authService.getToken()) {
 
             this.logged = true;
-            // this.ruta.navigate(["home/clases"]);
+            this.ruta.navigate(["home/clases"]);
 
         } else {
 
