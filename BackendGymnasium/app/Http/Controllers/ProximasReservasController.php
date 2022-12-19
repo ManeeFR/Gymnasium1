@@ -33,4 +33,17 @@ class ProximasReservasController extends Controller
         return response()->json($clases, 200);
     }
 
+
+    public function showNextDaysAll()
+    {
+
+        $reservas = ProximasReservas::where('fecha', '>=', date("Y-m-d"))
+                                    ->where('fecha', '<=', date("Y-m-d", strtotime("+15 days")))
+                                    ->orderBy('fecha','asc')
+                                    ->get();
+
+        return response()->json($reservas, 200);
+    }
+
+
 }

@@ -1,13 +1,7 @@
 
-<div class="demo">
-
-    <button> Editar lista de centros </button>
-
-</div>
-
 
 <div class="centros" *ngIf="centros">
-    
+
     <ng-container *ngFor="let centro of centros(); index as i;">
 
         <ng-container *ngIf="validClass(centro) === true">
@@ -19,8 +13,8 @@
 
                 <ng-template #noImage let-centroName="name">
 
-                    <p [style]="{'color': !centro.imagen ? 'gray' : ''}"> 
-                        {{ centroName }} has no image yet. 
+                    <p [style]="{'color': !centro.imagen ? 'gray' : ''}">
+                        {{ centroName }} has no image yet.
                     </p>
 
                     <img src="../assets/empty-image.png" alt="Not available image">

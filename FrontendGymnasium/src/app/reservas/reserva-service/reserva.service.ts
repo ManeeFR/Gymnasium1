@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Reserva } from '../reserva-model/reserva.interface';
 import { AuthService } from 'src/app/auth/auth.service';
 import { ProximaClase } from '../reserva-model/proximaClase.interface';
+import { urlencoded } from 'express';
 
 @Injectable({
     providedIn: 'root'
@@ -36,6 +37,19 @@ export class ReservaService {
 
     }
 
+
+    loadReservasSidebar(): Observable<ProximaClase[]> {
+
+        const params = new HttpParams();
+
+        const url = 'http://localhost:8000/api/clasestrimestre/sidebar';
+
+
+        return this.http.get<ProximaClase[]>(url);
+
+    }
+
+
     saveReserva(reserva: Reserva): Observable<Object> {
 
         const headers = new HttpHeaders().set("X-Auth", "reservaId");
@@ -56,15 +70,15 @@ export class ReservaService {
         //   fecha: '2022-12-26',
         // }
 
+        console.log("reserva111");
+        console.log(reserva);
+
         const params = new HttpParams().set("email_user", this.authService.UserEmailSessionStorage)
                                        .set("id_sala", reserva.id_sala)
                                        .set("deporte", reserva.deporte)
                                        .set("franja", reserva.franja)
                                        .set("plazasLibres", reserva.plazasLibres!)
-                                       .set("fecha", '2022-12-26');
-                                      //  .set("fecha", reserva.fecha.toISOString().split('T')[0]);
-
-                                      //  reserva.fecha.toString() === new Date().toISOString().split('T')[0]
+                                       .set("fecha", new Date(reserva.fecha).toISOString().split('T')[0]);
 
 
         return this.http.delete('http://localhost:8000/api/reservas/' + reserva.id, { params } );

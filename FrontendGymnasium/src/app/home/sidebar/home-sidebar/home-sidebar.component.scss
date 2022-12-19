@@ -22,23 +22,24 @@
             list-style: none;
             padding: 0;
 
-            li.pago {
+            li.item {
 
                 display: flex;
                 justify-content: space-between;
                 margin-right: 1vw;
                 border-bottom: solid 1px #b9bcbe96;
 
-                .pago__texto {
+                .item__texto {
                     padding: 1vh 0;
                     padding-bottom: 0;
                 }
-                
-                .pago__cantidad {
+
+                .item__plazas {
                     display: flex;
                     flex-direction: row;
 
                     padding-top: 1vh;
+                    gap: 2vw;
 
                     p {
                         margin-bottom: 0;

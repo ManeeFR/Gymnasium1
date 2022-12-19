@@ -9,5 +9,5 @@ export interface Reserva {
     fecha: Date;
     plazasLibres?: number;
     aforo?: number;
-    iconUrl?: string;
+    imagen?: string;
 }

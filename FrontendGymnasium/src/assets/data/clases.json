@@ -8,7 +8,7 @@
             "plazas": 1,
             "plazasMax": 2,
             "instructor": "Manuel Fernández",
-            "icon": "../../../../../assets/img/boxeoIcon.png"
+            "icon": "../../../../../assets/img/Boxeo.png"
         },
         {
             "titulo": "CrossFit",
@@ -18,7 +18,7 @@
             "plazas": 4,
             "plazasMax": 10,
             "instructor": "Manuel Fernández",
-            "icon": "../../../../../assets/img/crossFit.jpeg"
+            "icon": "../../../../../assets/img/CrossFit.png"
         },
         {
             "titulo": "Personal training",
@@ -40,7 +40,7 @@
             "plazas": 5,
             "plazasMax": 20,
             "instructor": "Manuel Fernández",
-            "icon": "../../../../../assets/img/crossFit.jpeg"
+            "icon": "../../../../../assets/img/CrossFit.png"
         },
         {
             "titulo": "Halterofilia",
@@ -60,7 +60,7 @@
             "plazas": 5,
             "plazasMax": 12,
             "instructor": "Manuel Fernández",
-            "icon": "../../../../../assets/img/boxeoIcon.png"
+            "icon": "../../../../../assets/img/Boxeo.png"
         },
         {
             "titulo": "CrossFit",
@@ -70,7 +70,7 @@
             "plazas": 5,
             "plazasMax": 20,
             "instructor": "Manuel Fernández",
-            "icon": "../../../../../assets/img/crossFit.jpeg"
+            "icon": "../../../../../assets/img/CrossFit.png"
         },
         {
             "titulo": "Boxeo",
@@ -80,7 +80,7 @@
             "plazas": 5,
             "plazasMax": 12,
             "instructor": "Manuel Fernández",
-            "icon": "../../../../../assets/img/boxeoIcon.png"
+            "icon": "../../../../../assets/img/Boxeo.png"
         },
         {
             "titulo": "Halterofilia",
@@ -100,7 +100,7 @@
             "plazas": 5,
             "plazasMax": 12,
             "instructor": "Manuel Fernández",
-            "icon": "../../../../../assets/img/boxeoIcon.png"
+            "icon": "../../../../../assets/img/Boxeo.png"
         }
     ]
 }

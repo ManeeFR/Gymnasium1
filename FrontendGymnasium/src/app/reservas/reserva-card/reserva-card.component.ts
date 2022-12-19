@@ -14,8 +14,6 @@ export class ReservaCardComponent {
 
     @Input() reserva!: Reserva;
 
-    @Input() cardIndex!: number;
-
     @Output('reservaChanged') reservaEditEmitter = new EventEmitter<Reserva>();
 
 
@@ -30,7 +28,7 @@ export class ReservaCardComponent {
 
 
     isImageVisible(reserva: Reserva): boolean {
-        if (reserva && reserva.iconUrl)
+        if (reserva && reserva.imagen)
             return true;
         return false;
     }

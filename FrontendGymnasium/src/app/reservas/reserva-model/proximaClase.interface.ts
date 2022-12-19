@@ -8,5 +8,5 @@ export interface ProximaClase {
     plazasLibres: number;
     plazasMaximas: number;
     fecha: Date;
-    iconUrl?: string;
+    imagen: string;
 }

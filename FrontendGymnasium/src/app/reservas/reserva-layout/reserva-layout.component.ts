@@ -83,14 +83,34 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
     reservas(): Reserva[] {
 
+      this.reservasList.forEach((reserva: any) => {
+        reserva.imagen = 'assets/img/' + reserva.deporte + '.png';
+      });
+
         return this.reservasList;
     }
 
     reservasAll(deporte: string): ProximaClase[] {
 
         this.reservaService.loadReservasAll(deporte).subscribe((reservas: any) => {
+
             this.reservasListAll = reservas;
-            console.log("this.reservasListAll");
+
+            this.clasesList.forEach((clase: any) => {
+
+              if (clase.deporte === deporte) {
+
+                this.reservasListAll.forEach((reserva: any) => {
+
+                  reserva.imagen = clase.imagen;
+
+                });
+
+              }
+
+            });
+
+            console.log("this.reservasListAll98");
             console.log(this.reservasListAll);
         });
 
@@ -104,16 +124,7 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
     }
 
 
-    validReserva(reserva: Reserva | ProximaClase, index?: number): boolean {
-
-      console.log("HOLA");
-      console.log(reserva);
-
-      if (index) {
-
-          reserva.plazasLibres = this.reservasListAll[index].plazasLibres;
-
-      }
+    validReserva(reserva: Reserva | ProximaClase): boolean {
 
         const date = new Date(reserva.fecha).getDate();
 
@@ -156,13 +167,23 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         return true;
     }
 
-
-    concreteStyles(url: string) {
-
-        return { 'background-image': 'url(' + url + ')',
-                 'background-size': 'cover',
-                 'background-repeat': 'round'
-               };
+    bgStyles(url: string | undefined) {
+      console.log("url33");
+      console.log(url);
+      return {
+        'background-image': 'url(' + url + ')',
+        'background-size': 'cover',
+        'background-repeat': 'round'
+      };
     }
+
+
+    // concreteStyles(url: string) {
+
+    //     return { 'background-image': 'url(' + url + ')',
+    //              'background-size': 'cover',
+    //              'background-repeat': 'round'
+    //            };
+    // }
 
 }

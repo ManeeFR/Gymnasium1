@@ -35,7 +35,9 @@ Route::get('/usuarios/{email}', [UsuarioController::class, 'userByEmail']);
 
 Route::get('/reservas', [ReservasController::class, 'index']);
 Route::get('/reservas/nextDays', [ReservasController::class, 'showNextDays']);
+
 Route::post('/reservas', [ReservasController::class, 'store']);
 Route::delete('/reservas/{id}', [ReservasController::class, 'delete']);
 
+Route::get('/clasestrimestre/sidebar', [ProximasReservasController::class, 'showNextDaysAll']);
 Route::get('/reservas/{deporte}', [ProximasReservasController::class, 'clasesByDeporte']);

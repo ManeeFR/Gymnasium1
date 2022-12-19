@@ -15,8 +15,6 @@ export class ProximasClasesComponent {
 
   @Input() clase!: ProximaClase;
 
-  @Input() cardIndex!: number;
-
   @Output('reservaChanged') reservaEditEmitter = new EventEmitter<Reserva>();
 
 
@@ -31,7 +29,7 @@ export class ProximasClasesComponent {
 
 
   isImageVisible(reserva: Reserva): boolean {
-    if (reserva && reserva.iconUrl)
+    if (reserva && reserva.imagen)
       return true;
     return false;
   }
@@ -72,7 +70,14 @@ export class ProximasClasesComponent {
 
   }
 
-
+  bgStyles(url: string) {
+    return {
+      'background-image': 'url(' + url + ')',
+      'background-size': 'cover',
+      'background-repeat': 'round'
+    };
+    // return { 'background': 'url(../assets/img/Boxeo.png)' };
+  }
 
 }
 

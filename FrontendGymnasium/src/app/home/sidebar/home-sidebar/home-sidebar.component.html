@@ -4,27 +4,37 @@
 
     <article>
 
-        <!-- TO DO: Hacer que la fecha se muestre bien siempre -->
-            <p class="fecha"> {{ fecha }} NOV </p>
+            <ng-container *ngIf="tieneReservaHoy() else notToday">
+
+              <p class="fecha">Hoy</p>
+
+            </ng-container>
+
+            <ng-template #notToday>
+
+              <p class="fecha">{{fecha}}</p>
+
+            </ng-template>
 
             <ul>
 
-                    <li *ngFor="let item of Data['actividad'].hoy;" class="pago">
-                            <div class="pago__texto">
-                                    {{ item.titulo }}
+                    <li *ngFor="let item of Data(0);" class="item">
+                            <div class="item__texto">
+                                    {{ item.deporte }}
                             </div>
-                            <div class="pago__cantidad">
+                            <div class="item__plazas">
 
-                                    <!-- <p> {{ (item.cantidad | currency:"EUR":"symbol") | euros }} </p> -->
-                                    <p> {{ item.cantidad }} </p>
-                                    
-                                    <img *ngIf="!item.individual else grupal"
+                                    <p> <img src="../../../../assets/icons/people.ico"/>{{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }} </p>
+
+                                    <p> {{ item.franja }} </p>
+
+                                    <img *ngIf="item.plazasLibres == 0 else libre"
                                             src="../../../../assets/icons/puntitoRojo.png"
                                             alt="Icono de punto rojo">
 
-                                    <ng-template #grupal>
+                                    <ng-template #libre>
                                             <img src="../../../../assets/icons/puntitoVerde.png"
-                                                    alt="Icono de punto verde">
+                                                 alt="Icono de punto verde">
                                     </ng-template>
 
                             </div>
@@ -36,30 +46,31 @@
 
     <article>
 
-            <p class="fecha"> {{ fecha + 1 }} NOV </p>
+        <p class="fecha">{{fecha}}</p>
 
             <ul>
 
-                    <li *ngFor="let item of Data['actividad'].ayer;" class="pago">
-                            <div class="pago__texto">
-                                    {{ item.titulo }}
-                            </div>
-                            <div class="pago__cantidad">
+              <li *ngFor="let item of Data(1);" class="item">
+                <div class="item__texto">
+                        {{ item.deporte }}
+                </div>
+                <div class="item__plazas">
 
-                                    <!-- <p> {{ (item.cantidad | currency:"EUR":"symbol") | euros }} </p> -->
-                                    <p> {{ item.cantidad }} </p>
-                                    
-                                    <img *ngIf="!item.individual else grupal"
-                                            src="../../../../assets/icons/puntitoRojo.png"
-                                            alt="Icono de punto rojo">
+                        <p> {{ item.plazasLibres }} </p>
 
-                                    <ng-template #grupal>
-                                            <img src="../../../../assets/icons/puntitoVerde.png"
-                                                    alt="Icono de punto verde">
-                                    </ng-template>
+                        <p> {{ item.franja }} </p>
 
-                            </div>
-                    </li>
+                        <img *ngIf="item.plazasLibres == 0 else libre"
+                                src="../../../../assets/icons/puntitoRojo.png"
+                                alt="Icono de punto rojo">
+
+                        <ng-template #libre>
+                                <img src="../../../../assets/icons/puntitoVerde.png"
+                                     alt="Icono de punto verde">
+                        </ng-template>
+
+                </div>
+        </li>
 
             </ul>
 
@@ -74,7 +85,6 @@
 
     <article>
 
-            <!-- CAMBIAR ESTO POR CSS Y DATOS DEL JSON "sidebar.json" -->
             <img src="../../../../assets/icons/compraPC.png" alt="Imagen de anuncio de PC">
 
     </article>

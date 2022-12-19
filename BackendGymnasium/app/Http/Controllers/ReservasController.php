@@ -34,15 +34,19 @@ class ReservasController extends Controller
     }
 
 
-    public function create()
-    {
-        if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 
-            return view('pistas', compact('pistas'));
-        } else {
-            return redirect()->route('pageError');
-        }
-    }
+
+
+
+    // public function create()
+    // {
+    //     if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
+
+    //         return view('pistas', compact('pistas'));
+    //     } else {
+    //         return redirect()->route('pageError');
+    //     }
+    // }
 
 
     // public function show($id)
@@ -83,7 +87,7 @@ class ReservasController extends Controller
                             ->get();
 
 
-        if (count($consulta) < $request->aforo) {
+        if (count($consulta) < $request->aforo && $request->plazasLibres > 0) {
 
             $yaTieneReserva = false;
             $json = '{"resp":"success"}';
@@ -112,11 +116,10 @@ class ReservasController extends Controller
                 $reserva->save();
 
                 ProximasReservas::where('id_sala', $request->id_sala)
-                                                   ->where('franja', urldecode($request->franja))
-                                                   ->where('fecha', $request->fecha)
-                                                   ->update([ 'plazasLibres' => ($request->plazasLibres - 1) ]);
+                                ->where('franja', urldecode($request->franja))
+                                ->where('fecha', $request->fecha)
+                                ->update([ 'plazasLibres' => ($request->plazasLibres - 1) ]);
 
-                $json = '{"resp":"success"}';
             }
 
         } else {
@@ -128,35 +131,20 @@ class ReservasController extends Controller
 
 
 
-
     public function delete(Request $request, $id)
     {
 
         Reservas::find($id)->delete();
 
-        ProximasReservas::where('id_sala', $request->id_sala)
-                                    ->where('franja', urldecode($request->franja))
-                                    ->where('fecha', $request->fecha)
-                                    ->update([ 'plazasLibres' => (intval($request->plazasLibres) + 1) ]);
+        $registro = ProximasReservas::where('id_sala', '=', $request->id_sala)
+                                                  ->where('franja', '=', urldecode($request->franja))
+                                                  ->where('fecha', '=', $request->fecha)
+                                                  ->first();
+        $registro->plazasLibres += 1;
 
-
-        // $reserva = new ProximasReservas();
-
-        // $reserva->id_sala = $request->id_sala;
-        // $reserva->deporte = $request->deporte;
-        // $reserva->franja = urldecode($request->franja);
-        // $reserva->fecha = $request->fecha;
-        // $reserva->plazasLibres = count($consulta);
-        // $reserva->plazasMaximas = 10;
-
-        // $reserva->save();
+        $registro->update();
 
         return json_decode('{"resp":"success"}');
     }
-
-
-
-
-
 
 }

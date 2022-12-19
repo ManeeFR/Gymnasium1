@@ -121,7 +121,7 @@ export class ClasesComponent implements OnInit, AfterContentChecked {
         //     id: 9,
         //     description: 'Angular Architecture Course',
         //     longDescription: "Learn the core RxJs Observable Pattern as well and many other Design Patterns for building Reactive Angular Applications.",
-        //     iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png',
+        //     imagen: 'https://s3-us-west-1.amazonaws.com/angular-academy/blog/images/rxjs-reactive-patterns-small.png',
         //     category: 'BEGINNER'
         // });
 
