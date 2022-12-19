@@ -1,6 +1,6 @@
 
 
-<div  class="body" >
+<div  class="body"  >
 
     <header *ngIf="logueado()">
 
@@ -9,7 +9,7 @@
     </header>
 
 
-    <main [ngClass]="logueado() ? 'bgImageHome' : 'bgImageForms'">
+    <main [ngClass]="logueado() ? 'bgImageHome' : 'bgImageForms'" >
 
         <router-outlet></router-outlet>
 

@@ -1,3 +1,6 @@
+body{
+    overflow-y: hidden;
+}
 .body {
 
     display: flex;
@@ -35,6 +38,7 @@
     }
 
     overflow-x: hidden;
+    
 }
 
 .bgImageForms {
@@ -47,3 +51,4 @@
     height: 99.8vh;
     max-height: 99.8vh;
 }
+

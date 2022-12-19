@@ -1,6 +1,43 @@
-<div class="clase-card">
+<!-- <div class="clase-card"> -->
 
-    <div class="clase-title" [style]="{'color': !clase.imagen ? 'gray' : ''}">
+    <!-- <div class="card" style="width: 100%;">
+        <img class="card-img-top" src="{{clase.imagen}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{clase.deporte}}</h5>
+          <p class="card-text"> {{clase.descripcion}}  </p>
+          <p class="card-text"> Instructor: {{clase.instructor}}  </p>
+          <p class="card-text"> Sala: {{clase.sala}} </p>
+          <p class="card-text"> Aforo máximo: {{clase.aforo}} personas  </p>
+          <p class="card-text"> Duración: {{clase.duracion}} minutos  </p>
+        </div>
+      </div> -->
+
+      <div class="example-1 card">
+        <div class="wrapper">
+          <div class="date">
+            <span class="day">12</span>
+            <span class="month">Aug</span>
+            <span class="year">2016</span>
+          </div>
+          <div class="data">
+            <div class="content">
+              <span class="author">Instructor: {{clase.instructor}}</span>
+              <h1 class="title">{{clase.deporte}}</h1>
+              <p class="text">{{clase.descripcion}}</p>
+              <label for="show-menu" class="menu-button"><span></span></label>
+            </div>
+            <input type="checkbox" id="show-menu" />
+            <ul class="menu-content">
+              <li>
+                <a href="#" class="fa fa-bookmark-o"></a>
+              </li>
+              <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
+              <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <!-- <div class="clase-title" [style]="{'color': !clase.imagen ? 'gray' : ''}">
         <clase-title [title]="clase.deporte"></clase-title>
     </div>
 
@@ -14,9 +51,9 @@
 
 
 
-    <ng-content select=".clase-nombre"></ng-content>
+    <ng-content select=".clase-nombre"></ng-content> -->
 
-    <div class="clase-editTitle">
+    <!-- <div class="clase-editTitle">
 
         Editar título <input #claseTitle
                                   [value]="clase.deporte"
@@ -27,7 +64,10 @@
 
     <button (click)="onClaseViewed()"> Ver clase </button>
 
-    <button (click)="onSaveClicked(claseTitle.value)"> Editar clase </button>
+    <button (click)="onSaveClicked(claseTitle.value)"> Editar clase </button> -->
 
-</div>
+<!-- </div> -->
+
+
+
 
