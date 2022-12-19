@@ -14,7 +14,7 @@ export class ClasesService {
 
     loadClases(): Observable<Clase[]> {
 
-        const params = new HttpParams().set("page", "1").set("pageSize", "10");
+        const params = new HttpParams().set("page", "1").set("pageSize", "20");
 
         return this.http.get<Clase[]>('http://localhost:8000/api/clases', { params } );
 

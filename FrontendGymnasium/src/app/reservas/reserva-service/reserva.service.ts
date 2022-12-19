@@ -17,7 +17,7 @@ export class ReservaService {
 
     loadReservas(): Observable<Reserva[]> {
 
-        const params = new HttpParams().set("page", "1").set("pageSize", "10").set("email", this.authService.UserEmailSessionStorage);
+        const params = new HttpParams().set("page", "1").set("pageSize", "20").set("email", this.authService.UserEmailSessionStorage);
 
         return this.http.get<Reserva[]>('http://localhost:8000/api/reservas/nextDays', { params } );
 
