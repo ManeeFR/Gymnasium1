@@ -110,7 +110,7 @@ export class AuthService implements OnInit {
 
     setToken(token: string) {
 
-        this.cookies.set("token", token);
+        this.cookies.set("token", token, 1);
 
     }
 

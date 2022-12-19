@@ -15,12 +15,17 @@ export class HomeDashboardComponent {
 
     ngOnInit() {
 
-        if (this.authService.userLogged && this.authService.getToken() !== undefined) {
+        if (this.authService.UserEmailSessionStorage && this.authService.getToken() !== undefined) {
 
-            this.router.navigate(["/home/clases"]);
+          console.log("entro");
+
+          this.router.navigate(["/home/clases"]);
 
         } else {
 
+          console.log("no entro");
+          console.log(this.authService.userLogged);
+          console.log(this.authService.getToken());
             this.router.navigate(["login"]);
 
         }

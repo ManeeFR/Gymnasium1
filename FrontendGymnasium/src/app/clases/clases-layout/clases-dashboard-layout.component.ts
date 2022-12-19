@@ -84,7 +84,7 @@ export class ClasesDashboardLayoutComponent implements OnInit {
         let aux = [...this.clasesList];
         this.clasesList = [...aux];
 
-        if (this.authService.userLogged && this.authService.getToken() !== undefined) {
+        if (this.authService.UserEmailSessionStorage && this.authService.getToken() !== undefined) {
 
             this.ruta.navigate(["/clases"]);
 

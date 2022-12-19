@@ -17,24 +17,14 @@ export class AppComponent {
 
     constructor(private ruta: Router, private authService: AuthService) {
 
-        if (authService.userLogged && authService.getToken()) {
+      if (this.authService.UserEmailSessionStorage && this.authService.getToken()) {
 
             this.logged = true;
-            this.ruta.navigate(["home/clases"]);
+            // this.ruta.navigate(["home/clases"]);
 
         } else {
 
             this.logged = false;
-
-            // if (this.authService.iniciado) {
-
-            //     // this.ruta.navigate(["login"]);
-
-            // } else {
-
-            //     // this.ruta.navigate([""]);
-
-            // }
 
         }
 
@@ -43,7 +33,7 @@ export class AppComponent {
 
     logueado(): boolean {
 
-        if (this.authService.userLogged && this.authService.getToken()) {
+        if (this.authService.UserEmailSessionStorage && this.authService.getToken()) {
             this.logged = true;
 
             return true;

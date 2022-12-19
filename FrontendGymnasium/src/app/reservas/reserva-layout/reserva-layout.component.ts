@@ -60,7 +60,7 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         });
 
 
-        if (this.authService.userLogged && this.authService.getToken() !== undefined) {
+        if (this.authService.UserEmailSessionStorage && this.authService.getToken() !== undefined) {
 
             this.ruta.navigate(["/reservas"]);
 
