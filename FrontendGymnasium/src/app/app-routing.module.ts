@@ -21,7 +21,7 @@ const routes: Routes = [
 
     { path: "", component: IndexComponent, pathMatch: "full" },
 
-    { path: "index", component: IndexComponent, pathMatch: "full" },
+    // { path: "index", component: IndexComponent, pathMatch: "full" },
 
     { path: "login", component: LoginComponent, pathMatch: "full" },
 

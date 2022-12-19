@@ -20,7 +20,7 @@ export class IndexComponent implements OnInit {
     } else {
 
         console.log("no entra");
-        this.router.navigate(["/index"]);
+        this.router.navigate(["/"]);
 
     }
 
