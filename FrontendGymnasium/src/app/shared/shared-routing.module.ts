@@ -6,11 +6,11 @@ import { HomeDashboardComponent } from '../home/home-dashboard.component';
 
 const routes: Routes = [
 
-    {
-        path: 'home/clases',
-        // pathMatch: 'full',
-        component: HomeDashboardComponent
-    }
+    // {
+    //     path: 'home/clases',
+    //     // pathMatch: 'full',
+    //     component: HomeDashboardComponent
+    // }
 
 ];
 
