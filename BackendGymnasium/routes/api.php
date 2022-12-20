@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CentrosController;
 use App\Http\Controllers\ListadoclasesController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ReservasController;
@@ -41,3 +42,6 @@ Route::delete('/reservas/{id}', [ReservasController::class, 'delete']);
 
 Route::get('/clasestrimestre/sidebar', [ProximasReservasController::class, 'showNextDaysAll']);
 Route::get('/reservas/{deporte}', [ProximasReservasController::class, 'clasesByDeporte']);
+
+Route::get('/centros', [CentrosController::class, 'index']);
+

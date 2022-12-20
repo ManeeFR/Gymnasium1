@@ -3,7 +3,12 @@ export interface Centro {
     poblacion: string,
     provincia: string,
     metrosCuadrados: number,
-    nombre: string,
+    gerente: string,
     mensualidad: number,
-    imagen: string
+    imagen: string,
+    anyoFundacion: number,
+    direccion: string,
+    telefono: number,
+    
+
 }

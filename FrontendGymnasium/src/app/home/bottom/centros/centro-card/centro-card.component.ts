@@ -1,5 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, Output, TemplateRef, Attribute, ChangeDetectionStrategy } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 import { Centro } from '../centro-model/centro.interface';
+import { CentrosService } from '../centro-services/centros.service';
 
 @Component({
     selector: 'app-centro-card',
@@ -20,15 +22,27 @@ export class CentroCardComponent {
 
     @Output('centroChanged') centroEditEmitter = new EventEmitter<Centro>();
     
+    idCard!: string;
+
     // @Output('descriptionChanged') descriptionEditEmitter = new EventEmitter<Course>();
     
     // @ViewChild('courseDescription') courseDescription: ElementRef;
 
-    categories: string[] = ['BEGINNER', 'INTERMEDIATE', 'ADVANCED'];
+    // categories: string[] = ['BEGINNER', 'INTERMEDIATE', 'ADVANCED'];
 
 
+    ngOnInit(): void {
+        this.idCard = "show-menu" + this.cardIndex;
     
-    constructor(@Attribute('type') private type: string) {
+        console.log(this.cardIndex);
+        console.log(this.idCard);
+
+        
+      }
+    
+      
+    
+    constructor(@Attribute('type') private type: string, private centrosService: CentrosService ) {
 
     }
 
@@ -75,14 +89,14 @@ export class CentroCardComponent {
     }
 
 
-    onNombreChange(newNombre: string): void {
-        this.centro.nombre = newNombre;
-    }
+    // onNombreChange(newNombre: string): void {
+    //     this.centro.nombre = newNombre;
+    // }
 
 
-    onSaveClicked(nombre: string): void {
-        this.centroEditEmitter.emit({...this.centro, nombre});
-    }
+    // onSaveClicked(nombre: string): void {
+    //     this.centroEditEmitter.emit({...this.centro, nombre});
+    // }
 
 
 }

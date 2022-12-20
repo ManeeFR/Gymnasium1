@@ -3,21 +3,20 @@
     <div class="example-1 card">
         <div class="wrapper" style="background: url({{centro.imagen}});">
           <div class="date">
-            <span class="day">titulo</span>
+            <span class="day">{{centro.poblacion}}, {{centro.provincia}}</span>
           </div>
           <div class="data">
             <div class="content">
-              <span class="author"><img src="../../../assets/img/trainerMan.png" alt="Icono de instructor"> instructor</span>
-              <p class="text">descripcion sdbsjfbsjhfbsjfsef wf webfiuwehffuiwf wefwehfuifsdkbejfbjhvbf wefbwelufweibcsd cwefbslduvbwleihfwcwe fwbfwliufb</p>
+              <p class="text">Gerente: {{centro.gerente}}</p>
+              <p class="text">Mensualidad: {{centro.mensualidad}}€</p>
+              <p class="text">Desde {{centro.anyoFundacion}}</p>
               <label for="{{idCard}}" class="menu-button"><span></span></label>
             </div>
             <input type="checkbox" id="{{idCard}}" />
             <ul class="menu-content">
-              <li>
-                <a href="#" class="fa fa-bookmark-o">Sala</a>
-              </li>
-              <li><a href="#" class="fa fa-heart-o"><span> personas</span></a></li>
-              <li><a href="#" class="fa fa-comment-o"><span> minutos</span></a></li>
+              <li><a href="#" class="fa fa-bookmark-o">{{centro.direccion}}</a></li>
+              <li><a href="#" class="fa fa-heart-o"><span> {{centro.telefono}}</span></a></li>
+              <li><a href="#" class="fa fa-comment-o"><span> {{centro.metrosCuadrados}}</span></a></li>
             </ul>
           </div>
         </div>

@@ -41,11 +41,11 @@ export class CentroLayoutComponent implements OnInit {
     }
 
 
-    onCentroEdited(centro: Centro): void {
+    // onCentroEdited(centro: Centro): void {
 
-        this.centrosService.saveCentro(centro).subscribe();
+    //     this.centrosService.saveCentro(centro).subscribe();
 
-    }
+    // }
 
 
     centros(): Centro[] {

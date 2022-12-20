@@ -8,8 +8,7 @@
 
             <app-centro-card [centro]="centro"
                              [cardIndex]="i+1"
-                             [noImage]="noImage"
-                             (centroChanged)="onCentroEdited($event)">
+                             [noImage]="noImage">
 
                 <ng-template #noImage let-centroName="name">
 
@@ -21,7 +20,7 @@
 
                 </ng-template>
 
-                <div class="centro-nombre"> {{ centro.nombre }} </div>
+                <div class="centro-nombre"> {{ centro.gerente }} </div>
 
             </app-centro-card>
 

@@ -16,16 +16,16 @@ export class CentrosService {
         
         const params = new HttpParams().set("page", "1").set("pageSize", "10");
 
-        return this.http.get<Centro[]>("http://localhost:9000/api/centros", { params } );
+        return this.http.get<Centro[]>("http://localhost:8000/api/centros", { params } );
 
     }
 
-    saveCentro(centro: Centro): Observable<Object> {
+    // saveCentro(centro: Centro): Observable<Object> {
 
-        const headers = new HttpHeaders().set("X-Auth", "centroId");
+    //     const headers = new HttpHeaders().set("X-Auth", "centroId");
 
-        return this.http.put(`http://localhost:9000/api/centros/${centro.id}`, centro, { headers } );
+    //     return this.http.put(`http://localhost:8000/api/centros/${centro.id}`, centro, { headers } );
         
-    }
+    // }
 
 }
