@@ -4,7 +4,8 @@
     justify-content: space-between;
     gap: 1.4vw;
     background-image: url(../../../assets/img/imgSidebar.png);
-    background-size: cover;
+    // background-size: cover;
+    background-repeat: round;
 
     .parteIzquierda {
 
@@ -119,6 +120,7 @@
             padding-right: 2vw;
             min-height: 70vh;
             max-height: 75vh;
+            background-color: rgba(59, 59, 59, 0.789);
         }
 
         @media screen and (max-width: 1279px) {
