@@ -12,7 +12,7 @@
 
         </li>
 
-        <div class="area-socios">
+        <div class="botonesNav">
             <li class="reservas" >
 
                 <a routerLink="/reservas"> <p> Reservas </p> </a>
@@ -35,8 +35,6 @@
                    onclick="if(this.placeholder=='Buscar en Gymnasium...') this.placeholder=''"
                    onblur="if(this.placeholder=='') this.placeholder='Buscar en Gymnasium...'">
 
-            <!-- <a href="#" class="numero"> <img src="../../../assets/icons/numero.png" alt="Número"> </a> -->
-
         </li>
 
         <li class="perfil">
@@ -45,17 +43,21 @@
 
             <p> Manuel Fdez </p>
 
-            <a href="#" class="despliegue">
+            <!-- <a href="#" class="despliegue">
 
                 <i> <img src="../../../assets/icons/flechita.png" alt="Flecha para despliegue"> </i>
 
-            </a>
+            </a> -->
 
-            <a href="#" class="boton">
+            <a (click)="logout()" class="ov-btn-grow-skew">Cerrar sesión</a>
+
+            <img src="../../../assets/icons/logoutIcon.png" alt="Icono de cerrar sesión" (click)="logout()" class="logoutIcon">
+
+            <!-- <a href="#" class="boton">
 
                 <i> <img src="../../../assets/icons/textoLogo.png" alt="Botón de logo">  </i>
 
-            </a>
+            </a> -->
 
         </li>
 

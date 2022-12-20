@@ -164,4 +164,9 @@ export class AuthService implements OnInit {
 
     }
 
+    logout() {
+      sessionStorage.clear();
+      this.cookies.delete("token");
+    }
+
 }
