@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { TopInterface } from './../top.interface';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
     selector: 'app-dashboard-welcome',
@@ -16,14 +17,18 @@ export class DashboardWelcomeComponent {
 
     datos!: TopInterface;
 
+    nombre!: string;
+
     private _jsonURL = '../../../assets/data/top.json';
 
-    constructor(private http: HttpClient) {
-        
+    constructor(private http: HttpClient, private authService: AuthService) {
+
         this.getJSON().subscribe(data => {
             this.datos = data;
         });
-        
+
+        this.nombre = this.authService.UserNameSessionStorage;
+
     }
 
     get Data(): TopInterface {

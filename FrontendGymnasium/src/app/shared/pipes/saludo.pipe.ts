@@ -8,7 +8,7 @@ export class SaludoPipe implements PipeTransform {
 
     transform(hora: Date): string {
 
-        let saludo: string = "Buen";
+        let saludo: string = "¡Buen";
 
         let horaActual = hora.getHours();
 
@@ -17,15 +17,15 @@ export class SaludoPipe implements PipeTransform {
             saludo = saludo + "os días, ";
 
         } else if (horaActual >= 13 && horaActual < 21) {
-            
+
             saludo = saludo + "as tardes, ";
-            
+
         } else {
             saludo = saludo + "as noches, ";
         }
 
         return saludo;
-    
+
       }
 
 }

@@ -126,16 +126,23 @@ export class AuthService implements OnInit {
 
     }
 
-    public get UserPasswordSessionStorage() : string {
+    public get UserNameSessionStorage() : string {
 
-        return sessionStorage.getItem("password")!;
+        return sessionStorage.getItem("nombre")!;
 
     }
+
+    // public get UserPasswordSessionStorage() : string {
+
+    //     return sessionStorage.getItem("password")!;
+
+    // }
 
     public set UserSessionStorage(user: any) {
 
         sessionStorage.setItem("email", user.email);
-        sessionStorage.setItem("password", user.password);
+        sessionStorage.setItem("nombre", user.nombre);
+        // sessionStorage.setItem("password", user.password);
 
     }
 

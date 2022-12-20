@@ -10,7 +10,12 @@ import { AuthService } from 'src/app/auth/auth.service';
 
 export class HeaderComponent {
 
+  nombre!: string;
+
+
     constructor(private ruta: Router, private authService: AuthService) {
+
+      this.nombre = this.authService.UserNameSessionStorage;
 
     }
 

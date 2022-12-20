@@ -136,13 +136,17 @@ nav {
             color: #dee1e384;
           }
 
-          @media screen and (max-width: 1023px) {
+          @media screen and (max-width: 1260px) {
             min-width: 20vw;
           }
 
-          @media screen and (max-width: 876px) {
-            min-width: 40vw;
-          }
+          // @media screen and (max-width: 1023px) {
+          //   min-width: 20vw;
+          // }
+
+          // @media screen and (max-width: 876px) {
+          //   min-width: 40vw;
+          // }
         }
 
         :hover {
@@ -180,6 +184,7 @@ nav {
             min-width: 15vw;
             // padding-left: 2vw;
             padding-right: 2vw;
+
           }
 
           @media screen and (max-width: 876px) {
@@ -258,7 +263,7 @@ nav {
     }
 
     @media (max-width:1030px) {
-      gap: 4vw;
+      gap: 2vw;
     }
 
     // @media (max-width:800px) {

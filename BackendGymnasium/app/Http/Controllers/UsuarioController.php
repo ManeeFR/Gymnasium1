@@ -34,7 +34,7 @@ class UsuarioController extends Controller {
             $usuario->save();
 
             $_SESSION['email_user'] = $request->email;
-            $_SESSION['password_user'] = $request->password;
+            // $_SESSION['password_user'] = $request->password;
 
 
             // return redirect(ServiceProvider::LOGIN);
@@ -133,7 +133,7 @@ class UsuarioController extends Controller {
 
         if (count($usuario) === 1) {
             $_SESSION['email_user'] = $request->email;
-            $_SESSION['password_user'] = $request->password;
+            // $_SESSION['password_user'] = $request->password;
         }
         return redirect()->route('login');
     }
