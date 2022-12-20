@@ -1,14 +1,15 @@
 nav {
     // margin-top: 3vh;
     // padding-bottom: 1vh;
-    border-top: solid 1px #acafb3b2;
-    border-bottom: solid 3px #acafb3b2;
+    border-top: solid 2px #a38603;
+    border-bottom: solid 3px #a38603;
 
     ul {
         display: flex;
         list-style: none;
         // padding: 0 0 4vh 4vw;
-        gap: 4vw;
+        padding-left: 3.5rem;
+        gap: 9.5vw;
 
         li {
 
@@ -34,11 +35,16 @@ nav {
                 @media screen and (max-width: 876px) {
                     display: none;
                 }
-            }            
+            }
         }
         @media screen and (max-width: 876px) {
             align-items: center;
             justify-content: center;
+            margin-top: 0.8vh;
+        }
+        @media screen and (max-width: 710px) {
+            padding-left: 0;
+            gap: 8.5vw;
         }
     }
 
@@ -47,9 +53,9 @@ nav {
         min-height: 10vh;
         max-height: 10vh;
     }
-    
+
     @media screen and (max-width: 680px) {
-        
+
         padding-bottom: 10vh;
     }
 }

@@ -44,17 +44,17 @@
     .cantidad {
         font-size: x-large;
         font-weight: 600;
-        
+
         @media screen and (max-width: 876px) {
             width: 29vw;
             min-width: 29vw;
             font-weight: 400;
-        }       
+        }
 
     }
 
     .azul {
-        color: #0b7ad0;
+        color: #a38603;
 
         @media screen and (max-width: 876px) {
             text-align: start;
@@ -72,6 +72,6 @@
         margin-bottom: 3vh;
         width: 35vw;
         min-width: 35vw;
-    }        
+    }
 
 }

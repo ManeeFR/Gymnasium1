@@ -48,7 +48,7 @@
                     }
                 }
             }
-            
+
         }
 
         .menu {
@@ -63,19 +63,19 @@
                 max-height: 10vh;
             }
         }
-        
+
         .bottom {
-            
+
             padding-left: 4vw;
             padding-bottom: 15vh;
             background-color: #f3f7fe;
             min-height: 72.4vh;
-            
+
             @media screen and (max-width: 876px) {
                 margin-top: 3.5vh;
-                
+
             }
-            
+
         }
 
         @media screen and (max-width: 1279px) {
@@ -89,10 +89,10 @@
             max-width: 98.1vw;
         }
         @media screen and (max-width: 876px) {
-            width: 97.15vw;
-            min-width: 97.15vw;
-            max-width: 97.15vw;
-           
+            width: 98.15vw;
+            min-width: 98.15vw;
+            max-width: 98.15vw;
+
         }
     }
 
@@ -114,5 +114,5 @@
             display: none;
         }
     }
-    
+
 }

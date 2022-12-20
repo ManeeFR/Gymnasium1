@@ -3,6 +3,8 @@
     display: flex;
     justify-content: space-between;
     gap: 1.4vw;
+    background-image: url(../../../assets/img/imgSidebar.png);
+    background-size: cover;
 
     .parteIzquierda {
 
@@ -55,7 +57,7 @@
                     }
                 }
             }
-            
+
         }
 
         .menu {
@@ -70,20 +72,21 @@
                 max-height: 10vh;
             }
         }
-        
+
         .bottom {
-            
+
             padding-left: 4vw;
             padding-bottom: 15vh;
             padding-top: 1vh;
-            background-color: #f3f7fe;
+            background-image: url(../../../assets/img/fondo2.png);
+            background-size: cover;
             min-height: 72.4vh;
-            
+
             @media screen and (max-width: 876px) {
                 margin-top: 3.5vh;
-                
+
             }
-            
+
         }
 
         @media screen and (max-width: 1279px) {
@@ -97,10 +100,10 @@
             max-width: 98.1vw;
         }
         @media screen and (max-width: 876px) {
-            width: 97.15vw;
-            min-width: 97.15vw;
-            max-width: 97.15vw;
-           
+            width: 98.15vw;
+            min-width: 98.15vw;
+            max-width: 98.15vw;
+
         }
     }
 

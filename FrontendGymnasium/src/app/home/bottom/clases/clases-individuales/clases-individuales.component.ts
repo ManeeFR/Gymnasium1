@@ -13,7 +13,7 @@ export class ClasesIndividualesComponent {
 
     titulo: string = 'Clases individuales';
     layout: string = 'flex';
-    imagen: string = '../../../../../assets/icons/flexMode.png';
+    imagen: string = '../../../../../assets/icons/cambiaLayout.png';
     datos!: Clases;
 
     private _jsonURL = '../../../../../assets/data/clases.json';
@@ -37,10 +37,10 @@ export class ClasesIndividualesComponent {
     cambiaLayout() {
         if (this.layout == 'flex') {
             this.layout = 'grid';
-            this.imagen = '../../../../../assets/icons/gridMode.png';
+            this.imagen = '../../../../../assets/icons/cambiaLayout2.png';
         } else {
             this.layout = 'flex';
-            this.imagen = '../../../../../assets/icons/flexMode.png';
+            this.imagen = '../../../../../assets/icons/cambiaLayout.png';
         }
     }
 
