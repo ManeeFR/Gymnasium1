@@ -39,7 +39,8 @@
 
                 &__texto {
                     padding: 1vh 0;
-                    min-width: 8.6vw;
+                    min-width: 6vw;
+                    font-size: smaller;
                 }
 
                 &__plazas {
@@ -51,7 +52,12 @@
                     align-items: center;
 
                     &__numero {
-                      margin-top: 0.5vh;
+                      margin-top: 0.18vh;
+                      img {
+                        @media (max-width:1490px) {
+                          display: none;
+                        }
+                      }
                     }
 
                     &__franja {

@@ -19,7 +19,7 @@ nav {
 
     .botonesNav {
       display: flex;
-      margin-top: -11px;
+      margin-top: -16px;
     }
 
     @media (max-width:450px) {}
@@ -93,7 +93,7 @@ nav {
         text-transform: uppercase;
         display: flex;
         justify-content: center;
-
+        margin-right: auto;
 
 
       }
@@ -242,28 +242,28 @@ nav {
           padding-left: 8.5vw;
         }
 
-        @media screen and (max-width: 1279px) {
-          padding-left: 3.5vw;
-        }
+        // @media screen and (max-width: 1279px) {
+        //   padding-left: 3.5vw;
+        // }
 
-        @media screen and (max-width: 1080px) {
-          padding-left: 2.4vw;
-        }
+        // // @media screen and (max-width: 1080px) {
+        // //   padding-left: 2.4vw;
+        // // }
 
-        @media screen and (max-width: 876px) {
-          min-width: 35vw;
-        }
+        // @media screen and (max-width: 876px) {
+        //   min-width: 35vw;
+        // }
 
       }
     }
 
     @media (max-width:1030px) {
-      gap: 10vw;
+      gap: 4vw;
     }
 
-    @media (max-width:800px) {
-      gap: 7vw;
-    }
+    // @media (max-width:800px) {
+    //   gap: 7vw;
+    // }
 
     @media (max-width:710px) {
       .logoutIcon {
