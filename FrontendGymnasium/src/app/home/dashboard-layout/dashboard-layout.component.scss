@@ -122,7 +122,11 @@
 
             min-height: 70vh;
             max-height: 80vh;
-            background-color: rgba(59, 59, 59, 0.789);
+            background-color: rgb(59 59 59 / 57%);
+            border-radius: 25px;
+            color: black;
+            font-size: 1.08em;
+            font-weight: 700;
         }
 
         @media screen and (max-width: 1279px) {

@@ -7,6 +7,10 @@
     max-height: 75.3vh;
     min-width: 25vw;
 
+    h2 {
+        font-size: 3vw;
+    }
+
     article {
         margin: 5vh 0;
 
@@ -27,7 +31,11 @@
                 display: flex;
                 justify-content: space-between;
                 margin-right: 1vw;
-                border-bottom: solid 1px #b9bcbe96;
+                border: solid 3px #00000096;
+                background-color: #a38603bc;
+                margin-bottom: 1.5vh;
+                border-radius: 17px;
+                padding: 0.6vw;
 
                 .item__texto {
                     padding: 1vh 0;

@@ -7,22 +7,22 @@
 
                 <img src="../../../../assets/icons/calendario.svg" alt="Calendario">
 
-        </button> 
+        </button>
 
-        <div [ngSwitch]="fecha.getUTCDay()"> 
-            <p *ngSwitchCase="1"> Lunes     </p>
-            <p *ngSwitchCase="2"> Martes    </p>
-            <p *ngSwitchCase="3"> Miércoles </p>
-            <p *ngSwitchCase="4"> Jueves    </p>
-            <p *ngSwitchCase="5"> Viernes   </p> 
-            <p *ngSwitchCase="6"> Sábado    </p>
-            <p *ngSwitchCase="0"> Domingo   </p>
+        <div [ngSwitch]="fecha.getUTCDay()">
+            <p *ngSwitchCase="1"> Lunes,     </p>
+            <p *ngSwitchCase="2"> Martes,    </p>
+            <p *ngSwitchCase="3"> Miércoles, </p>
+            <p *ngSwitchCase="4"> Jueves,    </p>
+            <p *ngSwitchCase="5"> Viernes,   </p>
+            <p *ngSwitchCase="6"> Sábado,    </p>
+            <p *ngSwitchCase="0"> Domingo,   </p>
             <!-- <p *ngSwitchDefault>  Lunes     </p> -->
-        </div>    
-    
+        </div>
+
         <p> {{ fecha.getUTCDate() }} de&nbsp;</p>
 
-        <div [ngSwitch]="fecha.getMonth()"> 
+        <div [ngSwitch]="fecha.getMonth()">
             <p *ngSwitchCase="1">  enero      </p>
             <p *ngSwitchCase="2">  febrero    </p>
             <p *ngSwitchCase="3">  mayo       </p>
