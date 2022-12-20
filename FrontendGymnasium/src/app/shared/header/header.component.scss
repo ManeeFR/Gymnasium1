@@ -49,7 +49,7 @@ nav {
         margin: auto;
         height: auto;
         cursor: pointer;
-        padding-top: 5px;
+        padding-top: 9px;
 
         i,
         p {
@@ -109,7 +109,7 @@ nav {
 
         a {
           i {
-            padding-top: 2.3vh;
+            padding-top: 1.6vh;
 
             img {
               min-width: 2vw;
@@ -130,7 +130,6 @@ nav {
           min-width: 28.6vw;
           background-color: transparent;
           border: 0;
-          margin-top: 1.5vh;
           outline: none;
 
           &::placeholder {
