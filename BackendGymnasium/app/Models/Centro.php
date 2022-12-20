@@ -23,6 +23,8 @@ class Centro extends Model
         'gerente',
         'mensualidad',
         'imagen',
-        'anyoFundacion'
+        'anyoFundacion',
+        'direccion',
+        'telefono'
     ];
 }

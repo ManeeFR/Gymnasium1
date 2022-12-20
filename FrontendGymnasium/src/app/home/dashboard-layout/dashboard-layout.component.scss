@@ -36,15 +36,14 @@
 
 
             .summary {
-                @media screen and (max-width: 1023px) {
-                    border-top: solid 1px rgba(212, 210, 210, 0.674);
-                    padding-top: 2vh;
-                    margin-right: 38vw;
-                    min-width: 71vw;
-                }
-                @media screen and (max-width: 876px) {
-                    min-width: 85vw;
-                }
+                // @media screen and (max-width: 1030px) {
+                //     border-top: 0;
+                //     padding-top: 2vh;
+                //     min-width: 71vw;
+                // }
+                // @media screen and (max-width: 876px) {
+                //     min-width: 85vw;
+                // }
             }
 
             .superior {
@@ -82,11 +81,6 @@
             background-image: url(../../../assets/img/fondo2.png);
             background-size: cover;
             min-height: 72.4vh;
-
-            @media screen and (max-width: 876px) {
-                margin-top: 3.5vh;
-
-            }
 
         }
 
