@@ -46,6 +46,9 @@ nav {
             padding-left: 0;
             gap: 8.5vw;
         }
+        @media screen and (max-width: 540px) {
+            gap: 5.5vw;
+        }
     }
 
     @media screen and (max-width: 876px) {

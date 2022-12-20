@@ -40,6 +40,52 @@
         max-width: 9vw;
       }
     }
+    @media screen and (max-width: 950px) {
+      &__notas {
+        min-width: 12vw;
+        width: 12vw;
+        max-width: 12vw;
+      }
+    }
+
+    @media screen and (max-width: 876px) {
+      &__rutinas {
+        min-width: 13vw;
+        width: 13vw;
+        max-width: 13vw;
+      }
+
+      &__comidas {
+        min-width: 20vw;
+        width: 20vw;
+        max-width: 20vw;
+      }
+
+      &__notas {
+        min-width: 17vw;
+        width: 17vw;
+        max-width: 17vw;
+      }
+    }
+    @media screen and (max-width: 724px) {
+      &__rutinas {
+        min-width: 17vw;
+        width: 17vw;
+        max-width: 17vw;
+      }
+
+      &__comidas {
+        min-width: 27vw;
+        width: 27vw;
+        max-width: 27vw;
+      }
+
+      &__notas {
+        min-width: 20vw;
+        width: 20vw;
+        max-width: 20vw;
+      }
+    }
 
     ul {
 

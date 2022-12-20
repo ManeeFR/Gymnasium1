@@ -49,12 +49,13 @@ nav {
         margin: auto;
         height: auto;
         cursor: pointer;
+        padding-top: 5px;
 
         i,
         p {
           display: block;
           font-weight: 400;
-          padding-top: 1vh;
+          // padding-top: 1vh;
           margin: auto;
         }
 
