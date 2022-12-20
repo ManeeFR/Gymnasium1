@@ -68,7 +68,7 @@
 
     <ng-container *ngFor="let clase of clases()">
 
-      <ng-container *ngIf="validClase(clase)">
+      <ng-container *ngIf="validClase(clase)" class="card">
 
         <app-listado-clases [clase]="clase" (click)="showNextClasses(clase.deporte)"></app-listado-clases>
 

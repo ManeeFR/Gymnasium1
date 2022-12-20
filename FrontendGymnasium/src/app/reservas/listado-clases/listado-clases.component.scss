@@ -10,3 +10,13 @@
   border-color: #9f8200;
   color: black;
 }
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+}
+
+.card{
+  margin-bottom: 24px;
+    margin-right: 237px;
+}
