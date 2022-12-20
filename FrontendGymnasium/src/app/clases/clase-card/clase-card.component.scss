@@ -84,12 +84,13 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    transform: translateY(calc(70px + 1em));
+    transform: translateY(calc(128px + 1em));
     transition: transform 0.3s;
     .content {
       padding: 1em;
       position: relative;
       z-index: 1;
+      // min-height: 245px;
     }
   }
   .author {
@@ -99,7 +100,7 @@
     margin-top: 10px;
   }
   .text {
-    height: 70px;
+    height: 130px;
     margin: 0;
   }
   input[type='checkbox'] {
@@ -113,13 +114,14 @@
 // First example styles
 .example-1 {
   .wrapper {
-    background: url(https://images.unsplash.com/photo-1496979551903-46e46589a88b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cda12b505afa1beb06e49d89014cbd65&auto=format&fit=crop&w=634&q=80) 20% 1% / cover no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .date {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #77d7b9;
+    background-color: #caa500;
     color: white;
     padding: 0.8em;
     span {
@@ -191,10 +193,11 @@
     z-index: -1;
     transition: transform 0.3s;
     transform: translateY(0);
+    min-height: 241px;
     li {
       width: 33.333333%;
       float: left;
-      background-color: #77d7b9;
+      background-color: #caa500;
       height: 60px;
       position: relative;
     }

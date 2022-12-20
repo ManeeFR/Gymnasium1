@@ -1,4 +1,4 @@
-<!-- <div class="clase-card"> -->
+<div class="clase-card">
 
     <!-- <div class="card" style="width: 100%;">
         <img class="card-img-top" src="{{clase.imagen}}" alt="Card image cap">
@@ -13,11 +13,12 @@
       </div> -->
 
       <div class="example-1 card">
-        <div class="wrapper">
+        <div class="wrapper" style="background: url({{clase.imagen}});">
           <div class="date">
-            <span class="day">12</span>
-            <span class="month">Aug</span>
-            <span class="year">2016</span>
+            <span class="day">Sala</span>
+            <span class="day">{{clase.sala}}</span>
+            <span class="month">{{clase.aforo}} pers. max.</span>
+            <span class="year">{{clase.duracion}} mntos.</span>
           </div>
           <div class="data">
             <div class="content">
@@ -66,7 +67,7 @@
 
     <button (click)="onSaveClicked(claseTitle.value)"> Editar clase </button> -->
 
-<!-- </div> -->
+</div>
 
 
 
