@@ -1,9 +1,12 @@
 .titulo {
 
     border-left: solid 4px #a38603;
+    border-right: solid 4px #a38603;
+    width: fit-content;
 
     h3 {
             margin-top: 3vh;
             padding-left: 1vw;
+            padding-right: 1vw;
     }
 }

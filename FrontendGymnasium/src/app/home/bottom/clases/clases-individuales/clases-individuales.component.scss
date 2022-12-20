@@ -16,6 +16,17 @@
             display: flex;
             margin-top: 1vh;
 
+            ul > button {
+              img {
+
+                @media screen and (max-width: 876px) {
+                  height: 7.5vh;
+                  min-height: 7.5vh;
+                  max-height: 9.5vh;
+                }
+            }
+            }
+
             ul {
                 list-style: none;
                 display: flex;
@@ -68,20 +79,13 @@
                     border: 0;
                     background-color: transparent;
 
-                    img {
 
-                        @media screen and (max-width: 876px) {
-                            height: 4vh;
-                            min-height: 4vh;
-                            max-height: 4vh;
-                        }
+                  //   @media screen and (max-width: 680px) {
 
-                        @media screen and (max-width: 680px) {
-                            height: 3.5vh;
-                            min-height: 3.5vh;
-                            max-height: 3.5vh;
-                        }
-                    }
+                  //     width: 23.5vw;
+                  //     min-width: 23.5vw;
+                  //     max-width: 23.5vw;
+                  // }
                 }
 
                 @media screen and (max-width: 876px) {
