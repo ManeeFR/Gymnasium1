@@ -26,7 +26,7 @@
             list-style: none;
             padding: 0;
 
-            li.item {
+            .item {
 
                 display: flex;
                 justify-content: space-between;
@@ -37,27 +37,36 @@
                 border-radius: 17px;
                 padding: 0.6vw;
 
-                .item__texto {
+                &__texto {
                     padding: 1vh 0;
-                    padding-bottom: 0;
+                    min-width: 8.6vw;
                 }
 
-                .item__plazas {
+                &__plazas {
                     display: flex;
                     flex-direction: row;
 
-                    padding-top: 1vh;
-                    gap: 2vw;
+                    // padding-top: 0.6vh;
+                    gap: 0.9vw;
+                    align-items: center;
+
+                    &__numero {
+                      margin-top: 0.5vh;
+                    }
+
+                    &__franja {
+                      min-width: 7vw;
+                    }
 
                     p {
                         margin-bottom: 0;
+                        font-size: smaller;
 
                     }
 
                     img {
-                        margin-bottom: 2vh;
-                        margin-top: 0.4vh;
-                        max-height: 3vh;
+                        margin-bottom: 0.5vh;
+                        max-height: 3.8vh;
                     }
                 }
             }

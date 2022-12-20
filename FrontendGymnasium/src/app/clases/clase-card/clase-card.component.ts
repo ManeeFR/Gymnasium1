@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, TemplateRef, Attribute, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, TemplateRef, Attribute, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Clase } from '../model/clase.interface';
 
 @Component({
@@ -8,7 +8,7 @@ import { Clase } from '../model/clase.interface';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class ClaseCardComponent {
+export class ClaseCardComponent implements OnInit {
 
     @Input() clase!: Clase;
 
@@ -19,13 +19,17 @@ export class ClaseCardComponent {
 
     @Output('claseChanged') claseEditEmitter = new EventEmitter<Clase>();
 
+    idCard!: string;
 
 
 
 
-    constructor(@Attribute('type') private type: string) {
+  ngOnInit(): void {
+    this.idCard = "show-menu" + this.cardIndex;
 
-    }
+    console.log(this.cardIndex);
+    console.log(this.idCard);
+  }
 
 
     onClaseViewed(): void {

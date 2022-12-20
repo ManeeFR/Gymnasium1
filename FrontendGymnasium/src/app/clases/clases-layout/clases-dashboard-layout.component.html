@@ -1,6 +1,6 @@
 <!-- <div class="top-menu" [appHighlighted]="false" [activateToggle]="false" #hl="hl" (dblclick)="hl.doToggle()"> -->
 
-<!-- 
+<!--
     <div class="demo">
 
         <button> Editar lista de clases </button>
@@ -23,36 +23,7 @@
 
             <ng-container *ngIf="validClass(clase) === true">
 
-                <app-clase-card [clase]="clase">
-                                <!-- [cardIndex]="i+1"
-                                 type="learning"
-                                (claseChanged)="onClaseEdited($event)"
-                                [appHighlighted]="false" -->
-                                
-                                
-                                      <!-- [ngClass]="concreteStyles(isFirst, isLast, isEven, isOdd)" -->
-
-                    <!-- <app-course-image [src]="course.imagen"
-                                      class="course-image">
-                    </app-course-image> -->
-
-
-                    <!-- <ng-template #noImage let-claseName="title">
-
-                        <p [style]="{'color': !clase.imagen ? 'gray' : ''}">
-                            {{ claseName }} has no image yet.
-                        </p>
-
-                        <img src="../assets/empty-image.png" alt="Not available image">
-
-                    </ng-template> -->
-
-                    <!-- <div class="clase-nombre">
-
-                        {{ clase.descripcion }}
-
-                    </div> -->
-
+                <app-clase-card [clase]="clase" [cardIndex]="i+1">
                 </app-clase-card>
 
 
@@ -62,4 +33,3 @@
 
     </div>
 
-    

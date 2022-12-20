@@ -1,6 +1,12 @@
-body{
+:root {
+
+  font-family: Consolas;
+}
+
+body {
     overflow-y: hidden;
 }
+
 .body {
 
     display: flex;

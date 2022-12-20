@@ -153,4 +153,12 @@ export class HomeSidebarComponent {
 
     }
 
+    plazasStyle(plazasLibres: number) {
+
+      if (plazasLibres == 0) return { 'color': '#b10e0ee8' };
+
+      else return { 'color': 'black' };
+
+    }
+
 }

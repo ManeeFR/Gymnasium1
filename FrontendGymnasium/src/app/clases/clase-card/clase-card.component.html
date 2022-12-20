@@ -1,39 +1,25 @@
 <div class="clase-card">
 
-    <!-- <div class="card" style="width: 100%;">
-        <img class="card-img-top" src="{{clase.imagen}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{clase.deporte}}</h5>
-          <p class="card-text"> {{clase.descripcion}}  </p>
-          <p class="card-text"> Instructor: {{clase.instructor}}  </p>
-          <p class="card-text"> Sala: {{clase.sala}} </p>
-          <p class="card-text"> Aforo máximo: {{clase.aforo}} personas  </p>
-          <p class="card-text"> Duración: {{clase.duracion}} minutos  </p>
-        </div>
-      </div> -->
+
 
       <div class="example-1 card">
         <div class="wrapper" style="background: url({{clase.imagen}});">
           <div class="date">
-            <span class="day">Sala</span>
-            <span class="day">{{clase.sala}}</span>
-            <span class="month">{{clase.aforo}} pers. max.</span>
-            <span class="year">{{clase.duracion}} mntos.</span>
+            <span class="day">{{clase.deporte}}</span>
           </div>
           <div class="data">
             <div class="content">
-              <span class="author">Instructor: {{clase.instructor}}</span>
-              <h1 class="title">{{clase.deporte}}</h1>
+              <span class="author"><img src="../../../assets/img/trainerMan.png" alt="Icono de instructor"> {{clase.instructor}}</span>
               <p class="text">{{clase.descripcion}}</p>
-              <label for="show-menu" class="menu-button"><span></span></label>
+              <label for="{{idCard}}" class="menu-button"><span></span></label>
             </div>
-            <input type="checkbox" id="show-menu" />
+            <input type="checkbox" id="{{idCard}}" />
             <ul class="menu-content">
               <li>
-                <a href="#" class="fa fa-bookmark-o"></a>
+                <a href="#" class="fa fa-bookmark-o">Sala {{clase.sala}}</a>
               </li>
-              <li><a href="#" class="fa fa-heart-o"><span>47</span></a></li>
-              <li><a href="#" class="fa fa-comment-o"><span>8</span></a></li>
+              <li><a href="#" class="fa fa-heart-o"><span>Hasta {{clase.aforo}} personas</span></a></li>
+              <li><a href="#" class="fa fa-comment-o"><span>{{clase.duracion}} minutos</span></a></li>
             </ul>
           </div>
         </div>

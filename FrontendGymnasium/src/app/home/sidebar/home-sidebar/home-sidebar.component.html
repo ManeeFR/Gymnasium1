@@ -1,124 +1,115 @@
 <section class="actividad">
 
-    <!-- <h2> Próximas clases </h2> -->
+  <!-- <h2> Próximas clases </h2> -->
 
-    <article>
+  <article>
 
-            <ng-container *ngIf="tieneReservaHoy() else notToday">
+    <ng-container *ngIf="tieneReservaHoy() else notToday">
 
-              <p class="fecha">Hoy</p>
+      <p class="fecha">Hoy</p>
 
-            </ng-container>
+    </ng-container>
 
-            <ng-template #notToday>
+    <ng-template #notToday>
 
-              <p class="fecha">{{fecha}}</p>
+      <p class="fecha">{{fecha}}</p>
 
-            </ng-template>
+    </ng-template>
 
-            <ul>
+    <ul>
 
-                    <li *ngFor="let item of Data(0);" class="item">
-                            <div class="item__texto">
-                                    {{ item.deporte }}
-                            </div>
-                            <div class="item__plazas">
+      <li *ngFor="let item of Data(0);" class="item">
+        <div class="item__texto">
+          {{ item.deporte }}
+        </div>
+        <div class="item__plazas">
 
-                                    <p> <img src="../../../../assets/icons/people.ico"/>{{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }} </p>
+          <p class="item__plazas__numero" [ngStyle]="plazasStyle(item.plazasLibres)">
 
-                                    <p> {{ item.franja }} </p>
+            {{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }}
 
-                                    <img *ngIf="item.plazasLibres == 0 else libre"
-                                            src="../../../../assets/icons/puntitoRojo.png"
-                                            alt="Icono de punto rojo">
+            <img src="../../../../assets/icons/people.ico"/>
 
-                                    <ng-template #libre>
-                                            <img src="../../../../assets/icons/puntitoVerde.png"
-                                                 alt="Icono de punto verde">
-                                    </ng-template>
+          </p>
 
-                            </div>
-                    </li>
+          <p class="item__plazas__franja"> {{ item.franja }} </p>
 
-            </ul>
+        </div>
+      </li>
 
-    </article>
+    </ul>
 
-    <article>
+  </article>
 
-        <p class="fecha">{{fecha}}</p>
+  <article>
 
-            <ul>
+    <p class="fecha">{{fecha}}</p>
 
-              <li *ngFor="let item of Data(1);" class="item">
-                <div class="item__texto">
-                        {{ item.deporte }}
-                </div>
-                <div class="item__plazas">
+    <ul>
 
-                  <p> <img src="../../../../assets/icons/people.ico"/>{{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }} </p>
+      <li *ngFor="let item of Data(1);" class="item">
+        <div class="item__texto">
+          {{ item.deporte }}
+        </div>
+        <div class="item__plazas">
 
-                  <p> {{ item.franja }} </p>
+          <p class="item__plazas__numero" [ngStyle]="plazasStyle(item.plazasLibres)">
 
-                  <img *ngIf="item.plazasLibres == 0 else libre"
-                          src="../../../../assets/icons/puntitoRojo.png"
-                          alt="Icono de punto rojo">
+            {{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }}
 
-                  <ng-template #libre>
-                          <img src="../../../../assets/icons/puntitoVerde.png"
-                               alt="Icono de punto verde">
-                  </ng-template>
+            <img src="../../../../assets/icons/people.ico"/>
 
-          </div>
-        </li>
+          </p>
 
-            </ul>
+          <p class="item__plazas__franja"> {{ item.franja }} </p>
 
-    </article>
+        </div>
+      </li>
 
-    <article>
+    </ul>
 
-        <p class="fecha">{{fecha}}</p>
+  </article>
 
-            <ul>
+  <article>
 
-              <li *ngFor="let item of Data(2);" class="item">
-                <div class="item__texto">
-                        {{ item.deporte }}
-                </div>
-                <div class="item__plazas">
+    <p class="fecha">{{fecha}}</p>
 
-                  <p> <img src="../../../../assets/icons/people.ico"/>{{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }} </p>
+    <ul>
 
-                  <p> {{ item.franja }} </p>
+      <li *ngFor="let item of Data(2);" class="item">
+        <div class="item__texto">
+          {{ item.deporte }}
+        </div>
+        <div class="item__plazas">
 
-                  <img *ngIf="item.plazasLibres == 0 else libre"
-                          src="../../../../assets/icons/puntitoRojo.png"
-                          alt="Icono de punto rojo">
+          <p class="item__plazas__numero" [ngStyle]="plazasStyle(item.plazasLibres)">
 
-                  <ng-template #libre>
-                          <img src="../../../../assets/icons/puntitoVerde.png"
-                               alt="Icono de punto verde">
-                  </ng-template>
+            {{ item.plazasMaximas - item.plazasLibres }} / {{ item.plazasMaximas }}
 
-          </div>
-        </li>
+            <img src="../../../../assets/icons/people.ico"/>
 
-            </ul>
+          </p>
 
-    </article>
+          <p class="item__plazas__franja"> {{ item.franja }} </p>
+
+        </div>
+      </li>
+
+    </ul>
+
+  </article>
 
 </section>
 
 
 <section class="necesidades">
 
-    <h2> Tienda </h2>
+  <h2> Tienda </h2>
 
-    <article>
+  <article>
 
-            <img src="../../../../assets/icons/compraPC.png" alt="Imagen de anuncio de PC">
+    <img src="../../../../assets/icons/compraPC.png" alt="Imagen de anuncio de PC">
 
-    </article>
+  </article>
 
 </section>
