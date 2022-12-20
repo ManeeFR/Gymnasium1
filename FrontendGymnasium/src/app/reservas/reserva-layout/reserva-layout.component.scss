@@ -1,3 +1,11 @@
+.clases{
+padding-top: 58px;
+}
+
+h1{
+padding-bottom: 31px;
+}
+
 .top-menu {
     background: #1976d2;
     padding: 2px 15px;
@@ -11,12 +19,6 @@
 .reservas, .reservasAll {
     min-width: 60vw;
     margin: 50px 10vw;
-}
-
-.reservasAll {
-  app-proximas-clases {
-    // background-color: blue;
-  }
 }
 
 textarea {
