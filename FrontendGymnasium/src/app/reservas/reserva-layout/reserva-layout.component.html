@@ -70,7 +70,7 @@
 
       <ng-container *ngIf="validClase(clase)">
 
-        <app-listado-clases [clase]="clase" (click)="showNextClasses(clase.deporte)"></app-listado-clases>
+        <app-listado-clases [clase]="clase" (showClase)="showClase($event)"></app-listado-clases>
 
       </ng-container>
 

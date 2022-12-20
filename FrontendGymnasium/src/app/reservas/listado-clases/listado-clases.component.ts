@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Clase } from 'src/app/clases/model/clase.interface';
 
 @Component({
@@ -7,14 +7,19 @@ import { Clase } from 'src/app/clases/model/clase.interface';
     styleUrls: ['./listado-clases.component.scss']
 })
 
-export class ListadoClasesComponent implements OnInit {
+export class ListadoClasesComponent {
 
     @Input() clase!: Clase;
 
+    @Output('showClase') onClaseClicked = new EventEmitter;
 
-    constructor() { }
 
-    ngOnInit(): void {
+    claseClicked() {
+
+      console.log("hola");
+
+      this.onClaseClicked.emit(this.clase.deporte);
+
     }
 
 }

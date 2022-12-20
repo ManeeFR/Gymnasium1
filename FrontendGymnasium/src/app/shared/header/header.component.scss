@@ -22,8 +22,6 @@ nav {
       margin-top: -16px;
     }
 
-    @media (max-width:450px) {}
-
     li {
 
       color: #3c4245;
@@ -33,12 +31,12 @@ nav {
       // border-right: solid 1px rgba(217, 217, 217, 0.426);
       cursor: pointer;
 
-      :hover {
-        background-color: #c29740ee;
-      }
 
       a {
 
+        :hover {
+          background-color: #c29740ee;
+        }
         display: block;
         width: 100%;
         min-height: 100%;
@@ -46,7 +44,7 @@ nav {
         padding: 11px;
         color: white;
         text-decoration: none;
-        margin: auto;
+        // margin: auto;
         height: auto;
         cursor: pointer;
         padding-top: 9px;
@@ -61,6 +59,7 @@ nav {
 
         p {
           padding: 4vh 0;
+          padding-bottom: 3vh;
         }
       }
 

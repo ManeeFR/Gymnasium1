@@ -23,6 +23,7 @@ import { ProximaClase } from 'src/app/reservas/reserva-model/proximaClase.interf
 
 export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
+
     currentDay: number = new Date().getDate();
     tieneReservasHoy!: boolean;
     showReservasAll!: boolean;
@@ -136,6 +137,17 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         return false;
     }
 
+    showClase($event: any) {
+
+      console.log("$event");
+      console.log($event);
+
+        this.reservasAll($event);
+        this.showReservasUser = false;
+        this.showReservasAll = true;
+
+    }
+
     showNextClasses(deporte: string) {
 
         this.reservasAll(deporte);
@@ -168,8 +180,7 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
     }
 
     bgStyles(url: string | undefined) {
-      console.log("url33");
-      console.log(url);
+
       return {
         'background-image': 'url(' + url + ')',
         'background-size': 'cover',
