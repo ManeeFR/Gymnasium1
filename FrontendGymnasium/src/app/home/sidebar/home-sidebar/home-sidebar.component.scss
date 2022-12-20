@@ -54,7 +54,7 @@
                     &__numero {
                       margin-top: 0.18vh;
                       img {
-                        @media (max-width:1490px) {
+                        @media (max-width:1500px) {
                           display: none;
                         }
                       }
@@ -71,7 +71,6 @@
                     }
 
                     img {
-                        margin-bottom: 0.5vh;
                         max-height: 3.8vh;
                     }
                 }
