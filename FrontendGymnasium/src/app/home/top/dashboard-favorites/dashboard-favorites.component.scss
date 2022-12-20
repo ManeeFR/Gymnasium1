@@ -3,11 +3,49 @@
     display: flex;
     margin: 2vh 0;
 
+    &__rutinas {
+      min-width: 6.9vw;
+      width: 6.9vw;
+      max-width: 6.9vw;
+    }
+
+    &__comidas {
+      min-width: 12.6vw;
+      width: 12.6vw;
+      max-width: 12.6vw;
+    }
+
+    &__notas {
+      min-width: 8vw;
+      width: 8vw;
+      max-width: 8vw;
+    }
+
+    @media screen and (max-width: 1279px) {
+      &__rutinas {
+        min-width: 9.9vw;
+        width: 9.9vw;
+        max-width: 9.9vw;
+      }
+
+      &__comidas {
+        min-width: 16.6vw;
+        width: 16.6vw;
+        max-width: 16.6vw;
+      }
+
+      &__notas {
+        min-width: 9vw;
+        width: 9vw;
+        max-width: 9vw;
+      }
+    }
+
     ul {
 
         list-style: none;
         display: flex;
-        gap: 1vw;
+        // gap: 1vw;
         margin: 0 1.5vw;
         padding: 0;
 
@@ -22,8 +60,8 @@
             }
 
             &#medio {
-                border-left: 1px solid rgba(128, 128, 128, 0.705);
-                border-right: 1px solid rgba(128, 128, 128, 0.705);
+                // border-left: 1px solid rgba(128, 128, 128, 0.705);
+                // border-right: 1px solid rgba(128, 128, 128, 0.705);
                 padding: 0 1.5vw;
             }
         }

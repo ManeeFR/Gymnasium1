@@ -23,9 +23,11 @@ return new class extends Migration
             $table->integer('mensualidad');
             $table->string('imagen');
             $table->integer('anyoFundacion');
+            $table->string('direccion');
+            $table->integer('telefono');
             $table->timestamps();
 
-            
+
         });
     }
 

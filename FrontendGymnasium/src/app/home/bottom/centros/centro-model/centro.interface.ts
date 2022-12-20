@@ -8,7 +8,7 @@ export interface Centro {
     imagen: string,
     anyoFundacion: number,
     direccion: string,
-    telefono: number,
-    
+    telefono: number
+
 
 }
