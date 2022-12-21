@@ -97,7 +97,6 @@ export class ProximasClasesComponent {
       'background-size': 'cover',
       'background-repeat': 'round'
     };
-    // return { 'background': 'url(../assets/img/Boxeo.png)' };
   }
 
 }
