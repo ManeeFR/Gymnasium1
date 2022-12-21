@@ -16,7 +16,6 @@ export class ListadoClasesComponent {
 
     claseClicked() {
 
-      console.log("hola");
 
       this.onClaseClicked.emit(this.clase.deporte);
 

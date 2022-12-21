@@ -96,7 +96,9 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
     reservasAll(deporte: string): ProximaClase[] {
 
-        this.reservaService.loadReservasAll(deporte).subscribe((reservas: any) => {
+      console.log(deporte);
+
+        this.reservaService.loadReservasAll(encodeURI(deporte)).subscribe((reservas: any) => {
 
             this.reservasListAll = reservas;
 
