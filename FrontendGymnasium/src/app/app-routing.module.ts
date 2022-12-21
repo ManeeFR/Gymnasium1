@@ -15,6 +15,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ReservasComponent } from './reservas/reservas/reservas.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
+import { ReservaDoneComponent } from './reservas/reserva-done/reserva-done.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,11 @@ const routes: Routes = [
         component: ReservasComponent
     },
     {
+      path: 'reservaDone',
+      component: ReservaDoneComponent,
+
+    },
+    {
       path: 'pagina404',
       component: ErrorPageComponent
     },
@@ -62,32 +68,32 @@ const routes: Routes = [
 ];
 
 
-//   const routes: Routes = [
-//     {
-//     //   path: 'home',
-//     //   loadChildren: () => import('../app/home/home.module').then(m => m.HomeModule)
-//     // },
-//     // // {
-//     // //   path: 'reservas',
-//     // //   loadChildren: () => import('../app/home/home.module').then(m => m.ReservasModule)
-//     // // },
-//     // {
-//     //   path: 'clases',
-//     //   loadChildren: () => import('../app/clases/clases.module').then(m => m.ClasesModule)
-//     // }
+  // const routes: Routes = [
+  //   {
+  //     path: 'home',
+  //     loadChildren: () => import('../app/home/home.module').then(m => m.HomeModule)
+  //   },
+  //   {
+  //     path: 'reservas',
+  //     loadChildren: () => import('../app/home/home.module').then(m => m.ReservasModule)
+  //   },
+  //   {
+  //     path: 'clases',
+  //     loadChildren: () => import('../app/clases/clases.module').then(m => m.ClasesModule)
+  //   },
+  //   {
+  //     pathMatch: 'full',
+  //     component: HomeDashboardComponent,
+  //     children: [
+  //       {
+  //           path: 'home/cobros',
+  //           pathMatch: 'full',
+  //           loadChildren: () => import('../app/home/bottom/cobros-pagos/cobros-pagos/cobros-pagos.module').then(m => m.CobrosPagosModule)
+  //       },
 
-//       pathMatch: 'full',
-//       component: HomeDashboardComponent,
-//       children: [
-//         {
-//             path: 'home/cobros',
-//             pathMatch: 'full',
-//             loadChildren: () => import('../app/home/bottom/cobros-pagos/cobros-pagos/cobros-pagos.module').then(m => m.CobrosPagosModule)
-//         },
-
-//       ]
-//     }
-//   ];
+  //     ]
+  //   }
+  // ];
 
 
 

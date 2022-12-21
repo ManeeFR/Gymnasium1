@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ReservaDoneComponent } from './reserva-done/reserva-done.component';
 import { ReservasComponent } from './reservas/reservas.component';
 
 

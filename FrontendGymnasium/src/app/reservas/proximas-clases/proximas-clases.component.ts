@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 import { Reserva } from '../reserva-model/reserva.interface';
 import { ProximaClase } from 'src/app/reservas/reserva-model/proximaClase.interface';
 import { ReservaService } from '../reserva-service/reserva.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class ProximasClasesComponent {
   @Output('reservaChanged') reservaEditEmitter = new EventEmitter<Reserva>();
 
 
-  constructor(private authService: AuthService, private reservaService: ReservaService) { }
+  constructor(private authService: AuthService, private reservaService: ReservaService, private ruta: Router) { }
 
 
 
@@ -56,7 +57,8 @@ export class ProximasClasesComponent {
       franja: encodeURI(this.clase.franja),
       fecha: this.clase.fecha,
       plazasLibres: plazasLibres,
-      aforo: this.clase.plazasMaximas
+      aforo: this.clase.plazasMaximas,
+      imagen: this.clase.imagen
 
     };
 
@@ -64,7 +66,26 @@ export class ProximasClasesComponent {
     console.log(reservaClase);
 
     this.reservaService.saveReserva(reservaClase).subscribe((resp: any) => {
-      // this.reservasList = reservas;
+
+      console.log("reservaClase.imagen");
+      console.log(reservaClase.imagen);
+
+      if (resp.resp == "success") {
+
+        this.ruta.navigate(['/reservaDone'], {
+
+          queryParams: {
+            'fecha': reservaClase.fecha,
+            'franja': reservaClase.franja,
+            'deporte': reservaClase.deporte,
+            'sala': reservaClase.id_sala,
+            'email': reservaClase.email_user,
+            'imagen': reservaClase.imagen
+          }
+
+        });
+
+      }
     });
 
 
