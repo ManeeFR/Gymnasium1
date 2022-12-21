@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-// import 'rxjs/add/operator/filter';
 
 @Component({
-  selector: 'app-reserva-done',
-  templateUrl: './reserva-done.component.html',
-  styleUrls: ['./reserva-done.component.scss']
+  selector: 'app-reserva-fail',
+  templateUrl: './reserva-fail.component.html',
+  styleUrls: ['./reserva-fail.component.scss']
 })
-
-
-export class ReservaDoneComponent implements OnInit {
+export class ReservaFailComponent implements OnInit {
 
   fecha!: Date;
   franja!: string;
@@ -35,4 +32,5 @@ export class ReservaDoneComponent implements OnInit {
       }
     );
   }
+
 }

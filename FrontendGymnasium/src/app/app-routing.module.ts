@@ -16,6 +16,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ReservasComponent } from './reservas/reservas/reservas.component';
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
 import { ReservaDoneComponent } from './reservas/reserva-done/reserva-done.component';
+import { ReservaFailComponent } from './reservas/reserva-fail/reserva-fail.component';
 
 
 const routes: Routes = [
@@ -55,6 +56,11 @@ const routes: Routes = [
     {
       path: 'reservaDone',
       component: ReservaDoneComponent,
+
+    },
+    {
+      path: 'reservaFail',
+      component: ReservaFailComponent,
 
     },
     {

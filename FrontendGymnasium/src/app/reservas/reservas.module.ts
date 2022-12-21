@@ -13,6 +13,7 @@ import { ListadoClasesComponent } from './listado-clases/listado-clases.componen
 import { ClasesService } from '../clases/clases-service/clases.service';
 import { ProximasClasesComponent } from './proximas-clases/proximas-clases.component';
 import { ReservaDoneComponent } from './reserva-done/reserva-done.component';
+import { ReservaFailComponent } from './reserva-fail/reserva-fail.component';
 
 
 
@@ -25,7 +26,8 @@ import { ReservaDoneComponent } from './reserva-done/reserva-done.component';
     ReservaLayoutComponent,
     ListadoClasesComponent,
     ProximasClasesComponent,
-    ReservaDoneComponent
+    ReservaDoneComponent,
+    ReservaFailComponent
   ],
   imports: [
     CommonModule,
