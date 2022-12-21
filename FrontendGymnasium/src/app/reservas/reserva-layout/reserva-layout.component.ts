@@ -47,6 +47,9 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         this.clasesList = [...aux];
         let aux1 = this.reservasList;
         this.reservasList = [...aux1];
+
+        this.currentDayAll = new Date().getDate();
+
     }
 
 
@@ -71,8 +74,7 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         }
 
         this.showReservasUser = true;
-        this.showReservasAll = false;
-
+        // this.showReservasAll = false;
 
 
     }
@@ -156,29 +158,21 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
         const date = new Date(reserva.fecha).getDate();
 
-        console.log("this.currentDayAll");
-        console.log(this.currentDayAll);
-        console.log("date");
-        console.log(date);
-
         if (date !== this.currentDayAll) {
             this.currentDayAll = date;
-            console.log("tre");
             return true;
           }
 
-          console.log("fals");
         return false;
     }
 
     showClase($event: any) {
 
-      console.log("$event");
-      console.log($event);
-
         this.reservasAll($event);
         this.showReservasUser = false;
         this.showReservasAll = true;
+        // this.currentDayAll = 99;
+
 
     }
 
