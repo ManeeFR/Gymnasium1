@@ -8,8 +8,8 @@
   min-width: 27.1vw;
   padding: 1vw;
   margin-right: 1vw;
-  min-height: 70vh;
-  max-height: 80vh;
+  min-height: 94vh;
+  max-height: 94vh;
   background-color: rgb(96 96 96 / 66%);
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .6), 0 3px 8px 0 rgba(0, 0, 0, .44), 0 5px 8px -1px rgba(0, 0, 0, .52);
   // border-radius: 25px;
@@ -17,6 +17,21 @@
   // min-width: 26vw;
   margin-right: 12vw;
   margin-top: 33vh;
+
+    @media screen and (max-width: 1370px) {
+      min-width: 31vw;
+  }
+    @media screen and (max-width: 1200px) {
+      min-width: 36vw;
+  }
+    @media screen and (max-width: 1020px) {
+      min-width: 38vw;
+  }
+    @media screen and (max-width: 950px) {
+      margin: auto;
+      margin-top: 5vh;
+      margin-bottom: 12vh;
+  }
 
   &::-webkit-scrollbar {
     scroll-margin-top: 3vh;
@@ -157,4 +172,20 @@ button:hover::after {
   flex-direction: row;
   justify-content: space-evenly;
 
+    @media screen and (max-width: 950px) {
+      flex-direction: column-reverse;
+    }
+
+}
+
+
+.reservas {
+  @media screen and (max-width: 1400px) {
+    margin-right: 1vw;
+
+  }
+  @media screen and (max-width: 950px) {
+    margin:auto;
+
+  }
 }

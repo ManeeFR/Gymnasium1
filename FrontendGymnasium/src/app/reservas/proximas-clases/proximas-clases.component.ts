@@ -95,7 +95,8 @@ export class ProximasClasesComponent {
     return {
       'background-image': 'url(' + url + ')',
       'background-size': 'cover',
-      'background-repeat': 'round'
+      'background-repeat': 'round',
+      'min-height': '60vh'
     };
   }
 

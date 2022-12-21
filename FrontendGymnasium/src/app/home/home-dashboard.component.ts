@@ -19,7 +19,7 @@ export class HomeDashboardComponent {
 
           console.log("entro");
 
-          this.router.navigate(["/home/clases"]);
+          this.router.navigate(["/home/centros"]);
 
         } else {
 

@@ -117,7 +117,7 @@ export class AuthService implements OnInit {
 
                     this.userLogged = true;
 
-                    this.router.navigateByUrl('/home/clases');
+                    this.router.navigateByUrl('/home/centros');
 
                 }
 

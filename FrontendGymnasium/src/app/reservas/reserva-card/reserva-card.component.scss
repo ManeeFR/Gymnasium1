@@ -13,8 +13,8 @@
 }
 
 .reserva-card {
+  min-height: 55vh;
   margin-bottom: 100px;
-  text-align: center;
   border-radius: 4px;
   padding: 20px 0;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .6), 0 3px 8px 0 rgba(0, 0, 0, .44), 0 5px 8px -1px rgba(0, 0, 0, .52);
@@ -34,6 +34,18 @@
 
 .reserva-card .reserva-editTitle input {
   font-size: 20px;
+}
+
+.reserva-franja, .reserva-sala {
+  background-color: rgba(96, 96, 96, 0.66);
+  box-shadow: 0 2px 16px 0 rgb(0 0 0 / 60%), 0 3px 8px 0 rgb(0 0 0 / 44%), 0 5px 8px -1px rgb(0 0 0 / 52%);
+  border-radius: 25px;
+  color: black;
+  padding: 2vh;
+  width: fit-content;
+  margin: 2vh;
+  font-size: 1.3em;
+  font-weight: 600;
 }
 
 button {

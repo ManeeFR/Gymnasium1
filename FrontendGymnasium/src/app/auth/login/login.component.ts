@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
         console.log("entra");
 
-        this.router.navigate(["/home/clases"]);
+        this.router.navigate(["/home/centros"]);
 
       } else {
 

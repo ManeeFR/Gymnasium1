@@ -208,7 +208,9 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
         'background-image': 'url(' + url + ')',
         'background-size': 'cover',
         'background-repeat': 'round',
-        'margin-top': '5vh'
+        'margin-top': '5vh',
+        'max-width': '47vw'
+
       };
     }
 
