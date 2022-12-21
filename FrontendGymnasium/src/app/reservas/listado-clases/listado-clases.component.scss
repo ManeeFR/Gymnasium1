@@ -14,9 +14,12 @@
 .card-body {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .card {
   margin-bottom: 24px;
   margin-right: 237px;
+  width: 18rem;
+  border: 0;
 }

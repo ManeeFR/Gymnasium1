@@ -139,11 +139,6 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
         const date = new Date(reserva.fecha).getDate();
 
-        console.log("this.currentDay");
-        console.log(this.currentDay);
-        console.log("date");
-        console.log(date);
-
         if (date !== this.currentDay) {
             this.currentDay = date;
             console.log("tre");

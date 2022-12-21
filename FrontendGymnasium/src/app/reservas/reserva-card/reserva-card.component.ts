@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, TemplateRef, Attribute, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Reserva } from '../reserva-model/reserva.interface';
 import { ReservaService } from '../reserva-service/reserva.service';
@@ -17,7 +18,7 @@ export class ReservaCardComponent {
     @Output('reservaChanged') reservaEditEmitter = new EventEmitter<Reserva>();
 
 
-    constructor(private authService: AuthService, private reservaService: ReservaService) { }
+    constructor(private authService: AuthService, private reservaService: ReservaService, private route: Router) { }
 
 
 
@@ -44,14 +45,35 @@ export class ReservaCardComponent {
     }
 
 
-    deleteReserva(reserva: Reserva): void {
+    deleteReserva(reservaClase: Reserva): void {
 
-      console.log("reserva990");
-      console.log(reserva);
+        this.reservaService.deleteReserva(reservaClase).subscribe((resp: any) => {
 
-        this.reservaService.deleteReserva(reserva).subscribe((resp: any) => {
-          // this.reservasList = reservas;
+          if (resp.resp == "success") {
+
+            this.route.navigate(['/reservaFail'], {
+
+              queryParams: {
+                'fecha': reservaClase.fecha,
+                'franja': reservaClase.franja,
+                'deporte': reservaClase.deporte,
+                'sala': reservaClase.id_sala,
+                'email': reservaClase.email_user,
+                'imagen': reservaClase.imagen
+              }
+
+            });
+
+          }
+
+
         });
+
+
+
+
+
+
     }
 
 

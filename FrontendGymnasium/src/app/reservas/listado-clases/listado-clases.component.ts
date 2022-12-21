@@ -22,4 +22,12 @@ export class ListadoClasesComponent {
 
     }
 
+
+    bgStyle(url: string) {
+      return { 'background-image': 'url(' + url + ')',
+               'background-size': 'cover',
+               'background-repeat': 'round'
+    };
+    }
+
 }
