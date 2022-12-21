@@ -1,14 +1,72 @@
-.clases{
-padding-top: 58px;
+.clases {
+  padding-top: 58px;
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 3vh;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .6), 0 3px 8px 0 rgba(0, 0, 0, .44), 0 5px 8px -1px rgba(0, 0, 0, .52);
+  min-width: 27.1vw;
+  padding: 1vw;
+  margin-right: 1vw;
+  min-height: 70vh;
+  max-height: 80vh;
+  background-color: rgb(96 96 96 / 66%);
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .6), 0 3px 8px 0 rgba(0, 0, 0, .44), 0 5px 8px -1px rgba(0, 0, 0, .52);
+  // border-radius: 25px;
+  // max-height: 80vh;
+  // min-width: 26vw;
+  margin-right: 12vw;
+  margin-top: 33vh;
+
+  &::-webkit-scrollbar {
+    scroll-margin-top: 3vh;
+    -webkit-appearance: none;
+
+    &:vertical {
+        width: 10px;
+    }
+
+    &-button {
+        display: none;
+
+        :increment {
+            display: none;
+        }
+    }
+
+    &-thumb {
+        background-color: #7d6d61d7;
+        border-radius: 20px;
+        border: 2px solid #a38603bc;
+    }
+
+    &-track {
+        border-radius: 10px;
+    }
+
+}
 }
 
-h1{
-padding-bottom: 31px;
+h1 {
+  padding-bottom: 31px;
 }
+
+h3 {
+  max-width: max-content;
+  padding: 1.4vh 1.8vh;
+  background-color: #a38603bc;
+  border-radius: 4%;
+  color: white;
+
+}
+
+
+
+
 
 .top-menu {
-    background: #1976d2;
-    padding: 2px 15px;
+  background: #1976d2;
+  padding: 2px 15px;
 }
 
 .logo {
@@ -16,34 +74,87 @@ padding-bottom: 31px;
 }
 
 
-.reservas, .reservasAll {
-    min-width: 60vw;
-    margin: 50px 10vw;
+.reservas,
+.reservasAll {
+  min-width: 60vw;
+  margin: 50px 10vw;
+  padding-left: 5vw;
+}
+
+.reservasAll {
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 textarea {
-    padding: 30vh auto;
+  padding: 30vh auto;
 }
 
+
 button {
-    margin: 1vh;
-    cursor: pointer;
+  background: #a38603;
+  color: black;
+  border: 0;
+  padding: 6px auto;
+  margin: 1vh;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  font-size: 0.83em;
+  width: 9vw;
+  min-width: 140px;
+  cursor: pointer;
+
+  @media screen and (max-width: 710px) {
+    display: none;
+  }
 }
-.card{
+
+button:hover {
+  color: white;
+  font-size: 0.9em;
+}
+
+button::after {
+  content: "";
+  background: #000000f0;
+  position: absolute;
+  z-index: -1;
+  padding: 7px 10px;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+
+button:hover::after {
+  transition: all 0.3s ease-out;
+  transform: skewX(45deg) scale(1, 1);
+}
+
+.card {
   margin-bottom: 100px;
 }
+
 .reserva-title {
-    color: white;
-    background-color: rgba(156, 156, 156, 0.563);
-    width: 80%;
-    display: inline-flex;
-    margin-top: 14vh;
+  color: white;
+  background-color: rgba(156, 156, 156, 0.563);
+  width: 80%;
+  display: inline-flex;
+  margin-top: 14vh;
 }
 
 
 .reservasLayout {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 
 }

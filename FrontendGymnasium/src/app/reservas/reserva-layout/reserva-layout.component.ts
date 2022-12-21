@@ -24,7 +24,6 @@ import { ProximaClase } from 'src/app/reservas/reserva-model/proximaClase.interf
 export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
 
-    currentDay: number = new Date().getDate();
     tieneReservasHoy!: boolean;
     showReservasAll!: boolean;
     showReservasUser!: boolean;
@@ -33,6 +32,8 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
     reservasListAll!: ProximaClase[];
     clasesList!: Clase[];
 
+    currentDay: number = new Date().getDate();
+    currentDayAll: number = new Date().getDate();
 
 
     constructor(private reservaService: ReservaService,
@@ -121,7 +122,14 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
     tieneReservaHoy(): boolean {
 
+
         return this.reservasList.some(reserva => reserva.fecha.toString() === new Date().toISOString().split('T')[0] );
+    }
+
+    tieneReservaHoyAll(): boolean {
+
+
+        return this.reservasListAll.some(reserva => reserva.fecha.toString() === new Date().toISOString().split('T')[0] );
     }
 
 
@@ -129,11 +137,37 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
 
         const date = new Date(reserva.fecha).getDate();
 
+        console.log("this.currentDay");
+        console.log(this.currentDay);
+        console.log("date");
+        console.log(date);
+
         if (date !== this.currentDay) {
             this.currentDay = date;
+            console.log("tre");
             return true;
-        }
+          }
 
+          console.log("fals");
+        return false;
+    }
+
+    validReservaAll(reserva: Reserva | ProximaClase): boolean {
+
+        const date = new Date(reserva.fecha).getDate();
+
+        console.log("this.currentDayAll");
+        console.log(this.currentDayAll);
+        console.log("date");
+        console.log(date);
+
+        if (date !== this.currentDayAll) {
+            this.currentDayAll = date;
+            console.log("tre");
+            return true;
+          }
+
+          console.log("fals");
         return false;
     }
 
@@ -184,7 +218,8 @@ export class ReservaLayoutComponent implements OnInit, AfterContentChecked {
       return {
         'background-image': 'url(' + url + ')',
         'background-size': 'cover',
-        'background-repeat': 'round'
+        'background-repeat': 'round',
+        'margin-top': '5vh'
       };
     }
 

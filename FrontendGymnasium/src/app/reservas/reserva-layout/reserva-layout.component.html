@@ -20,7 +20,8 @@
 
         </ng-container>
 
-        <app-reserva-card [reserva]="reserva" [ngStyle]="bgStyles(reserva.imagen)" (reservaChanged)="onReservaEdited($event)">
+        <app-reserva-card [reserva]="reserva" [ngStyle]="bgStyles(reserva.imagen)"
+                          (reservaChanged)="onReservaEdited($event)">
 
 
         </app-reserva-card>
@@ -34,19 +35,25 @@
 
     <div class="reservasAll">
 
-      <button (click)="showReservas()">Volver a mis reservas</button>
 
-      <h1>Próximas clases</h1>
+
+      <div class="reservasAll__title">
+
+        <h1>Próximas clases</h1>
+
+        <button (click)="showReservas()">Volver a mis reservas</button>
+
+      </div>
 
       <ng-container *ngFor="let reserva of reservasListAll; index as i; first as isFirst">
 
-        <ng-container *ngIf="isFirst && tieneReservaHoy()">
+        <ng-container *ngIf="isFirst && tieneReservaHoyAll()">
 
           <h3>Hoy</h3>
 
         </ng-container>
 
-        <ng-container *ngIf="validReserva(reserva)">
+        <ng-container *ngIf="validReservaAll(reserva)">
 
           <h3>{{reserva.fecha}}</h3>
 

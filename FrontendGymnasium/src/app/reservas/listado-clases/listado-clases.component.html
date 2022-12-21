@@ -2,8 +2,8 @@
     <!-- <img class="card-img-top" src="{{clase.imagen}}" alt="Card image cap"> -->
     <div class="card-body">
       <h5 class="card-title">{{clase.deporte}}</h5>
-      <p class="card-text">Aforo: {{clase.aforo}}</p>
-      <p class="card-text">Duración: {{clase.duracion}} minutos</p>
+      <p class="card-text">Hasta {{clase.aforo}} personas</p>
+      <p class="card-text">{{clase.duracion}} minutos</p>
       <a (click)="claseClicked()" class="btn btn-primary">Ver próximas clases</a>
     </div>
   </div>

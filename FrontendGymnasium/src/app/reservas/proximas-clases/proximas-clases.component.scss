@@ -4,6 +4,8 @@
 
   background-color: inherit;
   padding-bottom: 5vh;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, .6), 0 3px 8px 0 rgba(0, 0, 0, .44), 0 5px 8px -1px rgba(0, 0, 0, .52);
+  margin-bottom: 100px;
 
   &__deporte {
     font-size: 27px;
@@ -27,6 +29,6 @@ button {
 }
 
 
-.botonReservar {
-  margin-bottom: 5vh;
-}
+// .botonReservar {
+//   margin-bottom: 5vh;
+// }
